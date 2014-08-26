@@ -31,7 +31,7 @@
 ## Deploy OpenStack
   * Chef Architecture
   * Git Architecture
-  * OpenStack Repo
+  * OpenStack Cookbook Repo
 
 ## Software Defined Network
   * Neutron HA
