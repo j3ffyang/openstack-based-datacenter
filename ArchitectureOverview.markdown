@@ -6,7 +6,7 @@
 ### Technically, the architecture would look like
 
 + General scope into 
-![Overall Scope](images/20140814_architectureoverview_svc.png)
+![Overall Scope](images/20140814_architectureoverview_svc.png)   
 (a) OpenStack framework, 
 (b) SDN capability, 
 (c) Distributed storage and 
