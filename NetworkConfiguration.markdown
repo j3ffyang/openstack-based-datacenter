@@ -1,6 +1,6 @@
 Mustang Networking setup is up to six distinct physical data center networks. These networks isolated in physical switch. 
 
-![Network Architecture](20140814_architectureoverview_svc.png =100x) 
+![Network Architecture](./20140814_architectureoverview_svc.png =100x) 
 
 ## Management network
 172.16.xx.xx/16 --1G cable connection
