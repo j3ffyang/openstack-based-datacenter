@@ -1,20 +1,16 @@
-<<<<<<< HEAD
-## [Design Thoughts and Architecture Overview](./ArchitectureOverview.markdown)
-=======
 ## [Design Thoughts and Architecture Overview](ArchitectureOverview.markdown)
->>>>>>> 78cc5bcb7b6402f476a3baad34d2ac173c812b0d
   * Principle and Belief
 
-## [Disk Configuration](./DiskConfiguration.markdown)
+## [Disk Configuration](DiskConfiguration.markdown)
   * Configuration Spec on Controller, Compute and Storage Node Respectively
   * RAID Group Configuration
   * Caching on RAID Card
   * Disk Partition Layout
 
-## [Network Architecture](./NetworkConfiguration.markdown)
+## [Network Architecture](NetworkConfiguration.markdown)
   * Network Segmentations
 
-## [Hostnaming and IP Planning](./IPPlanning.markdown)
+## [Hostnaming and IP Planning](IPPlanning.markdown)
   * IP Range and Reservation Plan
 
 ## Hardware Specification
@@ -23,9 +19,9 @@
   * Switch Information
 
 ## 1st Controller Physical Box
-  * [Build the 1st Controller Physical Box](./BuildFirstBox.markdown)
-  * [CentOS Repo](./CreateCentosRepo)
-  * [Install and Configure OpenVPN](./InstallAndConfigureOpenvpn.markdown)
+  * [Build the 1st Controller Physical Box](BuildFirstBox.markdown)
+  * [CentOS Repo](CreateCentosRepo)
+  * [Install and Configure OpenVPN](InstallAndConfigureOpenvpn.markdown)
   * Cobbler Configuration and Template
 
 ## Distributed Storage by Ceph
