@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ## [Design Thoughts and Architecture Overview](./ArchitectureOverview.markdown)
+=======
+## [Design Thoughts and Architecture Overview](ArchitectureOverview.markdown)
+>>>>>>> 78cc5bcb7b6402f476a3baad34d2ac173c812b0d
   * Principle and Belief
 
 ## [Disk Configuration](./DiskConfiguration.markdown)
