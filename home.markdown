@@ -1,4 +1,4 @@
-## [Design Thoughts and Architecture Overview](./ArchitectureOverview)
+## [Design Thoughts and Architecture Overview](ArchitectureOverview.markdown)
   * Principle and Belief
 
 ## [Disk Configuration](./DiskConfiguration)
