@@ -6,7 +6,7 @@
 ## Configure virtio disk
 ![virtio_disk](images/20140827_virtio_disk.png)
 
-## Configure virtio network interface card
+## Configure virtio network interface card with bridge
 ![virtio_nic](images/20140827_virtio_network_bridge.png)
 
 ## Disable SELinux
