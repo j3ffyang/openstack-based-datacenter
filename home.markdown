@@ -22,8 +22,7 @@
   * [Build the 1st Controller Physical Box](BuildFirstBox.markdown)
   * [CentOS Repo](CreateCentosRepo)
   * [Install and Configure OpenVPN](InstallAndConfigureOpenvpn.markdown)
-
-## [Build an Image](BuildAnImage.markdown)
+  * [Build an Image](BuildAnImage.markdown)
   * [Cobbler Configuration and Template](BuildCobblerVM.markdown)
 
 ## Distributed Storage by Ceph
