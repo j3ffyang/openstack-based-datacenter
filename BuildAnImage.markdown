@@ -33,4 +33,4 @@ Update grub
 
 	grub2-mkconfig -o /boot/grub2/grub.cfg
 
-## Create repo as (reateCentosRepo.markdown)
+## Create repo as [CreateCentosRepo](CreateCentosRepo.markdown)
