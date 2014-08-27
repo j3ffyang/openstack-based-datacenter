@@ -1,7 +1,8 @@
 ## Launch a CentOS 7 VM
 
 ## Configure network according [IP Planning](IPPlanning.markdown)
-Configuration details
+Configuration details    
+
 	[root@localhost network-scripts]# pwd
 	/etc/sysconfig/network-scripts
 
