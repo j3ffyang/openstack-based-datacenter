@@ -119,3 +119,6 @@ According to Controller's [partition layout](./DiskConfiguration)
 
 ## Restart network service
 	systemctl restart network.service
+
+## Other packages to install
+	xauth qemu-kvm qemu-kvm-tools qemu-kvm-common virt-manager
