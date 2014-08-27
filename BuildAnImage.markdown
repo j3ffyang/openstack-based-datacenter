@@ -22,3 +22,11 @@
 	#     targeted - Targeted processes are protected,
 	#     mls - Multi Level Security protection.
 	SELINUXTYPE=targeted
+
+## Change console to display in command line
+	vi /etc/default/grub
+	Then change "GRUB_CMDLINE_LINUX" line to
+	GRUB_CMDLINE_LINUX="rd.lvm.lv=centos/swap vconsole.font=latarcyrheb-sun16 rd.lvm.lv=centos/root crashkernel=auto  vconsole.keymap=us rhgb quiet console=ttyS0"
+
+	Update grub
+	grub2-mkconfig -o /boot/grub2/grub.cfg
