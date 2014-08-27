@@ -18,7 +18,7 @@ Configuration details
 	DEVICE=eth0
 	ONBOOT=yes
 
-	[root@localhost network-scripts]# cat ifcfg-*eth1
+	[root@localhost network-scripts]# cat ifcfg-eth1
 	TYPE=Ethernet
 	BOOTPROTO=none
 	IPADDR0=172.29.83.248
