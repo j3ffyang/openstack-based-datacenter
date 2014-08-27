@@ -32,3 +32,5 @@ Then append "console=ttyS0"" and change "GRUB_CMDLINE_LINUX" line to
 Update grub   
 
 	grub2-mkconfig -o /boot/grub2/grub.cfg
+
+## Create repo as (reateCentosRepo.markdown)
