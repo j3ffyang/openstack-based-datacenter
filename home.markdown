@@ -22,7 +22,7 @@
   * [Build the 1st Controller Physical Box](BuildFirstBox.markdown)
   * [CentOS Repo](CreateCentosRepo)
   * [Install and Configure OpenVPN](InstallAndConfigureOpenvpn.markdown)
-  * [Cobbler Configuration and Template]()
+  * [Cobbler Configuration and Template](BuildCobblerVM.markdown)
 
 ## [Build an Image](BuildAnImage.markdown)
 
