@@ -24,6 +24,8 @@
   * [Install and Configure OpenVPN](InstallAndConfigureOpenvpn.markdown)
   * Cobbler Configuration and Template
 
+## [Build an Image](BuildAnImage.markdown)
+
 ## Distributed Storage by Ceph
   * Ceph repo and install
   * Stress Test Plan
