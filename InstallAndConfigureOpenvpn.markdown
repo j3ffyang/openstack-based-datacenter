@@ -21,7 +21,8 @@
 ## Create Server Configuration for Management Network (172.16.0.0/16)
 	cp /usr/share/doc/openvpn-2.3.2/sample/sample-config-files/server.conf /etc/openvpn/mgmt.conf
 
-## Sample Configuration File for Management Network (172.16.0.0/16)
+## Sample Configuration File for Management Network (172.16.0.0/16), at /etc/openvpn/mgmt.conf
+### Notice the file name and location
 	...
 	port 1194
 	proto udp
@@ -43,3 +44,6 @@
 
 	comp-lzo
 
+## Enable OpenVPN
+	systemctl -f enable openvpn@mgmt.service
+	systemctl start openvpn@mgmt.service
