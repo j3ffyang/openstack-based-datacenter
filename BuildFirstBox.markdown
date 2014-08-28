@@ -117,7 +117,7 @@ According to Controller's [partition layout](./DiskConfiguration)
 
 	brctl addif eno2 br1
 
-## Enable postrouting by IPTables
+## Enable postrouting by IPTables (important)
 	iptables -t nat -A POSTROUTING -s 172.16.0.0/16 -j MASQUERADE
 	iptables -L -n -v
 	iptables -t nat -L
