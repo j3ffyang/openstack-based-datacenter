@@ -22,7 +22,7 @@ Configuration details
 	[root@localhost network-scripts]# cat ifcfg-eth1
 	TYPE=Ethernet
 	BOOTPROTO=none
-	IPADDR0=172.29.83.248
+	IPADDR0=172.29.0.31
 	PREFIX0=16
 	DEFROUTE=yes
 	IPV4_FAILURE_FATAL=no
