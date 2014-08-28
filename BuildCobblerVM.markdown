@@ -31,3 +31,8 @@ Configuration details
 	UUID=2533e32f-5237-45d5-abc8-b549fa1fa6e7
 	DEVICE=eth1
 	ONBOOT=yes
+
+## Set hostname
+	hostnamectl set-hostname cobbler
+
+## Install Cobbler 

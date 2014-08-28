@@ -117,8 +117,17 @@ According to Controller's [partition layout](./DiskConfiguration)
 
 	brctl addif eno2 br1
 
+## Enable postrouting by IPTables
+	iptables -t nat -A POSTROUTING -s 172.16.0.0/16 -j MASQUERADE
+	iptables -L -n -v
+	iptables -t nat -L
+
 ## Restart network service
 	systemctl restart network.service
 
 ## Other packages to install
 	xauth qemu-kvm qemu-kvm-tools qemu-kvm-common virt-manager
+
+## Disable SELinux
+	setenforce 0
+	sestatus
