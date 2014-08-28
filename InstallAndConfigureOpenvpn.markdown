@@ -1,6 +1,10 @@
 ## Install OpenVPN
 	[root@r83x5u09 yum.repos.d]# yum install openvpn easy-rsa
 
+## Enable ip_forward
+	[root@r83x5u09 ~]# sysctl -p
+	net.ipv4.ip_forward = 1
+
 ## Create Configuration Files
 	mkdir -p /etc/openvpn/easy-rsa/
 	cp -rf /usr/share/easy-rsa/2.0/* /etc/openvpn/easy-rsa/
@@ -21,7 +25,7 @@
 ## Create Server Configuration for Management Network (172.16.0.0/16)
 	cp /usr/share/doc/openvpn-2.3.2/sample/sample-config-files/server.conf /etc/openvpn/mgmt.conf
 
-## Sample Configuration File for Management Network (172.16.0.0/16), at /etc/openvpn/mgmt.conf
+## Sample Configuration File /etc/openvpn/mgmt.conf
 ### Notice the file name and location
 	...
 	port 1194
@@ -47,3 +51,11 @@
 ## Enable OpenVPN
 	systemctl -f enable openvpn@mgmt.service
 	systemctl start openvpn@mgmt.service
+
+	brctl addif br0 tap0
+	ifconfig tap0 0.0.0.0 promisc up
+## Turn on iptables for postrouting and forward   
+	iptables -F
+	iptables -t nat -F
+	iptables -t nat -A POSTROUTING -s 172.16.0.0/16 -j MASQUERADE
+	iptables -A FORWARD -i br0 -j ACCEPT
