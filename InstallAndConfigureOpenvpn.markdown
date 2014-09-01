@@ -53,7 +53,7 @@
 	systemctl start openvpn@mgmt.service
 
 	brctl addif br0 tap0
-	ip link set dev tap0 promisc on (ifconfig tap0 0.0.0.0 promisc up)
+	ifconfig tap0 0.0.0.0 promisc up (ip link set dev tap0 promisc on)
 
 ## Turn on iptables for postrouting and forward   
 	iptables -F
