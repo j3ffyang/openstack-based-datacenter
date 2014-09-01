@@ -35,8 +35,9 @@ Configuration details
 ## Set hostname
 	hostnamectl set-hostname cobbler
 
-## Install Cobbler 
+## Install Cobbler and Pre- req
 	yum install cobbler cobbler-web -y
+	yum install syslinux
 
 ## Edit /etc/cobbler/settings
 	next_server: 172.16.0.31
