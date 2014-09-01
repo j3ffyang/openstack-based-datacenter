@@ -25,23 +25,44 @@
 	sync --recursive --progress --archive --compress centos7_64 centos7_64_repo
 	createrepo centos7_64_repo
 
-## Create repo configuration
-	[root@r83x5u09 yum.repos.d]# pwd
-	/etc/yum.repos.d
-	[root@r83x5u09 yum.repos.d]# cat centos-local.repo 
-	[local]
-	name=CentOS-$releasever - Base
-	baseurl=file:///mnt/centos7_64_repo/
-	gpgcheck=0
+## Create repo configuration    
 
-	[root@r83x5u09 yum.repos.d]# cat fedora-epel.repo 
-	[fedora-epel]
+	[root@r83x5u09 yum.repos.d]# cat /etc/yum.repos.d/centos7_fullpackage.repo 
+	[centos7_fullpackage]
 	name=Extra Packages for Enterprise Linux 7 - $basearch
-	#baseurl=http://download.fedoraproject.org/pub/epel/6/$basearch
-	mirrorlist=https://mirrors.fedoraproject.org/metalink?repo=epel-7&arch=$basearch
+	baseurl=http://9.115.78.100/centos/7/x86_64/
 	failovermethod=priority
 	enabled=1
 	gpgcheck=0
-	proxy=http://9.115.78.100:8085/
 	priority=3
+    
+
+	[root@r83x5u09 yum.repos.d]# cat epel.repo
+	[epel]
+	name=Extra Packages for Enterprise Linux 7 - $basearch
+	#baseurl=http://download.fedoraproject.org/pub/epel/7/$basearch
+	mirrorlist=https://mirrors.fedoraproject.org/metalink?repo=epel-7&arch=$basearch
+	failovermethod=priority
+	enabled=1
+	gpgcheck=1
+	gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-7
+	proxy=http://9.115.78.100:8085/
+
+	[epel-debuginfo]
+	name=Extra Packages for Enterprise Linux 7 - $basearch - Debug
+	#baseurl=http://download.fedoraproject.org/pub/epel/7/$basearch/debug
+	mirrorlist=https://mirrors.fedoraproject.org/metalink?repo=epel-debug-7&arch=$basearch
+	failovermethod=priority
+	enabled=0
+	gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-7
+	gpgcheck=1
+
+	[epel-source]
+	name=Extra Packages for Enterprise Linux 7 - $basearch - Source
+	#baseurl=http://download.fedoraproject.org/pub/epel/7/SRPMS
+	mirrorlist=https://mirrors.fedoraproject.org/metalink?repo=epel-source-7&arch=$basearch
+	failovermethod=priority
+	enabled=0
+	gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-7
+	gpgcheck=1
 
