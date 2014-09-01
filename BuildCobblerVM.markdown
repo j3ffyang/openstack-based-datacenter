@@ -57,7 +57,8 @@ Most configurations are default without change in version 2.6.5
 	cobbler sync
 
 ## Import Image    
-Transfer an ISO image to /mnt
+Transfer an ISO image to /mnt    
+
 	cobbler import --name=centos7 --path=/mnt --arch=x86_64
 
 ## Create a Profile
