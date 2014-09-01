@@ -60,3 +60,4 @@
 	iptables -t nat -F
 	iptables -t nat -A POSTROUTING -s 172.16.0.0/16 -j MASQUERADE
 	iptables -A FORWARD -i br0 -j ACCEPT
+	iptables -A FORWARD -i tap+ -j ACCEPT
