@@ -55,3 +55,10 @@ Most configurations are default without change in version 2.6.5
 
 ## Sync
 	cobbler sync
+
+## Import Image    
+Transfer an ISO image to /mnt
+	cobbler import --name=centos7 --path=/mnt --arch=x86_64
+
+## Create a Profile
+	cobbler profile add --distro=centos65-x86_64 --name=centos65-x86_64 --kickstart=/var/lib/cobbler/kickstarts/default.ks
