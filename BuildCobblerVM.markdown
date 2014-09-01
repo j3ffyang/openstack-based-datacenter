@@ -41,7 +41,7 @@ Configuration details
 ## Edit /etc/cobbler/settings
 	next_server: 172.16.0.31
 
-## Edit /etc/httpd/conf.d/cobbler_web.conf and /etc/cobbler/modules.conf    
+## Verify /etc/httpd/conf.d/cobbler_web.conf and /etc/cobbler/modules.conf    
 Most configurations are default without change in version 2.6.5
 
 ## Update the Login Credential
