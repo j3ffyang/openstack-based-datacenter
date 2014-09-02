@@ -59,8 +59,8 @@ Most configurations are default without change in version 2.6.5
 
 ## Import Image    
 Transfer an ISO image to /mnt    
-
-	cobbler import --name=centos7 --path=/mnt --arch=x86_64
+	mount -o loop CentOS-7.0-1406-x86_64-DVD.iso /mnt/centos7_mount/
+	cobbler import --name=centos7 --path=/mnt/centos7_mount/ --arch=x86_64
 
 ## Create a Profile
 	cobbler profile add --distro=centos65-x86_64 --name=centos65-x86_64 --kickstart=/var/lib/cobbler/kickstarts/default.ks
