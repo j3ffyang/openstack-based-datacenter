@@ -48,3 +48,5 @@
   * One rule everybody should remember is to run "who" and "wall" prior to shutdown the server!
   * Monitoring by Ganglia, Nagios
   * Log Analysis by Logstash
+
+## [Troubleshooting](TroubleShooting.markdown)
