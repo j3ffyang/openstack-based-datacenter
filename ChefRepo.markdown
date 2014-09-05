@@ -3,7 +3,7 @@
 
 Credit: [http://softlayer.github.io/chef-openstack/developing-havana/](http://softlayer.github.io/chef-openstack/developing-havana/)
 
-## Launch a VM then Install Chef
+## Launch a VM 
 From r83x5u09,     
 
 	cd /var/lib/libvirt/images
@@ -12,3 +12,9 @@ From r83x5u09,
 Modify xml definition to reflect template name, VM name and disk name, then    
 
 	virsh create chef.xml
+
+## Change hostname    
+	hostnamectl set-hostname chef
+
+## Assign IP address according to [IP Planning](IPPlanning.markdown)
+	nmtui
