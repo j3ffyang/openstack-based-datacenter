@@ -1,10 +1,7 @@
 ## Known Issues
 
-### r83x5u09 machine reboot unexpectedly at 4.11am every day    
-Update /etc/systemd/logind.conf
+### r83x5u09 machine reboot unexpectedly at 4.11am (OS time) every day    
+Check IMM configuration and found
+![IMM Configuration](images/20140905_u09_imm_restart.png)
 
-	HandlePowerKey=ignore    
-
-then restart LoginD    
-
-	systemctl restart systemd-logind.service
+Resolution is to clean up all setting and save
