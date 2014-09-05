@@ -28,6 +28,8 @@
 
 ## [Cobbler Configuration and Template](BuildCobblerVM.markdown)
 
+## [Chef Repository](ChefRepo.markdown)
+
 ## Distributed Storage by Ceph
   * Ceph repo and install
   * Stress Test Plan
