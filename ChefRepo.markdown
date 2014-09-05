@@ -10,4 +10,5 @@ From r83x5u09,
 	cp centos7_15g.qcow2 chef.qcow2; cp centos7_15g.xml chef.xml    
 
 Modify xml definition to reflect template name, VM name and disk name, then    
+
 	virsh create chef.xml
