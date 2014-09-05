@@ -9,6 +9,19 @@
 ## Configure virtio network interface card with bridge
 ![virtio_nic](images/20140827_virtio_network_bridge.png)
 
+## Convert a qcow2 image as base image
+	qemu-img create -b centos7_15g.img -o cluster_size=2M -f qcow2 centos7_15g.qcow2
+
+## Modify disk format in xml as base xml definition [sample xml](samples/centos7_15g.xml)
+	...
+	<disk type='file' device='disk'>
+	  <driver name='qemu' type='qcow2' cache='none'/>
+	  <source file='/var/lib/libvirt/images/centos7_15g.qcow2'/>
+	  <target dev='vda' bus='virtio'/>
+	  <address type='pci' domain='0x0000' bus='0x00' slot='0x04' function='0x0'/>
+    	</disk>
+	...
+
 ## Disable SELinux
 	[root@localhost ~]# cat /etc/selinux/config
 
