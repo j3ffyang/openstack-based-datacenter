@@ -5,6 +5,7 @@ Credit: [http://softlayer.github.io/chef-openstack/developing-havana/](http://so
 
 ## Launch a VM then Install Chef
 From r83x5u09,     
+
 	cd /var/lib/libvirt/images
 	cp centos7_15g.qcow2 chef.qcow2; cp centos7_15g.xml chef.xml    
 
