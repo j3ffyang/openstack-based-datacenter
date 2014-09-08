@@ -27,10 +27,12 @@
 ## [Build an Image](BuildAnImage.markdown)
 
 ## [Cobbler Configuration and Template](BuildCobblerVM.markdown)
+  * Bare- metal provisioning
 
 ## [Chef Repository](ChefRepo.markdown)
 
 ## [Controller VMs](BuildControllerVM.markdown)
+  * Respectively host clusters of MySQL, queue, etc
 
 ## Distributed Storage by Ceph
   * Ceph repo and install
