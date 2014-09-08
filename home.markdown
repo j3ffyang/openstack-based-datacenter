@@ -22,7 +22,7 @@
   * [Build the 1st Controller Physical Box](BuildFirstBox.markdown)
   * [Install and Configure OpenVPN](InstallAndConfigureOpenvpn.markdown)
 
-## [CentOS Repo](CreateCentosRepo)
+## [CentOS Repo](CreateCentosRepo.markdown)
 
 ## [Build an Image](BuildAnImage.markdown)
 
