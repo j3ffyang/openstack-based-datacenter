@@ -27,7 +27,7 @@
 
 ## Create repo configuration    
 
-	[root@r83x5u09 yum.repos.d]# cat /etc/yum.repos.d/centos7_fullpackage.repo 
+	[root@r83x5u09 yum.repos.d]# cat /etc/yum.repos.d/[centos7_fullpackage.repo](centos7_fullpackage.repo]
 	[centos7_fullpackage]
 	name=Extra Packages for Enterprise Linux 7 - $basearch
 	baseurl=http://9.115.78.100/centos/7/x86_64/
@@ -37,7 +37,7 @@
 	priority=3
     
 
-	[root@r83x5u09 yum.repos.d]# cat epel.repo
+	[root@r83x5u09 yum.repos.d]# cat [epel.repo](epel.repo)
 	[epel]
 	name=Extra Packages for Enterprise Linux 7 - $basearch
 	#baseurl=http://download.fedoraproject.org/pub/epel/7/$basearch
