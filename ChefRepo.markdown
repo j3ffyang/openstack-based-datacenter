@@ -43,3 +43,22 @@ Modify xml definition to reflect template name, VM name and disk name, then
 	yum install chef-server-11.1.3-1.el6.x86_64.rpm rubygems    
 
 Scratch all the above about CentOS 7 as Chef server doesn't support it up to this document being written
+
+## Update Hostname and Assign IP Address according to [IP Planning](IPPlanning.markdown)
+
+	[root@chef ~]# cd /etc/sysconfig/network-scripts/
+	[root@chef network-scripts]# pwd
+	/etc/sysconfig/network-scripts
+	[root@chef network-scripts]# cat ifcfg-eth0 
+	DEVICE=eth0
+	TYPE=Ethernet
+	ONBOOT=yes
+	NM_CONTROLLED=no
+	BOOTPROTO=none
+	IPADDR=172.16.0.32
+	NETMASK=255.255.0.0
+	GATEWAY=172.16.0.21
+
+
+## Setup [yum.repos.d](CreateCentosRepo.markdown)
+
