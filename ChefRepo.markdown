@@ -75,3 +75,4 @@ Scratch all the above about CentOS 7 as Chef server doesn't support it up to thi
 	chef-server-ctl reconfigure    
 
 If the task doesn't finish successfully because of hostname not able to be resolved, just disable /etc/resolv.conf
+Login as "admin"

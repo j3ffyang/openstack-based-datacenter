@@ -30,6 +30,8 @@
 
 ## [Chef Repository](ChefRepo.markdown)
 
+## [Controller VMs](BuildControllerVM.markdown)
+
 ## Distributed Storage by Ceph
   * Ceph repo and install
   * Stress Test Plan
