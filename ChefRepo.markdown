@@ -18,3 +18,23 @@ Modify xml definition to reflect template name, VM name and disk name, then
 
 ## Assign IP address according to [IP Planning](IPPlanning.markdown)
 	nmtui
+
+## ifcfg-eth0 Sample    
+	[root@chef network-scripts]# pwd
+	/etc/sysconfig/network-scripts
+	[root@chef network-scripts]# cat ifcfg-eth0 
+	HWADDR=52:54:00:D7:49:D6
+	TYPE=Ethernet
+	BOOTPROTO=none
+	IPADDR0=172.16.0.32
+	PREFIX0=16
+	GATEWAY0=172.16.0.21
+	DNS1=9.0.146.50
+	DNS2=9.0.148.50
+	DEFROUTE=yes
+	IPV4_FAILURE_FATAL=no
+	IPV6INIT=no
+	NAME=eth0
+	UUID=437b14d4-38cb-40ef-9553-5df02df114ea
+	ONBOOT=yes
+
