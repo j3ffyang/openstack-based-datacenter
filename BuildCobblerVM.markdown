@@ -68,3 +68,8 @@ Transfer an ISO image to /mnt
 
 ## Create a Profile
 	cobbler profile add --distro=centos65-x86_64 --name=centos65-x86_64 --kickstart=/var/lib/cobbler/kickstarts/default.ks
+
+## Access Cobbler Web    
+Log in as "cobbler"    
+
+	https://172.16.0.31/cobbler_web

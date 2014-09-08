@@ -59,6 +59,19 @@ Scratch all the above about CentOS 7 as Chef server doesn't support it up to thi
 	NETMASK=255.255.0.0
 	GATEWAY=172.16.0.21
 
+## Setup yum.repos.d for CentOS 6.5
 
-## Setup [yum.repos.d](CreateCentosRepo.markdown)
+## Update /etc/hosts and Hostname     
 
+	127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
+	::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
+	172.16.0.32     chef
+
+## Install rpms
+	yum install chef-server-11.1.3-1.el6.x86_64.rpm rubygems
+
+
+## Start Configuration    
+	chef-server-ctl reconfigure    
+
+If the task doesn't finish successfully because of hostname not able to be resolved, just disable /etc/resolv.conf
