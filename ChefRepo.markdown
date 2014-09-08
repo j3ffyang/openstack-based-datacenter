@@ -3,7 +3,7 @@
 
 Credit: [http://softlayer.github.io/chef-openstack/developing-havana/](http://softlayer.github.io/chef-openstack/developing-havana/)
 
-##~~Launch a VM~~
+## ~~Launch a VM~~
 From r83x5u09,     
 
 	cd /var/lib/libvirt/images
