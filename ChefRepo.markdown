@@ -3,7 +3,7 @@
 
 Credit: [http://softlayer.github.io/chef-openstack/developing-havana/](http://softlayer.github.io/chef-openstack/developing-havana/)
 
-## Launch a VM 
+~~## Launch a VM ~~
 From r83x5u09,     
 
 	cd /var/lib/libvirt/images
@@ -13,13 +13,13 @@ Modify xml definition to reflect template name, VM name and disk name, then
 
 	virsh create chef.xml
 
-## Set hostname    
+~~## Set hostname    ~~
 	hostnamectl set-hostname chef
 
-## Assign IP address according to [IP Planning](IPPlanning.markdown)
+~~## Assign IP address according to [IP Planning](IPPlanning.markdown)~~
 	nmtui
 
-## ifcfg-eth0 Sample    
+~~## ifcfg-eth0 Sample    ~~
 	[root@chef network-scripts]# pwd
 	/etc/sysconfig/network-scripts
 	[root@chef network-scripts]# cat ifcfg-eth0 
@@ -38,8 +38,8 @@ Modify xml definition to reflect template name, VM name and disk name, then
 	UUID=437b14d4-38cb-40ef-9553-5df02df114ea
 	ONBOOT=yes
 
-## Install Chef
+~~## Install Chef~~
 	wget https://opscode-omnibus-packages.s3.amazonaws.com/el/6/x86_64/chef-server-11.1.3-1.el6.x86_64.rpm 
 	yum install chef-server-11.1.3-1.el6.x86_64.rpm rubygems    
 
-~~Scratch all the above about CentOS 7 as Chef server doesn't support it up to this document being written~~
+Scratch all the above about CentOS 7 as Chef server doesn't support it up to this document being written
