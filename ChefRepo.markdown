@@ -13,7 +13,7 @@ Modify xml definition to reflect template name, VM name and disk name, then
 
 	virsh create chef.xml
 
-## Change hostname    
+## Set hostname    
 	hostnamectl set-hostname chef
 
 ## Assign IP address according to [IP Planning](IPPlanning.markdown)
@@ -38,3 +38,8 @@ Modify xml definition to reflect template name, VM name and disk name, then
 	UUID=437b14d4-38cb-40ef-9553-5df02df114ea
 	ONBOOT=yes
 
+## Install Chef
+	wget https://opscode-omnibus-packages.s3.amazonaws.com/el/6/x86_64/chef-server-11.1.3-1.el6.x86_64.rpm 
+	yum install chef-server-11.1.3-1.el6.x86_64.rpm rubygems    
+
+~~Scratch all the above about CentOS 7 as Chef server doesn't support it up to this document being written~~
