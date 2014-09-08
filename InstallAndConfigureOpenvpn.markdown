@@ -46,7 +46,9 @@
 	duplicate-cn
 	keepalive 10 120
 
-	comp-lzo
+	comp-lzo    
+
+Configuration samples can be found at [samples](samples/mgmt_client.conf)
 
 ## Enable OpenVPN
 	systemctl -f enable openvpn@mgmt.service
