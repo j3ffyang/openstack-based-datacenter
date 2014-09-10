@@ -27,6 +27,6 @@ Serial Number: 99N8996
 6*Fiber Adapter(10g eth fiber, 2 ports, each 10g available) for each host server
 IBM Emulex Dual Port 10GbE SFP+
 
-Rach Switch
+Rack Switch
 BNT Rack Switch G8264 * 1
 BNT Rack Switch G8000 * 1
