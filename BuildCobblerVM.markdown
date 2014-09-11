@@ -73,3 +73,15 @@ Transfer an ISO image to /mnt
 Log in as "cobbler"    
 
 	https://172.16.0.31/cobbler_web
+
+## Install Advanced Seeting Utility (ASU) (optional)
+Download package from [http://www-947.ibm.com/support/entry/portal/docdisplay?lndocid=TOOL-ASU](http://www-947.ibm.com/support/entry/portal/docdisplay?lndocid=TOOL-ASU)
+
+Install
+	yum install ibm_utl_asu_asut85b-9.61_linux_x86-64.rpm    
+
+Query to IMM    
+	/opt/ibm/toolscenter/asu/asu64 show all --host 172.29.83.3 --USER USERID --password PASSW0RD  | grep iSCSI
+	iSCSI.MacAddress.1=E4-1F-13-B3-2D-A0
+	iSCSI.MacAddress.2=E4-1F-13-B3-2D-A2
+
