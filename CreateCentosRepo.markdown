@@ -67,3 +67,16 @@
 	gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-7
 	gpgcheck=1
 
+
+## Create a tailered [chef-client.repo](samples/yum_repos_d/chef-client.repo)
+Copy chef server and cilent RPMs to the same server where CentOS7 local repo reside. In our case, this server is r83x5u09 (172.16.0.21)
+
+	scp 172.16.0.32:/opt/chef*.rpm /mnt/chef_repo/
+	
+Login r83x5u09, create repo
+
+	cd /mnt/; createrepo/chef_repo/
+
+Create soft link to chef_repo under /var/www/html
+	
+	cd /var/www/html/; ln s- /mnt/chef_repo chef_repo
