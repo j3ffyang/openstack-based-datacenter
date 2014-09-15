@@ -86,6 +86,7 @@ Install
 Query to IMM    
 
 	/opt/ibm/toolscenter/asu/asu64 show all --host 172.29.83.3 --USER USERID --password PASSW0RD  | grep iSCSI
+
 	iSCSI.MacAddress.1=E4-1F-13-B3-2D-A0
 	iSCSI.MacAddress.2=E4-1F-13-B3-2D-A2
 

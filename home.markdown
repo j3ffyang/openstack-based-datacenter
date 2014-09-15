@@ -31,6 +31,8 @@
 
 ## [Chef Repository](ChefRepo.markdown)
 
+## [Jenkins](BuildJenkins.markdown)
+
 ## [Controller VMs](BuildControllerVM.markdown)
   * Respectively host clusters of MySQL, queue, etc
 

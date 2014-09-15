@@ -47,3 +47,7 @@ Update grub
 	grub2-mkconfig -o /boot/grub2/grub.cfg
 
 ## Create repo as [CreateCentosRepo](CreateCentosRepo.markdown)
+
+## Add proxy when VM residing within private network     
+	export http_proxy=http://9.115.78.100:8085/
+	export https_proxy=http://9.115.78.100:8085/
