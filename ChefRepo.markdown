@@ -79,7 +79,9 @@ Login as "admin"
 
 ## Install and Configure Chef-Client    
 Download    
+
 	wget https://opscode-omnibus-packages.s3.amazonaws.com/el/6/x86_64/chef-11.16.0-1.el6.x86_64.rpm
 
 or directly install from web    
+
 	curl -L https://www.opscode.com/chef/install.sh | bash
