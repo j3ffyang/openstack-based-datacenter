@@ -76,3 +76,10 @@ Scratch all the above about CentOS 7 as Chef server doesn't support it up to thi
 
 If the task doesn't finish successfully because of hostname not able to be resolved, just disable /etc/resolv.conf
 Login as "admin"
+
+## Install and Configure Chef-Client    
+Download    
+	wget https://opscode-omnibus-packages.s3.amazonaws.com/el/6/x86_64/chef-11.16.0-1.el6.x86_64.rpm
+
+or directly install from web    
+	curl -L https://www.opscode.com/chef/install.sh | bash
