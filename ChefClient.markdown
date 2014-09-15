@@ -32,7 +32,7 @@ Configure chef-client on chef-server
 	Created user[root]
 	Configuration file written to /root/.chef/knife.rb
 
-## Boostrap
+## Bootstrap
 Since all VMs/ hosts are located within a private network plus #GFW, we'd have to create our own chef-client repo. Run the following commands on Chef server
 
 	# clone git
