@@ -1,2 +1,13 @@
+172.16.0.32	chef
 127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
 ::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
+
+172.16.0.21	r83x5u09
+
+172.16.0.31	cobbler
+172.16.0.32	chef
+172.16.0.33	ctrlr0
+172.16.0.34	ctrlr1
+172.16.0.35	ctrlr2
+172.16.0.36	jenkins
+
