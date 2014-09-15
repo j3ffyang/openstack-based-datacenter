@@ -125,3 +125,6 @@ Since all VMs/ hosts are located within a private network plus #GFW, we'd have t
 
 	# populate repos
 	scp /opt/git/mustang/samples/yum_repos_d/*.repo 172.16.0.36:/etc/yum.repos.d/
+
+	# install wget and git
+	ssh -t root@172.16.0.36 "yum install git wget -y"
