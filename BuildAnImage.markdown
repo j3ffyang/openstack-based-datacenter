@@ -54,4 +54,4 @@ Update grub
 
 ## [Sample of VM XML](samples/vm_xml/)
 
-## [/etc/hosts](samples/hosts/hosts)
+## [/etc/host](samples/hosts/hosts) accoding to [IP Planning](IPPlanning.markdown)
