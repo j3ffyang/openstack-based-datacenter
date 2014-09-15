@@ -53,3 +53,5 @@ Update grub
 	export https_proxy=http://9.115.78.100:8085/
 
 ## [Sample of VM XML](samples/vm_xml/)
+
+## [/etc/hosts](samples/hosts/hosts)
