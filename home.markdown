@@ -29,7 +29,7 @@
 ## [Cobbler Configuration and Template](BuildCobblerVM.markdown)
   * Bare- metal provisioning
 
-## [Chef Repository](ChefRepo.markdown)
+## [Chef Repository and Chef-Client](ChefRepo.markdown)
 
 ## [Jenkins](BuildJenkins.markdown)
 
