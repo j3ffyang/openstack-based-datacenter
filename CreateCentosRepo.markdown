@@ -26,7 +26,7 @@
 	createrepo centos7_64_repo
 
 ## Create repo configuration    
-[Sample repo files](yum_repos_d/)
+[Sample repo files](samples/yum_repos_d/)
 
 	[root@r83x5u09 yum.repos.d]# cat /etc/yum.repos.d/centos7_fullpackage.repo
 	[centos7_fullpackage]
