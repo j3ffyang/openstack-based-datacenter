@@ -85,3 +85,29 @@ Download
 or directly install from web    
 
 	curl -L https://www.opscode.com/chef/install.sh | bash
+
+Configure chef-client on chef-server
+
+	[root@chef ~]# mkdir .chef
+	[root@chef ~]# scp /etc/chef-server/
+	admin.pem                 chef-server-secrets.json  chef-webui.pem            
+	chef-server-running.json  chef-validator.pem        
+	[root@chef ~]# scp /etc/chef-server/admin.pem ~/.chef/
+	[root@chef ~]# scp /etc/chef-server/chef-
+	chef-server-running.json  chef-server-secrets.json  chef-validator.pem        chef-webui.pem
+	[root@chef ~]# scp /etc/chef-server/chef-validator.pem ~/.chef/
+	[root@chef ~]# knife configure -i
+	WARNING: No knife configuration file found
+	Where should I put the config file? [/root/.chef/knife.rb] 
+	Please enter the chef server URL: [https://chef:443] 
+	Please enter a name for the new user: [root] 
+	Please enter the existing admin name: [admin] 
+	Please enter the location of the existing admin's private key: [/etc/chef-server/admin.pem] 
+	Please enter the validation clientname: [chef-validator] 
+	Please enter the location of the validation key: [/etc/chef-server/chef-validator.pem] 
+	Please enter the path to a chef repository (or leave blank): 
+	Creating initial API user...
+	Please enter a password for the new user: 
+	Created user[root]
+	Configuration file written to /root/.chef/knife.rb
+
