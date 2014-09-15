@@ -13,10 +13,8 @@
 ## [Hostnaming and IP Planning](IPPlanning.markdown)
   * IP Range and Reservation Plan
 
-## Hardware Specification
-  * Machine Location and Cabling
-  * MAC Address
-  * Switch Information
+## [Hardware Specification](HardwareSpec.markdown)
+  * Machine Location and Cabling, MAC Address, Switch Information, etc.
 
 ## 1st Controller Physical Box
   * [Build the 1st Controller Physical Box](BuildFirstBox.markdown)
