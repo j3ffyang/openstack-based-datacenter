@@ -111,3 +111,17 @@ Configure chef-client on chef-server
 	Created user[root]
 	Configuration file written to /root/.chef/knife.rb
 
+## Boostrap
+Since all VMs/ hosts are located within a private network plus #GFW, we'd have to create our own chef-client repo. Run the following commands on Chef server
+
+	# clone git
+	cd /opt/git/; git clone git@github.rtp.raleigh.ibm.com:zodiacplus/mustang.git
+
+	# populate .ssh/* to client
+	ssh -t root@172.16.0.36 "mkdir ~/.ssh"; scp ~/.ssh/id_rsa* 172.16.0.36:~/.ssh/; ssh-copy-id root@172.16.0.36
+
+	# copy hosts
+	scp /opt/git/mustang/samples/hosts/hosts 172.16.0.36:/etc/
+
+	# populate repos
+	scp /opt/git/mustang/samples/yum_repos_d/*.repo 172.16.0.36:/etc/yum.repos.d/
