@@ -16,7 +16,7 @@
 | 201 | 240 | Storage |
 | 241 | 249 | VPN for maintenance |
 
-## IP Reservation
+## IP Reservation. Also defined at [/etc/hosts](samples/hosts/hosts)
 | Hostname | NIC0/br0 | NIC1/br1 | NIC2/br2 | Function |
 | -------- | ---- | ---- | ---- | ---- |
 | r83x5u09 | 172.16.0.21 | 9.110.178.28 | 172.29.83.249 | controller host |
