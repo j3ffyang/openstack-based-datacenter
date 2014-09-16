@@ -37,7 +37,7 @@
   * Respectively host clusters of MySQL, queue, etc
 
 ## Distributed Storage by Ceph
-  * Ceph repo and install
+  * [Ceph Host Configuration](CephDistributedStorage.markdown)
   * Stress Test Plan
 
 ## Deploy OpenStack
