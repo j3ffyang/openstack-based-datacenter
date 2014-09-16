@@ -9,4 +9,4 @@ Configure fiber network interface
 
 ## Configure Yum Repo
 
-## Sync /etc/hosts
+## Sync [/etc/hosts](samples/hosts/)
