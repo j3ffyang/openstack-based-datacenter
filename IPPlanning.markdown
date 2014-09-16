@@ -17,13 +17,16 @@
 | 241 | 249 | VPN for maintenance |
 
 ## IP Reservation
-| Hostname | NIC0/br0 | NIC1/br1 | NIC2/br2 | 
-| -------- | ---- | ---- | ---- |
-| r83x5u09 | 172.16.0.21 | 9.110.178.28 | 172.29.83.249 |
-|  |  |  |  | 
-| cobbler | 172.16.0.31 | | 172.29.0.31 |
-| chef | 172.16.0.32 | | |
-| ctrlr0 | 172.16.0.33 | | |
-| ctrlr1 | 172.16.0.34 | | |
-| ctrlr2 | 172.16.0.35 | | |
-| jenkins | 172.16.0.36 | | |
+| Hostname | NIC0/br0 | NIC1/br1 | NIC2/br2 | Function |
+| -------- | ---- | ---- | ---- | ---- |
+| r83x5u09 | 172.16.0.21 | 9.110.178.28 | 172.29.83.249 | controller host |
+| r83x6u16 | 172.16.0.201 | | 172.29.83.16 | storage node, mounted at unit 16 on rack 83 |
+| r83x6u18 | 172.16.0.202 | | 172.29.83.18 | storage node, mounted at unit 18 on rack 83 |
+| r83x6u20 | 172.16.0.203 | | 172.29.83.20 | storage node, mounted at unit 20 on rack 83 |
+|  |  |  |  |  |
+| cobbler | 172.16.0.31 | | 172.29.0.31 | |
+| chef | 172.16.0.32 | | | |
+| ctrlr0 | 172.16.0.33 | | | |
+| ctrlr1 | 172.16.0.34 | | | |
+| ctrlr2 | 172.16.0.35 | | | |
+| jenkins | 172.16.0.36 | | | |
