@@ -34,6 +34,7 @@ Configure chef-client on chef-server
 
 ## Bootstrap
 Since all VMs/ hosts are located within a private network plus #GFW, we'd have to create our own chef-client repo. Run the following commands on Chef server
+Sample files can be found at [samples files](samples/)
 
 	# clone git
 	cd /opt/git/; git clone git@github.rtp.raleigh.ibm.com:zodiacplus/mustang.git
