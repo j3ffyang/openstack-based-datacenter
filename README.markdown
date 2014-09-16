@@ -29,7 +29,7 @@
 
 ## Chef Automation
   * [Chef Repository](ChefRepo.markdown)
-  * [Chef Client](ChefClient.markdown)
+  * [Chef Client](ChefClient.markdown), including how deployment works after VM/ hosts provisioned
 
 ## [Jenkins](BuildJenkins.markdown)
 
