@@ -37,7 +37,7 @@ Since all VMs/ hosts are located within a private network plus #GFW, we'd have t
 Sample files can be found at [~/samples](samples/)
 
 	# clone git
-	cd /opt/git/; git clone git@github.rtp.raleigh.ibm.com:zodiacplus/mustang.git
+	cd /opt/git/; git clone git@github.rtp.raleigh.ibm.com:zodiacplus/mustang.git; git pull
 
 	# populate .ssh/* to client
 	ssh -t root@172.16.0.36 "mkdir ~/.ssh"; scp ~/.ssh/id_rsa* 172.16.0.36:~/.ssh/; ssh-copy-id root@172.16.0.36

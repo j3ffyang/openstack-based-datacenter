@@ -1,10 +1,17 @@
-## Update Hostname from Chef Server
-
+## Update Hostname from Chef Server, according to [IP Planning](IPPlanning.markdown)
+Pull git code first
+	
+	cd /opt/git/; git pull
 	ssh -t root@172.16.0.201 "hostnamectl set-homename r83x6u16"
 
 ## Configure Yum Repo
+Running the following command from Chef server
+	
+	scp /opt/git/mustang/samples/yum_repos_d/*.repo 172.16.0.36:/etc/yum.repos.d/
 
 ## Sync [/etc/hosts](samples/hosts/)
+
+	scp /opt/git/mustang/samples/hosts/hosts 172.16.0.36:/etc/
 
 ## Network Configuration. Sample on r83x6u16 (172.16.0.201)
 Use fiber NIC
