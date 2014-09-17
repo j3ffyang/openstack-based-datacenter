@@ -16,7 +16,7 @@
 | 201 | 240 | Storage |
 | 241 | 249 | VPN for maintenance |
 
-## IP Reservation. Also defined at [/etc/hosts](samples/hosts/hosts)
+## IP Reservation. Also defined at [/etc/hosts](samples/hosts/hosts) for Management network
 | Hostname | NIC0/br0 | NIC1/br1 | NIC2/br2 | NIC3/br3 | IMM | Function |
 | -------- | ---- | ---- | ---- | ---- | ---- | ---- |
 | r83x5u09 | 172.16.0.21 | 9.110.178.28 | 172.29.83.249 | | 172.29.83.9 | controller host. NIC3/br3's IP provides bridge to Cobbler VM to connect into IMM network |
