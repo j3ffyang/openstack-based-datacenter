@@ -1,8 +1,5 @@
-## Update Hostname from Chef Server
-
-	ssh -t root@172.16.0.201 "hostnamectl set-homename r83x6u16"
-
 ## Partition Layout
+
 The partition layout BEFORE partition remade by parted. You can see 3 groups of RAID0 exist in raw mode
 
 	[root@r83x6u16 ~]# lsblk
@@ -100,13 +97,6 @@ List block device after partition is done
 	sdd      8:48   0   1.1T  0 disk 
 	├─sdd1   8:49   0   9.3G  0 part 
 	└─sdd2   8:50   0   1.1T  0 part 
-
-## Network Configuration
-	Configure fiber network interface
-
-## Configure Yum Repo
-
-## Sync [/etc/hosts](samples/hosts/)
 
 ## Configure
 

@@ -37,6 +37,7 @@
   * Respectively host clusters of MySQL, queue, etc
 
 ## Distributed Storage by Ceph
+  * [Ceph Host Preparation](CephPrepare.markdown)
   * [Ceph Host Configuration](CephDistributedStorage.markdown)
   * Stress Test Plan
 
