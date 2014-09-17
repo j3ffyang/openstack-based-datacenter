@@ -38,7 +38,7 @@
 
 ## Distributed Storage by Ceph
   * [Ceph Host Preparation](CephPrepare.markdown)
-  * [Ceph Host Configuration](CephDistributedStorage.markdown)
+  * [Ceph Node Configuration](CephDistributedStorage.markdown)
   * Stress Test Plan
 
 ## Deploy OpenStack
