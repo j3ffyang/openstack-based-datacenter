@@ -98,6 +98,54 @@ List block device after partition is done
 	├─sdd1   8:49   0   9.3G  0 part 
 	└─sdd2   8:50   0   1.1T  0 part 
 
+Parted list AFTER partitioning is finished
+
+	[root@r83x6u16 network-scripts]# parted -l
+	Model: IBM ServeRAID M5015 (scsi)
+	Disk /dev/sda: 599GB
+	Sector size (logical/physical): 512B/512B
+	Partition Table: gpt
+	Disk Flags: 
+
+	Number  Start   End     Size    File system     Name                  Flags
+ 	1      1049kB  211MB   210MB   fat16           EFI System Partition  boot
+ 	2      211MB   473MB   262MB   xfs
+ 	3      473MB   2570MB  2097MB  linux-swap(v1)
+ 	4      2570MB  599GB   596GB   xfs
+
+
+	Model: IBM ServeRAID M5015 (scsi)
+	Disk /dev/sdb: 1198GB
+	Sector size (logical/physical): 512B/512B
+	Partition Table: gpt
+	Disk Flags: 
+
+	Number  Start   End     Size     File system  Name     Flags
+ 	1      17.4kB  10.0GB  10000MB               primary
+ 	2      10.0GB  1198GB  1188GB   xfs          primary
+
+
+	Model: IBM ServeRAID M5015 (scsi)
+	Disk /dev/sdc: 1198GB
+	Sector size (logical/physical): 512B/512B
+	Partition Table: gpt
+	Disk Flags: 
+	
+	Number  Start   End     Size     File system  Name     Flags
+ 	1      17.4kB  10.0GB  10000MB               primary
+ 	2      10.0GB  1198GB  1188GB                primary
+	
+	
+	Model: IBM ServeRAID M5015 (scsi)
+	Disk /dev/sdd: 1198GB
+	Sector size (logical/physical): 512B/512B
+	Partition Table: gpt
+	Disk Flags: 
+	
+	Number  Start   End     Size     File system  Name     Flags
+ 	1      17.4kB  10.0GB  10000MB               primary
+ 	2      10.0GB  1198GB  1188GB                primary
+
 ## Configure
 
 	[root@r83x6u16 ceph]# ceph-authtool --create-keyring /tmp/ceph.mon.keyring --gen-key -n mon. --cap mon 'allow *' 
