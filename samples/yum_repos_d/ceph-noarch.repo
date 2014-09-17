@@ -1,0 +1,9 @@
+[ceph-noarch]
+name=Ceph noarch packages
+baseurl=http://ceph.com/rpm/rhel7/noarch
+enabled=1
+gpgcheck=1
+type=rpm-md
+gpgkey=https://ceph.com/git/?p=ceph.git;a=blob_plain;f=keys/release.asc
+proxy=http://9.115.78.100:8085/
+priority=2

@@ -46,6 +46,7 @@ Sample files can be found at [~/samples](samples/)
 	scp /opt/git/mustang/samples/hosts/hosts 172.16.0.36:/etc/
 
 	# populate repos
+	ssh -t root@172.16.0.36 "mv /etc/yum.repos.d/CentOS*.repo /tmp/"
 	scp /opt/git/mustang/samples/yum_repos_d/*.repo 172.16.0.36:/etc/yum.repos.d/
 
 	# install wget and git
