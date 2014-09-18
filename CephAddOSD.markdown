@@ -1,4 +1,4 @@
-## Prepare NOde
+## Prepare Node
 Configure public (10.0/16) and Ceph cluster (10.10/16) network
 Update hostname
 Update /etc/hosts
