@@ -39,9 +39,6 @@ Add osd blocks
 	2014-09-19 00:19:39.734540 7f5c07c7c7c0 -1 created object store /var/lib/ceph/osd/ceph-3 journal /dev/sdb1 for osd.3 fsid ed095412-5171-4d91-8d7e-5f5678985cd2
 	2014-09-19 00:19:39.734635 7f5c07c7c7c0 -1 auth: error reading file: /var/lib/ceph/osd/ceph-3/keyring: can't open /var/lib/ceph/osd/ceph-3/keyring: (2) No such file or directory
 	2014-09-19 00:19:39.734752 7f5c07c7c7c0 -1 created new key in keyring /var/lib/ceph/osd/ceph-3/keyring
-	dded key for osd.3
-	
-	[root@localhost ceph]# ceph osd crush add-bucket r83x6u16 host^C
 	
 	[root@localhost ceph]# ceph osd crush add-bucket r83x6u18 host
 	added bucket r83x6u18 type host to crush map
