@@ -38,8 +38,8 @@
 
 ## Distributed Storage by Ceph
   * [Ceph Host Preparation](CephPrepare.markdown)
+  * [Ceph Partition](CephPartition.markdown)
   * [Ceph Node Configuration](CephDistributedStorage.markdown)
-  * Stress Test Plan
 
 ## Deploy OpenStack
   * Chef Architecture
