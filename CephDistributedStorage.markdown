@@ -1,5 +1,6 @@
 ## Ceph Architecture
 ![Ceph Architecture](images/20140918_ceph_stack.png)
+
 Credit: [http://docs.ceph.com](http://docs.ceph.com/docs/master/architecture/#the-ceph-storage-cluster)
 
 ## Ceph Network
