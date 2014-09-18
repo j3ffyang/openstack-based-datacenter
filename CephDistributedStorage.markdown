@@ -61,14 +61,14 @@ Create OSD
 	[root@r83x6u16 ceph]# ceph osd crush add osd.0 1.08 host=r83x6u16 
 	add item id 0 name 'osd.0' weight 1.08 at location {host=r83x6u16} to crush map
         
-        [root@r83x6u16 ceph-0]# /etc/init.d/ceph start osd.0
-        === osd.0 === 
-        create-or-move updated item name 'osd.0' weight 1.08 at location {host=r83x6u16,root=default} to crush map
-        Starting Ceph osd.0 on r83x6u16...
-        Running as unit run-22215.service.
+	[root@r83x6u16 ceph-0]# /etc/init.d/ceph start osd.0
+	=== osd.0 === 
+	create-or-move updated item name 'osd.0' weight 1.08 at location {host=r83x6u16,root=default} to crush map
+	Starting Ceph osd.0 on r83x6u16...
+	Running as unit run-22215.service.
         
-        [root@r83x6u16 ceph-0]# ceph osd ls
-        0
+	[root@r83x6u16 ceph-0]# ceph osd ls
+	0
  
 ## Tips
 Stop Ceph Cluster
