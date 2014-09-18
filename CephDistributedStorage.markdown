@@ -7,6 +7,8 @@ Credit: [http://docs.ceph.com](http://docs.ceph.com/docs/master/architecture/#th
 Credit: [http://ceph.com](http://ceph.com/docs/v0.80.5/rados/configuration/network-config-ref/)
 
 ## Create [Ceph Configure File](samples/ceph/ceph.conf)
+Public Network = 10.0.0.0/16
+Ceph Cluster   = 10.10.0.0/16
 
 ## Configure
 
@@ -27,6 +29,11 @@ Credit: [http://ceph.com](http://ceph.com/docs/v0.80.5/rados/configuration/netwo
 	[root@r83x6u16 network-scripts]# ceph-mon --mkfs -i r83x6u16 --monmap /tmp/monmap --keyring /tmp/ceph.mon.keyring 
 	ceph-mon: set fsid to ed095412-5171-4d91-8d7e-5f5678985cd2
 	ceph-mon: created monfs at /var/lib/ceph/mon/ceph-r83x6u16 for mon.r83x6u16
+
+Edit and Verify /etc/ceph/ceph.conf, then Start Ceph Mon
+	/etc/init.d/ceph start
+
+Create OSD
 
 	[root@r83x6u16 ceph]# ceph osd create
 
@@ -53,3 +60,10 @@ Credit: [http://ceph.com](http://ceph.com/docs/v0.80.5/rados/configuration/netwo
 
 	[root@r83x6u16 ceph]# ceph osd crush add osd.0 1.08 host=r83x6u16 
 	add item id 0 name 'osd.0' weight 1.08 at location {host=r83x6u16} to crush map
+
+## Tips
+Stop Ceph Cluster
+
+	touch /var/run/ceph/mon.r83x6u16.pid; echo `ps -ef | grep "ceph-mon" | grep -v grep | tail -n1 | awk '{print $2}'` > /var/run/ceph/mon.r83x6u16.pid; /etc/init.d/ceph stop
+
+	
