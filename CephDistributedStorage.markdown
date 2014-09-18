@@ -10,6 +10,10 @@ Credit: [http://ceph.com](http://ceph.com/docs/v0.80.5/rados/configuration/netwo
 Public Network = 10.0.0.0/16
 Ceph Cluster   = 10.10.0.0/16
 
+## Install
+
+	yum install ceph
+
 ## Configure
 
 	[root@r83x6u16 ceph]# ceph-authtool --create-keyring /tmp/ceph.mon.keyring --gen-key -n mon. --cap mon 'allow *' 
@@ -20,6 +24,9 @@ Ceph Cluster   = 10.10.0.0/16
 
 	[root@r83x6u16 ceph]# ceph-authtool /tmp/ceph.mon.keyring --import-keyring /etc/ceph/ceph.client.admin.keyring 
 	importing contents of /etc/ceph/ceph.client.admin.keyring into /tmp/ceph.mon.keyring
+
+	[root@r83x6u16 ceph]# uuidgen
+	ed095412-5171-4d91-8d7e-5f5678985cd2
 
 	[root@r83x6u16 ceph]# monmaptool --create --add r83x6u16 10.0.0.201 --fsid ed095412-5171-4d91-8d7e-5f5678985cd2 /tmp/monmap
 	monmaptool: monmap file /tmp/monmap
