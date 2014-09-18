@@ -73,6 +73,7 @@ Create OSD (ceph-0 is 1st OSD)
 	0
 
 Repeat the above step for 2nd and 3rd OSD (ceph-1 is the 2nd OSD and ceph-2 the 3rd)
+
 	ceph osd create
 	mkdir -p /var/lib/ceph/osd/ceph-1
 	mkfs -t xfs -i size=2048 -f /dev/sdc2
