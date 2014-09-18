@@ -90,6 +90,25 @@ Repeat the above step for 2nd and 3rd OSD (ceph-1 is the 2nd OSD and ceph-2 the 
 	ceph osd crush add osd.1 1.08 host=r83x6u16
 	/etc/init.d/ceph start osd.1
 	ceph osd ls
+
+## Update /etc/fstab
+
+	#
+	# /etc/fstab
+	# Created by anaconda on Sat Sep 13 15:45:15 2014
+	#
+	# Accessible filesystems, by reference, are maintained under '/dev/disk'
+	# See man pages fstab(5), findfs(8), mount(8) and/or blkid(8) for more info
+	#
+	UUID=1f533ea5-8b64-4ffb-bda4-afcdefc00faa /                       xfs     defaults        1 1
+	UUID=52ab55b8-6ec4-4cd0-ba90-42d57b500056 /boot                   xfs     defaults        1 2
+	UUID=68B1-4A17          /boot/efi               vfat    umask=0077,shortname=winnt 0 0
+	UUID=b9912f1a-9542-4986-8edc-4bc786dc78f0 swap                    swap    defaults        0 0
+	
+	/dev/sdb2               /var/lib/ceph/osd/ceph-0                  xfs     defaults        0 2
+	/dev/sdc2               /var/lib/ceph/osd/ceph-1                  xfs     defaults        0 2
+	/dev/sdd2               /var/lib/ceph/osd/ceph-2                  xfs     defaults        0 2
+	
  
 ## Tips
 Stop Ceph Cluster
