@@ -146,6 +146,8 @@ Parted list AFTER partitioning is finished
  	1      17.4kB  10.0GB  10000MB               primary
  	2      10.0GB  1198GB  1188GB                primary
 
+## Create [Ceph Configure File](samples/ceph/ceph.conf)
+
 ## Configure
 
 	[root@r83x6u16 ceph]# ceph-authtool --create-keyring /tmp/ceph.mon.keyring --gen-key -n mon. --cap mon 'allow *' 

@@ -58,23 +58,22 @@ Use fiber NIC
 		Link detected: yes
 
 The 1st fiber network card, used for link to VM
-
-	[root@r83x6u16 network-scripts]# ip addr show ens2f0
-	8: ens2f0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP qlen 1000
-	    link/ether 00:00:c9:cd:a2:1c brd ff:ff:ff:ff:ff:ff
-	    inet 172.18.0.201/16 brd 172.18.255.255 scope global ens2f0
-	       valid_lft forever preferred_lft forever
-    	inet6 fe80::200:c9ff:fecd:a21c/64 scope link 
-       	       valid_lft forever preferred_lft forever
+        
+        [root@r83x6u16 ceph]# ip add show ens2f0
+        8: ens2f0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP qlen 1000
+            link/ether 00:00:c9:cd:a2:1c brd ff:ff:ff:ff:ff:ff
+            inet 10.0.0.201/16 brd 10.0.255.255 scope global ens2f0
+               valid_lft forever preferred_lft forever
+            inet6 fe80::200:c9ff:fecd:a21c/64 scope link 
+               valid_lft forever preferred_lft forever
+    
 
 The 2nd fiber network card, used for Ceph storage traffic
-
-	[root@r83x6u16 network-scripts]# ip addr show ens2f1
-	10: ens2f1: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP qlen 1000
-	    link/ether 00:00:c9:cd:a2:20 brd ff:ff:ff:ff:ff:ff
-    	    inet 172.17.0.201/16 brd 172.17.255.255 scope global ens2f1
-       	       valid_lft forever preferred_lft forever
+         
+        10: ens2f1: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP qlen 1000
+            link/ether 00:00:c9:cd:a2:20 brd ff:ff:ff:ff:ff:ff
+            inet 10.10.0.201/16 brd 10.10.255.255 scope global ens2f1
+               valid_lft forever preferred_lft forever
             inet6 fe80::200:c9ff:fecd:a220/64 scope link 
                valid_lft forever preferred_lft forever
-	[root@r83x6u16 network-scripts]# 
-
+        
