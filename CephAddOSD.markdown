@@ -40,7 +40,7 @@ Add osd blocks
 	2014-09-19 00:19:39.734635 7f5c07c7c7c0 -1 auth: error reading file: /var/lib/ceph/osd/ceph-3/keyring: can't open /var/lib/ceph/osd/ceph-3/keyring: (2) No such file or directory
 	2014-09-19 00:19:39.734752 7f5c07c7c7c0 -1 created new key in keyring /var/lib/ceph/osd/ceph-3/keyring
 
-	[root@localhost ceph-3]# ceph auth add osd.3 osd 'allow *' mon 'allow profile osd' -i /var/lib/ceph/osd/ceph-3/keyring
+	[root@localhost ceph]# ceph auth add osd.3 osd 'allow *' mon 'allow profile osd' -i /var/lib/ceph/osd/ceph-3/keyring
 	added key for osd.3
 	
 	[root@localhost ceph]# ceph osd crush add-bucket r83x6u18 host
