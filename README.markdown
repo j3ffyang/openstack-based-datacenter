@@ -40,6 +40,7 @@
   * [Ceph Host Preparation](CephPrepare.markdown)
   * [Ceph Partition](CephPartition.markdown)
   * [Ceph Node Configuration](CephDistributedStorage.markdown)
+  * [Add New Ceph OSD](CephAddOSD.markdown)
 
 ## Deploy OpenStack
   * Chef Architecture
