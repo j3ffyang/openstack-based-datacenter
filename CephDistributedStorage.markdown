@@ -33,11 +33,13 @@ Ceph Cluster   = 10.10.0.0/16
 Edit and Verify /etc/ceph/ceph.conf, then Start Ceph Mon
 	/etc/init.d/ceph start
 
-Create OSD
+Create OSD (ceph-0 is 1st OSD)
 
 	[root@r83x6u16 ceph]# ceph osd create
 
 	[root@r83x6u16 ceph]# mkdir -p /var/lib/ceph/osd/ceph-0
+
+	[root@r83x6u16 ceph]# mkfs -t xfs -i size=2048 -f /dev/sdb2
 
 	[root@r83x6u16 ceph]# mount -t xfs /dev/sdb2 /var/lib/ceph/osd/ceph-0 
 
@@ -69,6 +71,17 @@ Create OSD
         
 	[root@r83x6u16 ceph-0]# ceph osd ls
 	0
+
+Repeat the above step for 2nd and 3rd OSD (ceph-1 is the 2nd OSD and ceph-2 the 3rd)
+	ceph osd create
+	mkdir -p /var/lib/ceph/osd/ceph-1
+	mkfs -t xfs -i size=2048 -f /dev/sdc2
+	mount -t xfs /dev/sdb2 /var/lib/ceph/osd/ceph-1
+	ceph-osd -i 1 --mkfs --mkkey
+	ceph auth add osd.1 osd 'allow *' mon 'allow profile osd' -i /var/lib/ceph/osd/ceph-1/keyring
+	ceph osd crush add osd.1 1.08 host=r83x6u16
+	/etc/init.d/ceph start osd.1
+	ceph osd ls
  
 ## Tips
 Stop Ceph Cluster
