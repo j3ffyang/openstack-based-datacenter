@@ -77,3 +77,7 @@ The 2nd fiber network card, used for Ceph storage traffic
             inet6 fe80::200:c9ff:fecd:a220/64 scope link 
                valid_lft forever preferred_lft forever
         
+
+## Disable SELinux at /etc/selinux/config
+
+## Flush IPTables

@@ -1,0 +1,7 @@
+[openstack-rdo]
+name=Extra Packages for Enterprise Linux 7 - $basearch
+baseurl=https://repos.fedorapeople.org/repos/openstack/openstack-icehouse/epel-7/
+failovermethod=priority
+enabled=1
+proxy=http://9.115.78.100:8085/
+
