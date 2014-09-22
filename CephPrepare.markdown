@@ -14,6 +14,10 @@ Running the following command from Chef server
 
 	scp /opt/git/mustang/samples/hosts/hosts 172.16.0.36:/etc/
 
+## Enable vi mode in Sheell
+
+	ssh -t root@172.16.0.203 "echo 'set -o vi' >> /etc/bashrc"
+
 ## Network Configuration. Sample on r83x6u16 (172.16.0.201)
 Use fiber NIC
 
