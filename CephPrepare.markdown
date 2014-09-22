@@ -1,7 +1,7 @@
 ## Update Hostname from Chef Server, according to [IP Planning](IPPlanning.markdown)
 Pull git code first
 	
-	cd /opt/git/; git pull
+	cd /opt/git/mustang; git pull
 	ssh -t root@172.16.0.201 "hostnamectl set-homename r83x6u16"
 
 ## Configure Yum Repo
