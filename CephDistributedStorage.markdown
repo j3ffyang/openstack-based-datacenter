@@ -10,13 +10,10 @@ Credit: [http://ceph.com](http://ceph.com/docs/v0.80.5/rados/configuration/netwo
 ## Create [Ceph Configure File](samples/ceph/ceph.conf)
 Public Network = 10.0.0.0/16
 Ceph Cluster   = 10.10.0.0/16
-<<<<<<< HEAD
-=======
 
 ## Install
 
 	yum install ceph
->>>>>>> 865a4c3b1f0ee9ae90dc288e627603ab5b8e0cf6
 
 ## Configure
 
@@ -44,11 +41,9 @@ Ceph Cluster   = 10.10.0.0/16
 Edit and Verify /etc/ceph/ceph.conf, then Start Ceph Mon
 	/etc/init.d/ceph start
 
-<<<<<<< HEAD
 Create OSD
 =======
 Create OSD (ceph-0 is 1st OSD)
->>>>>>> 865a4c3b1f0ee9ae90dc288e627603ab5b8e0cf6
 
 	[root@r83x6u16 ceph]# ceph osd create
 
@@ -77,9 +72,6 @@ Create OSD (ceph-0 is 1st OSD)
 
 	[root@r83x6u16 ceph]# ceph osd crush add osd.0 1.08 host=r83x6u16 
 	add item id 0 name 'osd.0' weight 1.08 at location {host=r83x6u16} to crush map
-<<<<<<< HEAD
-
-=======
         
 	[root@r83x6u16 ceph-0]# /etc/init.d/ceph start osd.0
 	=== osd.0 === 
@@ -103,26 +95,21 @@ Repeat the above step for 2nd and 3rd OSD (ceph-1 is the 2nd OSD and ceph-2 the 
 	ceph osd ls
 
 
-
-
-ot@r83x6u16 ~]# ceph osd pool create volumes 256 256
-pool 'volumes' created
-[root@r83x6u16 ~]# ceph osd pool create images 256 256
-pool 'images' created
-[root@r83x6u16 ~]# ceph osd pool set volumes size 3
-set pool 3 size to 3
-[root@r83x6u16 ~]# ceph osd pool set images size 3
-set pool 4 size to 3
-[root@r83x6u16 ~]# ceph auth get-or-create client.cinder mon 'allow r' osd 'allow class-read object_prefix rbd_children, allow rwx pool=volumes, allow rwx pool=vms, allow rx pool=images'
-[client.cinder]
-	key = AQByWRxU0JaQJhAAdVW11RNeCyiiGIVOYZcofw==
-[root@r83x6u16 ~]# ceph auth get-or-create client.glance mon 'allow r' osd 'allow class-read object_prefix rbd_children, allow rwx pool=images'
-[client.glance]
-	key = AQB6WRxUaLyuLBAA2VlgtS4lXk+WDR5k12eEuQ==
-[root@r83x6u16 ~]# 
-
-
-
+	[root@r83x6u16 ~]# ceph osd pool create volumes 256 256
+	pool 'volumes' created
+	[root@r83x6u16 ~]# ceph osd pool create images 256 256
+	pool 'images' created
+	[root@r83x6u16 ~]# ceph osd pool set volumes size 3
+	set pool 3 size to 3
+	[root@r83x6u16 ~]# ceph osd pool set images size 3
+	set pool 4 size to 3
+	[root@r83x6u16 ~]# ceph auth get-or-create client.cinder mon 'allow r' osd 'allow class-read object_prefix rbd_children, allow rwx pool=volumes, allow rwx pool=vms, allow rx pool=images'
+	[client.cinder]
+		key = AQByWRxU0JaQJhAAdVW11RNeCyiiGIVOYZcofw==
+	[root@r83x6u16 ~]# ceph auth get-or-create client.glance mon 'allow r' osd 'allow class-read object_prefix rbd_children, allow rwx pool=images'
+	[client.glance]
+		key = AQB6WRxUaLyuLBAA2VlgtS4lXk+WDR5k12eEuQ==
+	[root@r83x6u16 ~]# 
 
 
 ## Update /etc/fstab
@@ -143,11 +130,8 @@ set pool 4 size to 3
 	/dev/sdc2               /var/lib/ceph/osd/ceph-1                  xfs     defaults        0 2
 	/dev/sdd2               /var/lib/ceph/osd/ceph-2                  xfs     defaults        0 2
 	
- 
->>>>>>> 865a4c3b1f0ee9ae90dc288e627603ab5b8e0cf6
 ## Tips
 Stop Ceph Cluster
 
 	touch /var/run/ceph/mon.r83x6u16.pid; echo `ps -ef | grep "ceph-mon" | grep -v grep | tail -n1 | awk '{print $2}'` > /var/run/ceph/mon.r83x6u16.pid; /etc/init.d/ceph stop
 
-	
