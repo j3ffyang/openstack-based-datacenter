@@ -43,8 +43,7 @@ Edit and Verify /etc/ceph/ceph.conf, then Start Ceph Mon
 
 	/etc/init.d/ceph start
 
-Create OSD
-=======
+## Create OSD
 Create OSD (ceph-0 is 1st OSD)
 
 	[root@r83x6u16 ceph]# ceph osd create
