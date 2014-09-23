@@ -10,7 +10,11 @@ Update /etc/yum.repos.d
 	yum install ceph
 
 ## Update [/etc/ceph/ceph.conf](samples/ceph/ceph.conf)
-Add osd blocks
+Update ceph.conf to add osd blocks. Then upload the change to Chef
+Log into Chef
+
+	cd /opt/git/mustang/; git pull
+	scp samples/ceph/ceph.conf root@172.16.0.203:/etc/ceph/
 
 ## Create OSD
 	
@@ -23,6 +27,7 @@ Add osd blocks
 	meta-data=/dev/sdb2              isize=2048   agcount=4, agsize=72509648 blks
 	         =                       sectsz=512   attr=2, projid32bit=1
 	         =                       crc=0
+
 	data     =                       bsize=4096   blocks=290038589, imaxpct=5
 	         =                       sunit=0      swidth=0 blks
 	naming   =version 2              bsize=4096   ascii-ci=0 ftype=0
