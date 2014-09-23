@@ -1,8 +1,8 @@
 ## Prepare Node
 Configure public (10.0/16) and Ceph cluster (10.10/16) network
-Update hostname
-Update /etc/hosts
-Update /etc/yum.repos.d
+Update hostname    
+Update /etc/hosts    
+Update /etc/yum.repos.d    
 [Partition](CephPartition.markdown)
 
 ## Install Ceph
