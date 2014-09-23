@@ -39,6 +39,7 @@ Ceph Cluster   = 10.10.0.0/16
 	ceph-mon: created monfs at /var/lib/ceph/mon/ceph-r83x6u16 for mon.r83x6u16
 
 Edit and Verify /etc/ceph/ceph.conf, then Start Ceph Mon
+
 	/etc/init.d/ceph start
 
 Create OSD
