@@ -6,6 +6,8 @@ Update /etc/yum.repos.d
 [Partition](CephPartition.markdown)
 
 ## Install Ceph
+	
+	yum install ceph
 
 ## Update [/etc/ceph/ceph.conf](samples/ceph/ceph.conf)
 Add osd blocks
