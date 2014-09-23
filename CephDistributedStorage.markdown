@@ -38,6 +38,7 @@ Ceph Cluster   = 10.10.0.0/16
 	ceph-mon: set fsid to ed095412-5171-4d91-8d7e-5f5678985cd2
 	ceph-mon: created monfs at /var/lib/ceph/mon/ceph-r83x6u16 for mon.r83x6u16
 
+## Start Ceph Monitor
 Edit and Verify /etc/ceph/ceph.conf, then Start Ceph Mon
 
 	/etc/init.d/ceph start
