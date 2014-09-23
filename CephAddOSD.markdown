@@ -1,4 +1,6 @@
 ## Prepare Node
+Take a reference at [Ceph documentation](http://ceph.com/docs/v0.67.9/rados/operations/add-or-rm-osds/) or similar
+
 Configure public (10.0/16) and Ceph cluster (10.10/16) network
 Update hostname    
 Update /etc/hosts    
