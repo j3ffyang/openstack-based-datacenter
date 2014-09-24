@@ -25,8 +25,8 @@ Log in r83x6u16 (172.16.0.201)
 
 ## Create OSD
 	
-	~~[root@localhost ceph]# ceph osd create~~
-	~~3~~
+~~[root@localhost ceph]# ceph osd create~~
+~~3~~
 	
 	[root@localhost ceph]# mkdir -p /var/lib/ceph/osd/ceph-3
 	
