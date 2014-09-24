@@ -18,6 +18,11 @@ Log into Chef
 	cd /opt/git/mustang/; git pull
 	scp samples/ceph/ceph.conf root@172.16.0.203:/etc/ceph/
 
+## Copy ceph.client.admin.keyring from earlier setup Ceph node
+Log in r83x6u16 (172.16.0.201)
+
+	scp 172.16.0.201:/etc/ceph/ceph.client.admin.keyring 172.16.0.203:/etc/ceph/
+
 ## Create OSD
 	
 	[root@localhost ceph]# ceph osd create
