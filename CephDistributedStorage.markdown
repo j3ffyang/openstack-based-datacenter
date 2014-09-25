@@ -29,6 +29,8 @@ Ceph Cluster   = 10.10.0.0/16
 	[root@r83x6u16 ceph]# uuidgen
 	ed095412-5171-4d91-8d7e-5f5678985cd2
 
+Update uuid into [/etc/ceph/ceph.conf](samples/ceph/ceph.conf)
+
 	[root@r83x6u16 ceph]# monmaptool --create --add r83x6u16 10.0.0.201 --fsid ed095412-5171-4d91-8d7e-5f5678985cd2 /tmp/monmap
 	monmaptool: monmap file /tmp/monmap
 	monmaptool: set fsid to ed095412-5171-4d91-8d7e-5f5678985cd2
