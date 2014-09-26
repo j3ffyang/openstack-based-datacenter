@@ -41,6 +41,7 @@
   * [Ceph Partition](CephPartition.markdown)
   * [Ceph Node Configuration](CephDistributedStorage.markdown)
   * [Add New Ceph OSD](CephAddOSD.markdown)
+  * [Add New Monitor](CephAddMon.markdown)
 
 ## Deploy OpenStack
   * Chef Architecture
