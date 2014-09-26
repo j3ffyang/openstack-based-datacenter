@@ -27,6 +27,8 @@
 ## [Cobbler Configuration and Template](BuildCobblerVM.markdown)
   * Bare- metal provisioning
 
+## [Setup an NTP Server](CreateNTP.markdown)
+
 ## Chef Automation
   * [Chef Repository](ChefRepo.markdown)
   * [Chef Client](ChefClient.markdown), including how deployment works after VM/ hosts provisioned
