@@ -19,5 +19,9 @@ Log into r83x6u18
 	ceph-mon: set fsid to ed095412-5171-4d91-8d7e-5f5678985cd2
 	ceph-mon: created monfs at /var/lib/ceph/mon/ceph-r83x6u18 for mon.r83x6u18
 
-	[root@r83x6u18 temp]# ceph mon add r83x6u18 172.16.0.202
+	[root@r83x6u18 temp]# ceph mon add r83x6u18 10.0.0.202
 
+## Tips
+
+
+	ceph-mon -i r83x6u16 --inject-monmap /tmp/ceph.map
