@@ -44,6 +44,7 @@
   * [Ceph Node Configuration](CephDistributedStorage.markdown)
   * [Add New Ceph OSD](CephAddOSD.markdown)
   * [Add New Monitor](CephAddMon.markdown)
+  * [Post Install Configuration](CephPostConfiguration.markdown)
 
 ## Deploy OpenStack
   * Chef Architecture
