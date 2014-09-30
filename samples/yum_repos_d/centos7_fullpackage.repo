@@ -1,0 +1,8 @@
+[centos7_fullpackage]
+name=Extra Packages for Enterprise Linux 7 - $basearch
+baseurl=http://9.115.78.100/centos/7/x86_64/
+failovermethod=priority
+enabled=1
+gpgcheck=0
+#proxy=http://9.115.78.100:8085/
+priority=3

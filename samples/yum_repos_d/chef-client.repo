@@ -1,0 +1,9 @@
+[chef-client]
+name=Extra Packages for Enterprise Linux 6 - $basearch
+baseurl=http://172.16.0.21/chef_repo
+#mirrorlist=https://mirrors.fedoraproject.org/metalink?repo=epel-6&arch=$basearch
+failovermethod=priority
+enabled=0
+gpgcheck=0
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-6
+
