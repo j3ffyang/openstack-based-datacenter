@@ -7,6 +7,10 @@ Credit: [http://docs.ceph.com](http://docs.ceph.com/docs/master/architecture/#th
 ![Ceph Network](images/20140918_ceph_nw.png)
 Credit: [http://ceph.com](http://ceph.com/docs/v0.80.5/rados/configuration/network-config-ref/)
 
+## How Data is Stored in Ceph Cluster
+![ceph cluster](images/20140930_ceph_cluster_blogspot_fi.png)    
+Credit [http://karan-mj.blogspot.fi/2014/01/how-data-is-stored-in-ceph-cluster.html](http://karan-mj.blogspot.fi/2014/01/how-data-is-stored-in-ceph-cluster.html)
+
 ## Create [Ceph Configure File](samples/ceph/ceph.conf)
 Public Network = 10.0.0.0/16
 Ceph Cluster   = 10.10.0.0/16
