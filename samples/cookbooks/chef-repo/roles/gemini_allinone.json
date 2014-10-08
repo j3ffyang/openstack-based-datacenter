@@ -1,0 +1,31 @@
+{
+  "description": "gemini allinone including neutron network but without compute node on it",
+  "name": "gemini_allinone",
+  "chef_type": "role",
+  "default_attributes": {
+  },
+  "json_class": "Chef::Role",
+  "override_attributes": {
+  },
+  "env_run_lists": {
+  },
+  "run_list": [
+    "recipe[sysctl]",
+    "role[os-base]",
+    "recipe[memcached::default]",
+    "role[os-ops-database]",
+    "recipe[openstack-ops-database::openstack-db]",
+    "role[os-ops-messaging]",
+    "role[os-identity-sco]",
+    "role[os-network-linuxbridge]",
+    "role[iaas_gateway]",
+    "recipe[apache2]",
+    "role[os-dashboard]",
+    "role[sco_horizon]",
+    "role[db2]",
+    "recipe[bpm::database]",
+    "role[bpm]",
+    "role[scui]",
+    "role[sco-ldap]"
+  ]
+}

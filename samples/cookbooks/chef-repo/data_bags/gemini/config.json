@@ -1,0 +1,18 @@
+ {
+   "id": "config",
+   "mysql_wsrep_tarball_x86_64": "mysql-5.6.16_wsrep_25.5-linux-x86_64.tar.gz",
+   "galera_package_x86_64": {
+     "rpm": "galera-25.3.5-7.el7.x86_64.rpm"
+   },
+   "mysql_wsrep_source": "http://172.16.0.21/mysql-galera",
+   "galera_source": "http://172.16.0.21/mysql-galera",
+   "sst_method": "rsync",
+   "init_node": "172.16.0.33",
+   "galera_nodes": [
+     "172.16.0.33",
+     "172.16.0.34",
+     "172.16.0.35"
+    ],
+   "secure": "yes",
+   "update_wsrep_urls": "yes"
+ }

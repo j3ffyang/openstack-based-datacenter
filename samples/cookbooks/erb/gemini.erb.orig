@@ -1,0 +1,301 @@
+bash -c '
+<%= "export http_proxy=\"#{knife_config[:bootstrap_proxy]}\"" if knife_config[:bootstrap_proxy] -%>
+
+mkdir -p /root/.ssh/
+mkdir -p /etc/chef/
+<% if ENV["PRIVATE_SSH_KEY"] %>
+  echo "<%= ENV["PRIVATE_SSH_KEY"] %>" > /root/.ssh/smartcloud 2>&1
+  chmod 0600 /root/.ssh/smartcloud
+<% end %>
+<% if ENV["PUBLIC_SSH_KEY"] %>
+  echo "<%= ENV["PUBLIC_SSH_KEY"] %>" > /root/.ssh/smartcloud.pub
+  grep "<%= ENV["PUBLIC_SSH_KEY"] %>" /root/.ssh/authorized_keys >/dev/null 2>&1 ||echo "<%= ENV["PUBLIC_SSH_KEY"] %>" >> /root/.ssh/authorized_keys
+<% end %>
+
+if [ -e /etc/chef/client.pem ]; then
+    rm -f /etc/chef/client.pem
+fi
+
+if [ -e /etc/chef/client.pem ]; then
+    rm -f /root/.s9s_galera_installed
+fi
+
+#if [[ -e /etc/init.d/NetworkManager ]]; then
+#    /etc/init.d/NetworkManager stop > /dev/null
+#    chkconfig NetworkManager off
+#fi
+
+echo "nameserver 9.0.148.50" > /etc/resolv.conf
+
+retries=25
+timeout=600
+yum_config_file="/etc/yum.conf"
+
+grep "^retries=.*$" $yum_config_file > /dev/null
+if [ "$?" -eq 0 ]; then
+      sed -i "s/^retries=.*$/retries=$retries/g"  $yum_config_file
+else
+      echo "retries="$retries >> $yum_config_file
+fi
+
+grep "^timeout=.*$"  $yum_config_file > /dev/null
+if [ "$?" -eq 0 ]; then
+      sed -i "s/^timeout=.*$/timeout=$timeout/g"  $yum_config_file
+else
+      echo "timeout="$timeout >> $yum_config_file
+fi
+
+/etc/init.d/rhnsd stop >/dev/null 2>&1
+chkconfig rhnsd off >/dev/null 2>&1
+/etc/init.d/rhsmcertd stop >/dev/null 2>&1
+chkconfig rhsmcertd off >/dev/null 2>&1
+
+yum_pid=$(cat /var/run/yum.pid)
+kill -9 $yum_pid
+rm -f /var/run/yum.pid
+
+rm -rf /var/cache/yum/* > /dev/null 2>&1
+yum clean all
+if yum -y reinstall bzip2 > /dev/null 2>&1 ;then
+  skip_os_repo="yes"
+else
+  rm /etc/yum.repos.d/*.repo -f
+  skip_os_repo="no"
+fi
+
+rm /etc/yum.repos.d/*.repo -f
+skip_os_repo="no"
+
+<% sc_chef_ip = @chef_config[:chef_server_url].match(/([0-9]{1,3}\.){3}[0-9]{1,3}/).to_s %>
+<% sc_repo_port = ENV["HTTP_REPO_PORT"] %>
+
+#scp_repo=<%=ENV["SCP_REPO"]%>
+#chmod -R a+r $scp_repo
+#[ -L /var/www/html/scp ] && unlink /var/www/html/scp
+#ln -s $scp_repo /var/www/html/scp
+
+(
+cat <<'EOP'
+[chef-repo]
+name=Smart Cloud \$releasever - \$basearch - Extra
+#baseurl=http://<%= sc_chef_ip %>:<%= sc_repo_port%>/scp/
+baseurl=http://172.16.0.21/chef_repo/
+enabled=1
+gpgcheck=0
+
+EOP
+) > /etc/yum.repos.d/mabo.repo
+
+if [[ "${skip_os_repo}" = "no" ]]; then
+(
+cat <<'EOP'
+[centos7-base]
+name=Red Hat Enterprise Linux \$releasever - \$basearch
+#baseurl=http://<%= sc_chef_ip %>:<%= sc_repo_port%>/rhel6
+baseurl=http://9.115.78.100/centos/7/x86_64/
+enabled=1
+gpgcheck=0
+priority=1
+
+[openstack-noarch]
+name=openstack noarch
+baseurl=http://rchgsa.ibm.com//projects/e/emsol/ccs/build/verified/410/bvt20140717120821/openstack/noarch
+enabled=1
+gpgcheck=0
+
+[openstack-x86-64]
+name=openstack x86-64
+baseurl=http://rchgsa.ibm.com//projects/e/emsol/ccs/build/verified/410/bvt20140717120821/openstack/x86_64
+enabled=1
+gpgcheck=0
+
+[rhel-epel]
+name=Extra Packages for Enterprise Linux 6 - x86_64 
+#baseurl=http://download.fedoraproject.org/pub/epel/6/x86_64
+mirrorlist=https://mirrors.fedoraproject.org/metalink?repo=epel-7&arch=$basearch
+failovermethod=priority
+enabled=1
+gpgcheck=0
+proxy=http://9.115.78.100:8085/
+priority=3
+
+[ceph]
+name=Ceph packages for $basearch
+baseurl=http://ceph.com/rpm/rhel6/x86_64
+enabled=1
+gpgcheck=1
+type=rpm-md
+gpgkey=https://ceph.com/git/?p=ceph.git;a=blob_plain;f=keys/release.asc
+proxy=http://9.115.78.100:8085/
+priority=2
+
+[ceph-noarch]
+name=Ceph noarch packages
+baseurl=http://ceph.com/rpm/rhel7/noarch
+enabled=1
+gpgcheck=1
+type=rpm-md
+gpgkey=https://ceph.com/git/?p=ceph.git;a=blob_plain;f=keys/release.asc
+proxy=http://9.115.78.100:8085/
+priority=2
+
+
+EOP
+) >> /etc/yum.repos.d/mabo.repo
+
+fi
+<% if ENV["RPM_REPOS"]
+  require 'rubygems'
+  require 'json'
+  repos = JSON.parse(ENV["RPM_REPOS"])
+  repos.each_pair do |name, yum_repo_url| %>
+(
+cat <<'EOP'
+[<%= name%>]
+name=<%= name%>
+baseurl=<%= yum_repo_url%>
+enabled=1
+gpgcheck=0
+
+EOP
+) > /etc/yum.repos.d/<%= name%>.repo
+<% end
+end %>
+
+<% if ENV["CHEF_FQDN"] %>
+hosts_ip="<%= sc_chef_ip %>"
+<% end %>
+
+cat /etc/hosts |grep "$hosts_ip"
+if [ $? -ne 0 ];then
+    echo "<%= sc_chef_ip %> <%= ENV["CHEF_FQDN"] %>" >> /etc/hosts
+fi
+
+yum clean all
+yum install -y ntp ntpdate tunctl bridge-utils ebtables make gcc gcc-c++ wget chef
+rpm -q gnote && yum -y remove gnote
+rpm -q akonadi && yum -y remove akonadi
+rpm -q boost-program-options && yum -y remove boost-program-options
+
+if [ -f /sys/block/sda/queue/scheduler ]; then echo "noop" > /sys/block/sda/queue/scheduler; fi
+if [ -f /sys/block/vda/queue/scheduler ]; then echo "noop" > /sys/block/vda/queue/scheduler; fi
+
+ulimit -n 1048576
+sed -i "/hard    nofile/"d /etc/security/limits.conf
+echo "* hard    nofile  1048576" >> /etc/security/limits.conf
+sed -i "/soft    nofile/"d /etc/security/limits.conf
+echo "* soft    nofile  1048576" >> /etc/security/limits.conf
+sed -i "/hard    nproc/"d /etc/security/limits.conf
+echo "* hard    nproc   1048576" >> /etc/security/limits.conf
+sed -i "/soft    nproc/"d /etc/security/limits.conf
+echo "* soft    nproc   1048576" >> /etc/security/limits.conf
+if !(grep "net.ipv4.tcp_rmem = 4096    873800  16777216" /etc/sysctl.conf); then
+    RAM_SIZE=$(free -b | grep Mem | cut -d" " -f5)
+    uname -m | grep 64
+    IS_64BIT=$?
+    if [ $IS_64BIT -eq 0 ]; then
+        BIT_WIDTH=64
+    else
+        BIT_WIDTH=32
+    fi
+    ((CONNTRACK_MAX=$RAM_SIZE / 16384 * 32 / $BIT_WIDTH))
+(
+cat <<'EOP'
+# Tuning netfilter performance
+net.nf_conntrack_max = $CONNTRACK_MAX
+net.netfilter.nf_conntrack_tcp_timeout_established = 2000
+# Tuning tcp network performance
+net.core.somaxconn = 1048576
+net.core.rmem_max = 16777216
+net.core.wmem_max = 16777216
+net.core.rmem_default = 8388608
+net.core.wmem_default = 8388608
+net.core.netdev_max_backlog = 1048576
+net.ipv4.tcp_sack = 1
+net.ipv4.tcp_tw_reuse = 1
+net.ipv4.tcp_tw_recycle = 1
+net.ipv4.tcp_syncookies = 1
+net.ipv4.tcp_timestamps = 0
+net.ipv4.tcp_fin_timeout = 5
+net.ipv4.tcp_syn_retries = 10
+net.ipv4.tcp_synack_retries = 10
+net.ipv4.tcp_window_scaling = 1
+net.ipv4.tcp_keepalive_time = 30
+net.ipv4.tcp_max_orphans = 32768
+net.ipv4.tcp_max_tw_buckets = 6000
+net.ipv4.tcp_max_syn_backlog = 1048576
+net.ipv4.ip_local_port_range = 1024 65535
+net.ipv4.tcp_mem = 4096     873800  16777216
+net.ipv4.tcp_wmem = 4096    873800  16777216
+net.ipv4.tcp_rmem = 4096    873800  16777216
+# Tuning number of open files
+fs.nr_open = 1048576
+fs.file-max = 1048576
+vm.zone_reclaim_mode = 1
+net.ipv4.ip_nonlocal_bind = 1
+EOP
+) >> /etc/sysctl.conf
+    sysctl -p >/dev/null 2>&1
+fi
+/etc/init.d/ntpd stop
+<% if ENV["CENTRAL_SERVER"] %>
+  ntpdate <%= ENV["CENTRAL_SERVER"] %>
+  sed -i /^server/d /etc/ntp.conf
+  sync
+  grep "server <%= ENV["CENTRAL_SERVER"] %> burst iburst prefer" /etc/ntp.conf > /dev/null 2>&1 || echo "server <%= ENV["CENTRAL_SERVER"] %> burst iburst prefer"  >> /etc/ntp.conf
+<% else %>
+  ntpdate <%= sc_chef_ip%>
+  sed -i /^server/d /etc/ntp.conf
+  sync
+  if ip address show | grep <%= sc_chef_ip%> >/dev/null 2>&1; then
+    grep "^server 127.127.1.0" /etc/ntp.conf > /dev/null 2>&1 || echo "server 127.127.1.0	# local clock" >> /etc/ntp.conf
+  else
+    grep "server 172.16.0.21 burst iburst prefer" /etc/ntp.conf >/dev/null 2>&1 || echo "server <%= sc_chef_ip%> burst iburst prefer" >> /etc/ntp.conf
+  fi
+<% end %>
+
+/etc/init.d/ntpd start
+
+
+/sbin/iptables -F
+service iptables save
+/sbin/ip6tables -F
+service ip6tables save
+[[ -e /etc/resolv.conf.orig.sc ]] || cp -pf /etc/resolv.conf /etc/resolv.conf.orig.sc
+
+(
+cat <<'EOP'
+<%= validation_key %>
+EOP
+) > /tmp/validation.pem
+awk NF /tmp/validation.pem > /etc/chef/chef-validator.pem
+rm /tmp/validation.pem
+
+<% if ENV["DATABAG_SECRET"] -%>
+
+(
+cat <<'EOP'
+<%= ENV["DATABAG_SECRET"] %>
+EOP
+) > /tmp/databag_secret
+awk NF /tmp/databag_secret > /etc/chef/databag_secret
+rm /tmp/databag_secret
+<% end -%>
+
+(
+cat <<'EOP'
+<%= config_content %>
+EOP
+) > /etc/chef/client.rb
+
+echo "no_lazy_load true" >> /etc/chef/client.rb
+echo "validation_key \"/etc/chef/chef-validator.pem\"" >> /etc/chef/client.rb
+echo "yum_timeout 3600" >> /etc/chef/client.rb
+(
+cat <<'EOP'
+<%= { "run_list" => @run_list }.to_json %>
+EOP
+) > /etc/chef/first-boot.json
+
+<%= start_chef %>'
+

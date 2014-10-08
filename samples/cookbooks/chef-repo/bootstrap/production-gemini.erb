@@ -1,0 +1,99 @@
+bash -c '
+<%= "export http_proxy=\"#{knife_config[:bootstrap_proxy]}\"" if knife_config[:bootstrap_proxy] -%>
+
+if [[ `cat /etc/hosts | grep chef-srv | head -n 1 |cut -d " " -f 2` != "chef-srv" ]]; then
+    echo "172.16.27.201 gemini-chef-repo" >> /etc/hosts
+fi
+
+if [[ `cat /etc/hosts | grep gitorious | head -n 1 |cut -d " " -f 2` != "gitorious.rch.stglabs.ibm.com" ]]; then
+    echo "9.5.84.57 gitorious.rch.stglabs.ibm.com" >> /etc/hosts
+fi
+name=`hostname`
+
+if [[ `cat /etc/hosts | grep $name | head -n 1 |cut -d " " -f 2` != $name ]]; then
+    echo "<%= ENV['IP_ADDR'] %> $name" >> /etc/hosts
+fi
+
+if [[ `cat /etc/hosts | grep bejgsa | head -n 1 |cut -d " " -f 2` != "bejgsa.ibm.com" ]]; then
+    echo "9.119.32.128 bejgsa.ibm.com" >> /etc/hosts
+fi
+
+if [[ `cat /etc/hosts | grep rchgsa | head -n 1 |cut -d " " -f 2` != "rchgsa.ibm.com" ]]; then
+    echo "9.10.228.206 rchgsa.ibm.com" >> /etc/hosts
+fi
+
+yum clean all
+rm /etc/yum.repos.d/*.repo -f
+export http_proxy=http://172.16.27.200:8085/
+export https_proxy=http://172.16.27.200:8085/
+
+mkdir /root/.ssh
+(
+cat <<'EOP'
+[scp]
+name=SCP
+baseurl=http://172.16.27.201:3080/scp/
+enable=1
+gpgcheck=0
+
+[rhel-source]
+name=Red Hat Enterprise Linux $releasever - $basearch - Source
+baseurl=http://172.16.27.200/rhel/6.5/x86_64/
+enabled=1
+gpgcheck=0
+
+EOP
+) > /etc/yum.repos.d/rhel-dev.repo
+
+(
+cat <<'EOP'
+<%= ENV['AUTHORIZED_KEYS'] %>
+EOP
+) > /tmp/authorized_keys
+awk NF /tmp/authorized_keys > /root/.ssh/authorized_keys
+rm /tmp/authorized_keys
+
+yum install -y openssh-clients ntpdate chef wget
+
+ntpdate 172.16.27.200
+
+rm -rf /etc/chef
+mkdir /etc/chef
+rm -rf /root/.chef
+mkdir /root/.chef
+
+(
+cat <<'EOP'
+<%= validation_key %>
+EOP
+) > /tmp/validation.pem
+awk NF /tmp/validation.pem > /etc/chef/validation.pem
+rm /tmp/validation.pem
+
+(
+cat <<'EOP'
+<%= config_content %>
+EOP
+) > /etc/chef/client.rb
+
+(
+cat <<'EOP'
+log_level                :debug
+log_location             STDOUT
+node_name                "admin"
+client_key               "/etc/chef/admin.pem"
+validation_client_name   "chef-validator"
+validation_key           "/etc/chef/chef-validator.pem"
+chef_server_url          "https://172.16.27.201:443"
+cache_type               "BasicFile"
+cache_options( :path => "/root/.chef/checksums" )
+EOP
+) > /root/.chef/knife.rb
+
+(
+cat <<'EOP'
+<%= ENV['CLIENT_KEY'] %>
+EOP
+) > /etc/chef/admin.pem
+
+<%= start_chef %>'

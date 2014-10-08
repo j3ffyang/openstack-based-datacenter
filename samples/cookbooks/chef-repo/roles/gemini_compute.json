@@ -1,0 +1,19 @@
+{
+  "description": "gemini compute node with neutron network",
+  "name": "gemini_compute",
+  "chef_type": "role",
+  "default_attributes": {
+  },
+  "json_class": "Chef::Role",
+  "override_attributes": {
+  },
+  "env_run_lists": {
+  },
+  "run_list": [
+    "role[os-base]",
+    "recipe[openstack-ops-database::openstack-db-name]",
+    "role[os-compute-worker-sco]",
+    "role[os-telemetry-agent-compute]",
+    "recipe[openstack-network::linuxbridge]"
+  ]
+}

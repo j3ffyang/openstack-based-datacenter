@@ -46,6 +46,10 @@
   * [Add New Monitor](CephAddMon.markdown)
   * [Post Install Configuration](CephPostConfiguration.markdown)
 
+## Deploy Galera with MariaDB
+  * [Galera](DeployGalera.markdown)
+  * RabbitMQ Cluster
+
 ## Deploy OpenStack
   * Chef Architecture
   * Git Architecture
@@ -53,10 +57,6 @@
 
 ## Software Defined Network
   * Neutron HA
-
-## Apply HA
-  * Galera
-  * RabbitMQ Cluster
 
 ## Operation
   * One rule everybody should remember is to run "who" and "wall" prior to shutdown the server!

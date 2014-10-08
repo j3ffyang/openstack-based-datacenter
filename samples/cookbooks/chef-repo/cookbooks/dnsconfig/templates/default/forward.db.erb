@@ -1,0 +1,23 @@
+$ORIGIN .
+$TTL 86400	; 1 day
+gemini.cdl.ibm.com	IN SOA	dhcp-dns.gemini.cdl.ibm.com. fake.gemini.cdl.ibm.com. (
+				45         ; serial
+				10800      ; refresh (3 hours)
+				3600       ; retry (1 hour)
+				10800      ; expire (3 hours)
+				86400      ; minimum (1 day)
+				)
+			NS	dhcp-dns.gemini.cdl.ibm.com.
+			A	9.110.51.35
+$ORIGIN gemini.cdl.ibm.com.
+dhcp-dns		A	9.110.51.35
+CS-1        A   9.110.51.35
+CS-2        A   9.110.51.36
+CS-3        A   9.110.51.37
+CS-4        A   9.110.51.39
+dhcp-dns.RegionVmware.gemini.cdl.ibm.com.                A       9.110.51.40
+statuscode	A 	9.181.26.252
+review		A	9.181.26.252
+etherpad	A	9.181.26.252
+dhcp-dns.RegionKvm.gemini.cdl.ibm.com.                A       9.110.51.41
+

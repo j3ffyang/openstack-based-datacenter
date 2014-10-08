@@ -1,0 +1,377 @@
+{
+  "name": "gemini",
+  "description": "Environment used to deploy gemini cloud with HA",
+  "cookbook_versions": {
+  },
+  "json_class": "Chef::Environment",
+  "chef_type": "environment",
+  "default_attributes": {
+  },
+  "override_attributes": {
+    "rabbitmq": {
+      "use_distro_version":"true"
+    },
+    "yum":{
+      "epel":{
+        "key": "RPM-GPG-KEY-CentOS-6",
+        "key_url": "http://172.16.27.234:3080/epel/", 
+        "url": "http://172.16.27.234:3080/epel/"
+       },
+       "openstacknoarch" :{
+         "url":"http://rchgsa.ibm.com//projects/e/emsol/ccs/build/verified/410/bvt20140717120821/openstack/noarch"
+       },
+       "openstackx86_64" : {
+         "url":"http://rchgsa.ibm.com//projects/e/emsol/ccs/build/verified/410/bvt20140717120821/openstack/x86_64"
+       }
+    },
+    "mysql":{
+        "server_root_password": "password"
+    },
+    "openstack":{
+        "region" : "Gemini",
+        "developer_mode":"true",
+        "yum":{
+            "rdo_enabled" : false 
+        },
+        "db":{
+            "service_type" : "mysql",
+            "python_packages" : {
+                "mysql" : []
+            }
+        },
+        "auth": {
+           "validate_certs": false,
+           "strategy": "uuid"
+        },
+        "api":{
+            "auth":{
+               "version": "v2.0"
+            }
+        },
+        "block-storage": {
+            "syslog": {
+                "use": false
+            },
+            "api": {
+                "ratelimit": "False",
+                "bind_interface": "eth0"
+            }
+        },
+        "compute":{
+            "api": {
+                "bind_interface": "eth0"
+            },
+            "enabled_apis": "osapi_compute",
+            "network": {
+                "service_type": "neutron"
+            }
+        },
+        "network": {
+            "use_namespaces": "True",
+            "quota": {
+              "driver": "neutron.db.quota_db.DbQuotaDriver"
+            },
+            "interface_driver": "neutron.agent.linux.interface.BridgeInterfaceDriver",
+            "l3": {
+              "router_delete_namespaces": "True",
+              "external_network_bridge_interface": ""
+            },
+            "ml2": {
+              "type_drivers": "flat,vlan,vxlan",
+              "mechanism_drivers": "linuxbridge",
+              "network_vlan_ranges": "physnet1",
+              "flat_networks": "physnet1",
+              "vni_ranges": "10000:20000",
+              "vxlan_group": "224.1.1.100",
+              "tenant_network_types": "flat,vlan,vxlan"
+            },
+            "platform": {
+              "neutron_client_packages": [
+                "python-neutronclient",
+                "dnsmasq-utils"
+              ],
+              "neutron_dhcp_packages": [
+                "openstack-neutron",
+                "dnsmasq-utils"
+              ],
+              "neutron_l3_packages": [
+                "openstack-neutron"
+              ],
+              "neutron_linuxbridge_agent_packages": [
+                "openstack-neutron-linuxbridge",
+                "openstack-neutron-openvswitch"
+              ],
+              "neutron_openvswitch_agent_packages": [
+                "openstack-neutron-openvswitch"
+              ],
+              "neutron_openvswitch_agent_service": "neutron-openvswitch-agent",
+              "neutron_linuxbridge_agent_service": "neutron-linuxbridge-agent"
+            },
+            "api": {
+              "auth": {
+                "version": "v3.0"
+              },
+              "bind_interface": "eth0"
+            },
+            "linuxbridge": {
+              "management_interface": "eth1",
+              "network_vlan_ranges": "physnet1",
+              "enable_vxlan": "True",
+              "vxlan_group": "224.1.1.100",
+              "tenant_network_type": "flat,vlan,vxlan",
+              "external_interface": "eth1",
+              "firewwall_driver": "neutron.agent.linux.iptables_firewall.IptablesFirewallDriver",
+              "data_interface": "eth1"
+            },
+            "plugins": [
+              "linuxbridge"
+            ],
+            "debug": "false",
+            "dhcp": {
+              "dhcp-option": "26,1454",
+              "enable_metadata_network": "True",
+              "ovs_use_veth": "False",
+              "dhcp_delete_namespaces": "True",
+              "enable_isolated_metadata": "True"
+            },
+            "core_plugin": "neutron.plugins.ml2.plugin.Ml2Plugin",
+            "service_plugins": [
+              "neutron.services.l3_router.l3_router_plugin.L3RouterPlugin"
+            ],
+            "allow_overlapping_ips": "True",
+            "metadata": {
+              "nova_metadata_ip": "172.16.27.230"
+            }
+        },
+        "endpoints": {
+            "host": "172.16.27.230",
+            "bind_interface" : "eth0",
+            "db": {
+                  "host" : "172.16.27.230",
+                  "port" : "13306",
+                  "bind_interface" : "eth0"
+            },
+            "identity-admin": {
+                  "port": "35358"
+            },
+            "identity-api": {
+                  "port": "15000"
+            },
+            "image-api": {
+                 "port": "19292"
+            },
+            "image-registry": {
+                 "port": "19191"
+            },
+            "compute-api": {
+                 "port": "18774"
+            },
+            "compute-ec2-api": {
+                 "port": "18773"
+            },
+            "block-storage-api": {
+                 "port": "18776"
+            },
+            "network-api": {
+                 "port": "19696"
+            }
+         },
+         "memcached_servers": [
+             "172.16.27.231:11211,172.16.27.232:11211,172.16.27.233:11211"
+         ],
+         "mq": {
+             "service_type":"rabbitmq",
+             "bind_interface": "eth0",
+             "user": "rabbit",
+             "vhost": "/",
+             "cluster": true,
+             "server_role":"gemini-controller",
+             "compute": {
+                 "rabbit": {
+                     "ha": true
+                 }
+             },
+             "image": {
+                 "rabbit": {
+                     "ha": true
+                 }
+             },
+             "block-storage": {
+                 "rabbit": {
+                     "ha": true
+                 }
+             },
+             "network": {
+                 "rabbit": {
+                     "ha": true
+                 }
+             }
+         }
+    },
+    "haproxy": {
+      "incoming_address": "0.0.0.0",
+      "incoming_port": "8080",
+      "member_port": "80",
+      "enable_default_http": "false",
+      "install_method": "package",
+      "defaults_options": [
+        "redispatch"
+      ],
+      "defaults_timeouts": {
+        "connect": "10s",
+        "http-request": "10s",
+        "queue": "1m",
+        "client": "1m",
+        "server": "1m",
+        "check": "10s"
+      },
+      "admin": {
+        "address_bind": "0.0.0.0"
+      },
+      "members": [
+        {
+          "hostname": "gemini-controller-1",
+          "ipaddress": "172.16.27.231",
+          "max_connections": 100
+        },
+        {
+          "hostname": "gemini-controller-2",
+          "ipaddress": "172.16.27.232",
+          "max_connections": 100
+        },
+        {
+          "hostname": "gemini-controller-2",
+          "ipaddress": "172.16.27.233",
+          "max_connections": 100
+        }
+      ],
+      "listeners": {
+        "listen": {
+          "galera_cluster": [
+            "bind 0.0.0.0:13306",
+            "mode tcp",
+            "log global",
+            "balance  source",
+            "#option httpchk",
+            "option tcpka",
+            "server gemini-control-1 172.16.27.231:3306 check inter 2000 rise 2 fall 5",
+            "server gemini-control-2 172.16.27.232:3306 check inter 2000 rise 2 fall 5",
+            "server gemini-control-3 172.16.27.233:3306 check inter 2000 rise 2 fall 5"
+          ],
+          "openstack-identity-public-api":[
+            "bind 0.0.0.0:15000",
+            "mode tcp",
+            "log global",
+            "balance  source",
+            "#option httpchk",
+            "option tcpka",
+            "server gemini-control-1 172.16.27.231:5000 check inter 2000 rise 2 fall 5",
+            "server gemini-control-2 172.16.27.232:5000 check inter 2000 rise 2 fall 5",
+            "server gemini-control-3 172.16.27.233:5000 check inter 2000 rise 2 fall 5"
+          ],
+          "openstack-identity-amin-api":[
+            "bind 0.0.0.0:35358",
+            "mode tcp",
+            "log global",
+            "balance  source",
+            "#option httpchk",
+            "option tcpka",
+            "server gemini-control-1 172.16.27.231:35357 check inter 2000 rise 2 fall 5",
+            "server gemini-control-2 172.16.27.232:35357 check inter 2000 rise 2 fall 5",
+            "server gemini-control-3 172.16.27.233:35357 check inter 2000 rise 2 fall 5"
+          ],
+          "openstack-image-api":[
+            "bind 0.0.0.0:19292",
+            "mode tcp",
+            "log global",
+            "balance  source",
+            "#option httpchk",
+            "option tcpka",
+            "server gemini-control-1 172.16.27.231:9292 check inter 2000 rise 2 fall 5",
+            "server gemini-control-2 172.16.27.232:9292 check inter 2000 rise 2 fall 5",
+            "server gemini-control-3 172.16.27.233:9292 check inter 2000 rise 2 fall 5"
+          ],
+          "openstack-image-registry-api":[
+            "bind 0.0.0.0:19191",
+            "mode tcp",
+            "log global",
+            "balance  source",
+            "#option httpchk",
+            "option tcpka",
+            "server gemini-control-1 172.16.27.231:9191 check inter 2000 rise 2 fall 5",
+            "server gemini-control-2 172.16.27.232:9191 check inter 2000 rise 2 fall 5",
+            "server gemini-control-3 172.16.27.233:9191 check inter 2000 rise 2 fall 5"
+          ],
+          "openstack-compute-api":[
+            "bind 0.0.0.0:18774",
+            "mode tcp",
+            "log global",
+            "balance  source",
+            "#option httpchk",
+            "option tcpka",
+            "server gemini-control-1 172.16.27.231:8774 check inter 2000 rise 2 fall 5",
+            "server gemini-control-2 172.16.27.232:8774 check inter 2000 rise 2 fall 5",
+            "server gemini-control-3 172.16.27.233:8774 check inter 2000 rise 2 fall 5"
+          ],
+          "openstack-cinder-api":[
+            "bind 0.0.0.0:18776",
+            "mode tcp",
+            "log global",
+            "balance  source",
+            "#option httpchk",
+            "option tcpka",
+            "server gemini-control-1 172.16.27.231:8776 check inter 2000 rise 2 fall 5",
+            "server gemini-control-2 172.16.27.232:8776 check inter 2000 rise 2 fall 5",
+            "server gemini-control-3 172.16.27.233:8776 check inter 2000 rise 2 fall 5"
+          ],
+          "openstack-network-api":[
+            "bind 0.0.0.0:19696",
+            "mode tcp",
+            "log global",
+            "balance  source",
+            "#option httpchk",
+            "option tcpka",
+            "server gemini-control-1 172.16.27.231:9696 check inter 2000 rise 2 fall 5",
+            "server gemini-control-2 172.16.27.232:9696 check inter 2000 rise 2 fall 5",
+            "server gemini-control-3 172.16.27.233:9696 check inter 2000 rise 2 fall 5"
+          ]
+        }
+      }
+    },
+    "keepalived": {
+      "shared_address": true,
+      "check_scripts": {
+        "chk_haproxy": {
+          "script": "killall -0 haproxy",
+          "interval": 2,
+          "weight": 20
+        }
+      },
+      "instances": {
+        "openstack-vip": {
+          "ip_addresses": "172.16.27.230/24",
+          "interface": "eth0",
+          "state": "BACKUP",
+          "states": {
+            "controller1": "MASTER",
+            "controller2": "BACKUP",
+            "controller3": "BACKUP"
+          },
+          "virtual_router_ids": {
+            "controller1": 47,
+            "controller2": 47,
+            "controller3": 47
+          },
+          "priorities": {
+            "controller1": 110,
+            "controller2": 100,
+            "controller3": 90
+          },
+          "track_script": "chk_haproxy",
+          "nopreempt": false,
+          "advert_int": 1
+        }
+      }
+    }
+  }
+}

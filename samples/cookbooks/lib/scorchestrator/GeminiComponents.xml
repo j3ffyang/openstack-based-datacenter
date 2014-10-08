@@ -1,0 +1,41 @@
+<GeminiComponents>
+	<component name="db2" scriptName="db2ctrl.sh" workdir="/tmp" startPrio="10" stopPrio="290"/>
+	<component name="qpidd" scriptName="qpiddctrl.sh" workdir="/tmp" startPrio="30" stopPrio="270"/>
+	<component name="openstack-keystone" openstackService="true" scriptName="openstack-servicectrl.sh" workdir="/tmp" startPrio="70" stopPrio="230"/>
+	<component name="openstack-cinder-api" openstackService="true" scriptName="openstack-servicectrl.sh" workdir="/tmp" startPrio="80" stopPrio="220"/>
+	<component name="openstack-cinder-scheduler" openstackService="true" scriptName="openstack-servicectrl.sh" workdir="/tmp" startPrio="90" stopPrio="210"/>
+	<component name="openstack-cinder-volume" openstackService="true" scriptName="openstack-servicectrl.sh" workdir="/tmp" startPrio="100" stopPrio="200"/>
+	<component name="openstack-glance-api" openstackService="true" scriptName="openstack-servicectrl.sh" workdir="/tmp" startPrio="110" stopPrio="190"/>
+	<component name="openstack-glance-registry" openstackService="true" scriptName="openstack-servicectrl.sh" workdir="/tmp" startPrio="120" stopPrio="180"/>
+	<component name="openstack-nova-api" openstackService="true" scriptName="openstack-servicectrl.sh" workdir="/tmp" startPrio="130" stopPrio="170"/>
+	<component name="openstack-nova-cert" openstackService="true" scriptName="openstack-servicectrl.sh" workdir="/tmp" startPrio="140" stopPrio="160"/>
+	<component name="openstack-nova-conductor" openstackService="true" scriptName="openstack-servicectrl.sh" workdir="/tmp" startPrio="150" stopPrio="150"/>
+	<component name="openstack-nova-cells" openstackService="true" scriptName="openstack-servicectrl.sh" workdir="/tmp" startPrio="160" stopPrio="140"/>
+	<component name="openstack-nova-metadata-api" openstackService="true" scriptName="openstack-servicectrl.sh" workdir="/tmp" startPrio="180" stopPrio="120"/>
+	<component name="openstack-nova-scheduler" openstackService="true" scriptName="openstack-servicectrl.sh" workdir="/tmp" startPrio="200" stopPrio="100"/>
+	<component name="openstack-nova-consoleauth" openstackService="true" scriptName="openstack-servicectrl.sh" workdir="/tmp" startPrio="210" stopPrio="90"/>
+	<component name="openstack-nova-novncproxy" openstackService="true" scriptName="openstack-servicectrl.sh" workdir="/tmp" startPrio="220" stopPrio="80"/>
+	<component name="openstack-nova-compute" openstackService="true" scriptName="openstack-servicectrl.sh" workdir="/tmp" startPrio="230" stopPrio="70"/>
+	<component name="neutron-server" openstackService="true" scriptName="openstack-servicectrl.sh" workdir="/tmp" startPrio="237" stopPrio="67"/>
+	<component name="neutron-metadata-agent" openstackService="true" scriptName="openstack-servicectrl.sh" workdir="/tmp" startPrio="235" stopPrio="65"/>
+	<component name="neutron-lbaas-agent" openstackService="true" scriptName="openstack-servicectrl.sh" workdir="/tmp" startPrio="234" stopPrio="64"/>
+	<component name="neutron-dhcp-agent" openstackService="true" scriptName="openstack-servicectrl.sh" workdir="/tmp" startPrio="233" stopPrio="63"/>
+	<component name="openstack-iaasgateway" openstackService="true" scriptName="openstack-servicectrl.sh" workdir="/tmp" startPrio="240" stopPrio="60"/>
+	<component name="pcg" scriptName="pcgctrl.sh" workdir="/tmp" startPrio="280" stopPrio="20"/>		
+	<component name="bpm-dmgr" scriptName="bpm-dmgrctrl.sh" workdir="/tmp" startPrio="290" stopPrio="10"/>
+	<component name="bpm-node" scriptName="bpm-nodectrl.sh" workdir="/tmp" startPrio="291" stopPrio="9"/>
+	<component name="bpm-server" scriptName="bpm-serverctrl.sh" workdir="/tmp" startPrio="292" stopPrio="8"/>
+
+	<!-- Newly added components in decibel -->
+	<component name="openstack-heat-api" openstackService="true" scriptName="openstack-servicectrl.sh" workdir="/tmp" startPrio="250" stopPrio="53"/>
+	<component name="openstack-heat-api-cfn" openstackService="true" scriptName="openstack-servicectrl.sh" workdir="/tmp" startPrio="251" stopPrio="52"/>
+	<component name="openstack-heat-api-cloudwatch" openstackService="true" scriptName="openstack-servicectrl.sh" workdir="/tmp" startPrio="252" stopPrio="51"/>
+	<component name="openstack-heat-engine" openstackService="true" scriptName="openstack-servicectrl.sh" workdir="/tmp" startPrio="253" stopPrio="50"/>
+	<component name="openstack-ceilometer-api" openstackService="true" scriptName="openstack-servicectrl.sh" workdir="/tmp" startPrio="270" stopPrio="33"/>
+	<component name="openstack-ceilometer-central" openstackService="true" scriptName="openstack-servicectrl.sh" workdir="/tmp" startPrio="271" stopPrio="32"/>
+	<component name="openstack-ceilometer-collector" openstackService="true" scriptName="openstack-servicectrl.sh" workdir="/tmp" startPrio="272" stopPrio="31"/>
+	<component name="openstack-ceilometer-compute" openstackService="true" scriptName="openstack-servicectrl.sh" workdir="/tmp" startPrio="273" stopPrio="30"/>
+	<component name="neutron-linuxbridge-agent" openstackService="true" scriptName="openstack-servicectrl.sh" workdir="/tmp" startPrio="236" stopPrio="67"/>
+	<component name="scui" openstackService="false" scriptName="openstack-servicectrl.sh"  workdir="/tmp" startPrio="300" stopPrio="7"/>
+	<component name="httpd" openstackService="true" scriptName="openstack-servicectrl.sh" workdir="/tmp" startPrio="260" stopPrio="40"/>
+</GeminiComponents>
