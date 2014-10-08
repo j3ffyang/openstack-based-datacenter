@@ -1,0 +1,44 @@
+{
+  "description": "Gemini Controller Node, which has galera, rabbit, and haproxy natively",
+  "name": "gemini-controller",
+  "chef_type": "role",
+  "default_attributes": {
+  },
+  "json_class": "Chef::Role",
+  "override_attributes": {
+     "wsrep":{
+       "cluster_name": "gemini_cluster"
+     },
+     "galera_config":{
+       "data_bag_name":"gemini",
+       "data_bag_item_name":"config"
+     }
+  },
+  "env_run_lists": {
+  },
+  "run_list": [
+     "role[os-base]",
+     "role[os-ops-messaging]",
+     "recipe[rabbitmq::policy_management]",
+     "recipe[haproxy]",
+     "recipe[keepalived]",
+     "recipe[galera::server]",
+     "recipe[openstack-ops-database::openstack-db]",
+     "recipe[memcached::default]",
+     "role[os-identity]",
+     "role[os-image-api]",
+     "role[os-image-registry]",
+     "recipe[openstack-image::identity_registration]",
+     "role[os-block-storage-api]",
+     "role[os-block-storage-scheduler]",
+     "role[os-block-storage-volume]",
+     "recipe[openstack-block-storage::identity_registration]",
+     "role[os-compute-setup]",
+     "role[os-compute-api]",
+     "role[os-compute-conductor]",
+     "role[os-compute-scheduler]",
+     "recipe[openstack-network::server]",
+     "recipe[openstack-network::identity_registration]",
+     "role[os-dashboard]"
+  ]
+}

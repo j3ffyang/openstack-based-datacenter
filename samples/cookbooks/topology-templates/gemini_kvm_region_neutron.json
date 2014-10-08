@@ -1,0 +1,455 @@
+{
+    "AWSTemplateFormatVersion": "2010-09-09",
+    "Description":"SCO Core with neutron network + addtional kvm compute node deployment (Existing machines)",
+    "Parameters": {
+        "AvailabilityZone": {
+            "Description": "TheAvailabilityZoneinwhichtolaunchtheinstance.",
+            "Type": "String",
+            "Default": "nova"
+        },
+        "KeyName": {
+            "Description": "novakeypair-add--pub-key~/.ssh/id_rsa.pubheat-key",
+            "Type": "String",
+            "Default": "heat-key"
+        },
+        "Flavor": {
+            "Description": "novaflavor-list",
+            "Type": "String",
+            "Default": "m1.medium"
+        },
+        "EnableOSDebug": {
+            "Description": "Enable OpenStack debug mode",
+            "Type": "String",
+            "Default": "false"
+        },
+        "NetworkManager": {
+            "Description": "Network manager type of OpenStack",
+            "Type": "String",
+            "Default": "nova.network.manager.VlanManager"
+        },
+        "VMIPV4ADDR": {
+            "Description": "VM IPv4 network address",
+            "Type": "String",
+            "Default": "10.10.0.0/24"
+        },
+        "VMBridge": {
+            "Description": "Bridge of VM",
+            "Type": "String",
+            "Default": "br4096"
+        },
+        "VMDns1": {
+            "Description": "DNS1 of VM",
+            "Type": "String",
+            "Default": " "
+        },
+        "VMDns2": {
+            "Description": "DNS2 of VM",
+            "Type": "String",
+            "Default": " "
+        },
+        "VMStartIP": {
+            "Description": "Start IP address of VM IP Range",
+            "Type": "String",
+            "Default": "10.10.0.100"
+        },
+        "VMEndIP": {
+            "Description": "End IP address of VM IP Range",
+            "Type": "String",
+            "Default": "10.10.0.200"
+        },
+        "MGMNetInterface": {
+            "Description": "Management network bind interface",
+            "Type": "String",
+            "Default": "eth0"
+        },
+        "OSNetworkType": {
+            "Description": "OpenStack network type, nova or neutron",
+            "Type": "String",
+            "Default": "neutron"
+        },
+        "SimpleTokenSecret": {
+            "Description": "OpenStack keystone simple token",
+            "Type": "String",
+            "Default": "EzzNhXb17ZsOu9j18Ek7jg=="
+        },
+        "BrowserSimpleTokenSecret": {
+            "Description": "Browser simple token",
+            "Type": "String",
+            "Default": "qBg4YTUjWd1hsLqo1yeJ2w=="
+        },
+        "OSLibvirtType": {
+            "Description": "OpenStack libvirt type (kvm/qemu)",
+            "Type": "String",
+            "Default": "kvm"
+        },
+        "DatabaseType": {
+            "Description": "Database type (db2)",
+            "Type": "String",
+            "Default": "db2"
+        },
+        "DatabasePort": {
+            "Description": "Database port",
+            "Type": "String",
+            "Default": "50000"
+        }
+    },
+    "Resources": {
+        "control": {
+            "Type": "IBM::SCO::Node",
+            "Properties": {
+                "Address": "CENTRAL2_ADDR",
+                "User": "root",
+                "Password": "passw0rd"
+            },
+            "Metadata": {
+                "chef-runlist": "role[gemini_allinone]",
+                "order": 1
+            }
+        },
+        "kvm_region": {
+            "Type": "IBM::SCO::Node",
+            "Properties": {
+                "Address": "CENTRAL2_ADDR",
+                "User": "root",
+                "Password": "passw0rd"
+            },
+            "Metadata": {
+                "chef-runlist": "role[kvm_region]",
+                "order": 2
+            }
+        },
+        "compute": {
+            "Type": "IBM::SCO::Node",
+            "Properties": {
+                "Address": "REGION1_ADDR",
+                "User": "root",
+                "Password": "passw0rd"
+            },
+            "Metadata": {
+                "chef-runlist": "role[gemini_compute]",
+                "order": 3
+            }
+        }
+    },
+
+    "Outputs": {
+        "control_IP": {
+            "Value": {
+                "Fn::GetAtt": [
+                    "control",
+                    "PublicIp"
+                ]
+            }
+        },
+        "kvm_region_IP": {
+            "Value": {
+                "Fn::GetAtt": [
+                    "kvm_region",
+                    "PublicIp"
+                ]
+            }
+        },
+        "compute_IP": {
+            "Value": {
+                "Fn::GetAtt": [
+                    "compute",
+                    "PublicIp"
+                ]
+            }
+        },
+        "ENABLE_DEBUG":{
+            "Value":{
+        		"Ref": "EnableOSDebug"
+            }
+        },
+        "NETWORK_MANAGER":{
+            "Value":{
+	        	"Ref": "NetworkManager"
+            }
+        },
+        "IPV4_CIDR":{
+            "Value":{
+	        	"Ref": "VMIPV4ADDR"
+            }
+        },
+        "BRIDGE":{
+            "Value":{
+	        	"Ref": "VMBridge"
+            }
+        },
+        "DNS1":{
+            "Value":{
+	        	"Ref": "VMDns1"
+            }
+        },
+        "DNS2":{
+            "Value":{
+	        	"Ref": "VMDns2"
+            }
+        },
+        "START_IP":{
+            "Value":{
+	        	"Ref": "VMStartIP"
+            }
+        },
+        "END_IP":{
+            "Value":{
+	        	"Ref": "VMEndIP"
+            }
+        },
+        "NET_INTERFACE": {
+            "Value":{
+	            "Ref": "MGMNetInterface"
+            }
+        },
+        "NETWORK_TYPE": {
+            "Value":{
+	            "Ref": "OSNetworkType"
+            }
+        },
+        "SIMPLE_TOKEN_SECRET": {
+            "Value":{
+	            "Ref": "SimpleTokenSecret"
+            }
+        },
+        "BROWSER_SIMPLE_TOKEN_SECRET": {
+            "Value":{
+	            "Ref": "BrowserSimpleTokenSecret"
+            }
+        },
+        "LIBVIRT_TYPE": {
+            "Value":{
+	            "Ref": "OSLibvirtType"
+            }
+        },
+        "DB_TYPE": {
+            "Value":{
+	            "Ref": "DatabaseType"
+            }
+        },
+        "DB_PORT": {
+            "Value":{
+	            "Ref": "DatabasePort"
+            }
+        },
+        "RHEL64_IMAGE_URL": {
+            "Value": ""
+        },
+        "IAASGATEWAY_IP_ADDR": {
+            "Value": {
+                "Fn::GetAtt": [
+                    "control",
+                    "PublicIp"
+                ]
+            }
+        },
+        "MQ_ADDR": {
+            "Value": {
+                "Fn::GetAtt": [
+                    "control",
+                    "PublicIp"
+                ]
+            }
+        },
+        "NOVA_META_ADDR": {
+            "Value": {
+                "Fn::GetAtt": [
+                    "control",
+                    "PublicIp"
+                ]
+            }
+	},
+        "COMPUTE_DB_ADDR": {
+            "Value": {
+                "Fn::GetAtt": [
+                    "control",
+                    "PublicIp"
+                ]
+            }
+        },
+        "KEYSTONE_DB_ADDR": {
+            "Value": {
+                "Fn::GetAtt": [
+                    "control",
+                    "PublicIp"
+                ]
+            }
+        },
+        "IMAGE_DB_ADDR": {
+            "Value": {
+                "Fn::GetAtt": [
+                    "control",
+                    "PublicIp"
+                ]
+            }
+        },
+        "NETWORK_DB_ADDR": {
+            "Value": {
+                "Fn::GetAtt": [
+                    "control",
+                    "PublicIp"
+                ]
+            }
+        },
+        "VOLUME_DB_ADDR": {
+            "Value": {
+                "Fn::GetAtt": [
+                    "control",
+                    "PublicIp"
+                ]
+            }
+        },
+        "DASHBOARD_DB_ADDR": {
+            "Value": {
+                "Fn::GetAtt": [
+                    "control",
+                    "PublicIp"
+                ]
+            }
+        },
+        "METERING_DB_ADDR": {
+            "Value": {
+                "Fn::GetAtt": [
+                    "control",
+                    "PublicIp"
+                ]
+            }
+        },
+        "ORCHESTRATION_DB_ADDR": {
+            "Value": {
+                "Fn::GetAtt": [
+                    "control",
+                    "PublicIp"
+                ]
+            }
+        },
+        "IAAS_ADDR": {
+            "Value": {
+                "Fn::GetAtt": [
+                    "control",
+                    "PublicIp"
+                ]
+            }
+        },
+        "COMPUTE_API_ADDR": {
+            "Value": {
+                "Fn::GetAtt": [
+                    "kvm_region",
+                    "PublicIp"
+                ]
+            }
+        },
+        "COMPUTE_XVPVNC_API_ADDR": {
+            "Value": {
+                "Fn::GetAtt": [
+                    "kvm_region",
+                    "PublicIp"
+                ]
+            }
+        },
+        "COMPUTE_NOVNC_API_ADDR": {
+            "Value": {
+                "Fn::GetAtt": [
+                    "kvm_region",
+                    "PublicIp"
+                ]
+            }
+        },
+        "IMAGE_API_ADDR": {
+            "Value": {
+                "Fn::GetAtt": [
+                    "kvm_region",
+                    "PublicIp"
+                ]
+            }
+        },
+        "IMAGE_REGISTRY_API_ADDR": {
+            "Value": {
+                "Fn::GetAtt": [
+                    "kvm_region",
+                    "PublicIp"
+                ]
+            }
+        },
+        "IDENTITY_API_ADDR": {
+            "Value": {
+                "Fn::GetAtt": [
+                    "control",
+                    "PublicIp"
+                ]
+            }
+        },
+        "IDENTITY_ADMIN_API_ADDR": {
+            "Value": {
+                "Fn::GetAtt": [
+                    "control",
+                    "PublicIp"
+                ]
+            }
+        },
+        "VOLUME_API_ADDR": {
+            "Value": {
+                "Fn::GetAtt": [
+                    "kvm_region",
+                    "PublicIp"
+                ]
+            }
+        },
+        "METERING_API_ADDR": {
+            "Value": {
+                "Fn::GetAtt": [
+                    "kvm_region",
+                    "PublicIp"
+                ]
+            }
+        },
+        "NETWORK_API_ADDR": {
+            "Value": {
+                "Fn::GetAtt": [
+                    "control",
+                    "PublicIp"
+                ]
+            }
+        },
+        "ORCHESTRATION_API_ADDR": {
+            "Value": {
+                "Fn::GetAtt": [
+                    "kvm_region",
+                    "PublicIp"
+                ]
+            }
+        },
+        "ORCHESTRATION_CFN_API_ADDR": {
+            "Value": {
+                "Fn::GetAtt": [
+                    "kvm_region",
+                    "PublicIp"
+                ]
+            }
+        },
+        "MEMCACHED_ADDR": {
+            "Value": {
+                "Fn::GetAtt": [
+                    "control",
+                    "PublicIp"
+                ]
+            }
+        },
+        "BPM_IP": {
+            "Value": {
+                "Fn::GetAtt": [
+                    "control",
+                    "PublicIp"
+                ]
+            }
+        },
+        "BPM_FQDN": {
+            "Value": {
+                "Fn::GetAtt": [
+                    "control",
+                    "PublicIp"
+                ]
+            }
+        }
+    }
+}

@@ -1,0 +1,51 @@
+<GeminiEnvironment>
+        <!-- central-server-1 central-server-2 kvm-region network-node kvm-compute-->
+        <host hostname="central-server-1">
+                <component name="openstack-keystone"/>
+                <component name="db2"/>
+                <component name="qpidd"/>
+                <component name="openstack-ceilometer-api"/>
+                <component name="openstack-ceilometer-central"/>
+                <component name="openstack-ceilometer-collector"/>
+        </host>
+        <host hostname="central-server-2">
+                <component name="bpm-dmgr"/>
+                <component name="bpm-node"/>
+                <component name="bpm-server"/>
+                <component name="pcg"/>
+                <component name="scui"/>
+                <component name="httpd"/>
+        </host>
+
+        <host hostname="kvm-region">
+                <component name="openstack-cinder-scheduler"/>
+                <component name="openstack-cinder-volume"/>
+                <component name="openstack-cinder-api"/>
+                <component name="openstack-glance-registry"/>
+                <component name="openstack-glance-api"/>
+                <component name="openstack-nova-api"/>
+                <component name="openstack-nova-cert"/>
+                <component name="openstack-nova-consoleauth"/>
+                <component name="openstack-nova-novncproxy"/>
+                <component name="openstack-nova-scheduler"/>
+                <component name="openstack-nova-conductor"/>
+                <component name="openstack-iaasgateway"/>
+                <component name="openstack-heat-api"/>
+                <component name="openstack-heat-api-cfn"/>
+                <component name="openstack-heat-api-cloudwatch"/>
+                <component name="openstack-heat-engine"/>
+                <component name="neutron-server"/>
+                <component name="neutron-metadata-agent"/>
+        </host>
+
+        <host hostname="network-node">
+                <component name="neutron-dhcp-agent"/>
+                <component name="neutron-linuxbridge-agent"/>
+        </host>
+
+        <host hostname="kvm-compute">
+                <component name="openstack-nova-compute"/>
+                <component name="neutron-linuxbridge-agent"/>
+                <component name="openstack-ceilometer-compute"/>
+        </host>
+</GeminiEnvironment>

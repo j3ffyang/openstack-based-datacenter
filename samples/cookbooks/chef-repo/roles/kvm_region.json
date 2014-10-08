@@ -1,0 +1,29 @@
+{
+  "description": "kvm region with nova controller",
+  "name": "kvm_region",
+  "chef_type": "role",
+  "default_attributes": {
+  },
+  "json_class": "Chef::Role",
+  "override_attributes": {
+  },
+  "env_run_lists": {
+  },
+  "run_list": [
+    "role[os-base]",
+    "recipe[openstack-ops-database::openstack-db-name]",
+    "role[db2-odbc]",
+    "role[os-compute-setup-sco]",
+    "role[os-compute-conductor]",
+    "role[os-compute-scheduler]",
+    "role[os-compute-api-sco]",
+    "role[os-compute-cert]",
+    "role[os-compute-vncproxy]",
+    "role[os-image]",
+    "role[os-block-storage]",
+    "role[os-telemetry-api]",
+    "role[os-telemetry-collector]",
+    "role[os-telemetry-agent-central]",
+    "role[os-orchestration]"
+  ]
+}

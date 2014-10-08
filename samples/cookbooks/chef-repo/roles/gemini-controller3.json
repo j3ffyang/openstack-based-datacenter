@@ -1,0 +1,64 @@
+{
+  "description": "Gemini Controller Node1, which has galera, rabbit, and haproxy natively",
+  "name": "gemini-controller3",
+  "chef_type": "role",
+  "default_attributes": {
+  },
+  "json_class": "Chef::Role",
+  "override_attributes": {
+      "mysql": {
+          "client": {
+               "packages": ["mariadb","mariadb-devel"]
+          }
+      },
+      "openstack":{
+          "host": "172.16.0.35",
+          "endpoints": {
+              "bind-host": "172.16.0.35",
+              "mq": {
+                 "host": "172.16.0.35"
+              }
+          },
+          "block-storage": {
+              "volume": {
+                  "driver": "cinder.volume.drivers.rbd.RBDDriver"
+              },
+              "platform": {
+                  "cinder_ceph_packages": [
+                      "python-ceph", 
+                      "ceph-common"
+                  ]
+              },
+              "rbd_pool": "volumes",
+              "rbd_ceph_conf": "/etc/ceph/ceph.conf",
+              "rbd_user": "cinder",
+              "rbd_secret_uuid": "dea66dcd-d661-4569-983a-b4a6e6f36824",
+              "rbd_key_name": "AQD0ZCVUMOS6EhAAAqswAN263yDJkJmegRf6rw=="
+          },
+          "image": {
+              "api": {
+                  "default_store": "rbd",
+                  "rbd": {
+                      "rbd_store_ceph_conf": "/etc/ceph/ceph.conf",
+                      "rbd_store_user": "glance",
+                      "rbd_store_pool": "images",
+                      "rbd_store_chunk_size": "8",
+                      "key_name": "AQB6WRxUaLyuLBAA2VlgtS4lXk+WDR5k12eEuQ=="
+                  }
+               }
+          },
+          "ceph": {
+              "global": {
+                  "fsid": "ed095412-5171-4d91-8d7e-5f5678985cd2",
+                  "mon_initial_members": ["r83x6u16","r83x6u18","r83x6u20"],
+                  "mon_host": ["10.0.0.201","10.0.0.202","10.0.0.202"]
+               }
+          }
+      }
+  },
+  "env_run_lists": {
+  },
+  "run_list": [
+     "role[gemini-controller]"
+  ]
+}

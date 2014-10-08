@@ -1,0 +1,16 @@
+{
+  "description": "LDAP config for SCO",
+  "name": "sco-ldap",
+  "chef_type": "role",
+  "default_attributes": {
+  },
+  "json_class": "Chef::Role",
+  "override_attributes": {
+  },
+  "env_run_lists": {
+  },
+  "run_list": [
+    "recipe[ldap]"
+  ]
+}
+

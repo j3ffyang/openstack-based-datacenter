@@ -1,0 +1,3 @@
+{
+  "run_list":["recipe[ganglia]","recipe[ganglia::web]","recipe[ganglia::graphite]"]
+}

@@ -1,0 +1,59 @@
+{
+  "description": "Gemini Controller Node2, which has galera, rabbit, and haproxy natively",
+  "name": "gemini-controller2",
+  "chef_type": "role",
+  "default_attributes": {
+  },
+  "json_class": "Chef::Role",
+  "override_attributes": {
+      "openstack":{
+          "host": "172.16.27.232",
+          "endpoints": {
+              "bind-host": "172.16.27.232",
+              "mq": {
+                 "host": "172.16.27.232"
+              }
+          },
+          "block-storage": {
+              "volume": {
+                  "driver": "cinder.volume.drivers.rbd.RBDDriver"
+              },
+              "platform": {
+                  "cinder_ceph_packages": [
+                      "python-ceph", 
+                      "ceph-common"
+                  ]
+              },
+              "rbd_pool": "volumes",
+              "rbd_ceph_conf": "/etc/ceph/ceph.conf",
+              "rbd_user": "cinder",
+              "rbd_secret_uuid": "4e8c0d88-38ec-4005-bc8c-d23e3fcff750",
+              "rbd_key_name": "AQAVfxpUCIrkEBAAk7AHSpP55r52KWMvE4UAdA=="
+          },
+          "image": {
+              "api": {
+                  "default_store": "rbd",
+                  "rbd": {
+                      "rbd_store_ceph_conf": "/etc/ceph/ceph.conf",
+                      "rbd_store_user": "glance",
+                      "rbd_store_pool": "images",
+                      "rbd_store_chunk_size": "8",
+                      "key_name": "AQAWfxpUOKHmNRAACSK7PfYnyLi6kyE8+f7V7A=="
+                  }
+               }
+          },
+          "ceph": {
+              "global": {
+                  "fsid": "cb750945-9585-4699-b231-808694fde55f",
+                  "mon_initial_members": ["R27-IDP-21"],
+                  "mon_host": ["172.16.27.21"]
+               }
+          }
+      }
+  },
+  "env_run_lists": {
+  },
+  "run_list": [
+     "role[gemini-controller]"
+  ]
+}
