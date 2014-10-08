@@ -47,7 +47,7 @@
   * [Post Install Configuration](CephPostConfiguration.markdown)
 
 ## Deploy Galera with MariaDB
-  * [Galera](DeployGalera.markdown)
+  * [Deploy Galera Cluster](DeployGalera.markdown)
   * RabbitMQ Cluster
 
 ## Deploy OpenStack
