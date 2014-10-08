@@ -8,3 +8,15 @@
 [Environments](samples/cookbooks/chef-repo/environments/gemini.json)        
 
 [erb](samples/cookbooks/erb/gemini.erb)        
+
+## Deploy Galera
+
+Log into root@chef:/opt/git/gemini/scripts
+
+	./deploy_controller.sh
+
+## Update root privilege
+
+	mysql -u mysql -p password -h localhost
+	update user set host='%' where host='localhost';
+	flush priviledges;
