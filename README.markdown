@@ -23,6 +23,7 @@
 ## [CentOS Repo](CreateCentosRepo.markdown)
 
 ## [Build an Image](BuildAnImage.markdown)
+  * Build a Standard Image
 
 ## [Cobbler Configuration and Template](BuildCobblerVM.markdown)
   * Bare- metal provisioning
