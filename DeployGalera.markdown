@@ -3,7 +3,6 @@
 	for i in 172.16.0.{33..35}; do scp /opt/git/mustang/samples/hosts/hosts $i:/etc/; done
 
 ## Update Cookbook
-The cookbook is referenced from our another development and test environment, which is called "Gemini". We just didn't change its name and use it as it is.
 [Roles](samples/cookbooks/chef-repo/roles)        
 
 [Environments](samples/cookbooks/chef-repo/environments/gemini.json)        
