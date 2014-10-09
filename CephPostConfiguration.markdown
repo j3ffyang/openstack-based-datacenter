@@ -16,3 +16,8 @@
 	[client.glance]
 	        key = AQD+ZCVUSIgDLBAA4tFE6GozDXExqc8BtDanFQ==
 	
+
+## Verify
+
+	ceph -s
+	ceph -w
