@@ -1,4 +1,7 @@
 ## Install and Basic Configuration
+
+Reference: [http://www.rabbitmq.com/clustering.html](http://www.rabbitmq.com/clustering.html)
+
 Our cookbook installs and configures RabbitMQ on 3 nodes basically. But the 2nd and 3rd nodes didn't start up in cluster properly.
 
 On 1st RabbitMQ node    
@@ -50,7 +53,7 @@ Do the following commands on 2nd and 3rd RabbitMQ nodes
 	[root@ctrlr2 ~]# rabbitmqctl join_cluster --ram rabbit@ctrlr0
 	Clustering node rabbit@ctrlr2 with rabbit@ctrlr0 ...
 	...done.
-	[root@ctrlr2 ~]# 
+	[root@ctrlr2 ~]# rabbitmqctl start_app
 	
 ## Check the Status
 
