@@ -48,7 +48,7 @@
 
 ## Deploy Galera with MariaDB
   * [Deploy Galera Cluster](DeployGalera.markdown)
-  * RabbitMQ Cluster
+  * [Deploy RabbitMQ Cluster](DeployRabbitMQCluster.markdown)
 
 ## Deploy OpenStack
   * Chef Architecture
