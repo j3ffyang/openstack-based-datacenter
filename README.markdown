@@ -33,8 +33,6 @@
   * [Chef Repository](ChefRepo.markdown)
   * [Chef Client](ChefClient.markdown), including how deployment works after VM/ hosts provisioned
 
-## [Jenkins](BuildJenkins.markdown)
-
 ## [Controller VMs](BuildControllerVM.markdown)
   * Respectively host clusters of MySQL, queue, etc
 
@@ -56,6 +54,8 @@
   * Chef Architecture
   * Git Architecture
   * OpenStack Cookbook Repo
+
+## [Jenkins](BuildJenkins.markdown)
 
 ## Software Defined Network
   * Neutron HA
