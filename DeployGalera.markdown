@@ -11,7 +11,7 @@
 
 ## Deploy Galera
 
-Log into root@chef:/opt/git/gemini/scripts. The script is located at [deploy_controller.sh](samples/cookbooks/script/deploy_controller.sh)
+Log into root@chef:/opt/git/gemini/scripts. The script is located at [deploy_controller.sh](samples/cookbooks/scripts/deploy_controller.sh)
 
 	./deploy_controller.sh
 
