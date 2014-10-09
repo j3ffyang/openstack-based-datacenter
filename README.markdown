@@ -44,7 +44,7 @@
   * [Ceph Node Configuration](CephDistributedStorage.markdown)
   * [Add New Ceph OSD](CephAddOSD.markdown)
   * [Add New Monitor](CephAddMon.markdown)
-  * [Post Install Configuration](CephPostConfiguration.markdown)
+  * [Post Install Configuration and Verify](CephPostConfiguration.markdown)
 
 ## Deploy Galera with MariaDB
   * [Deploy Galera Cluster](DeployGalera.markdown)
