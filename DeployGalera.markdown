@@ -21,7 +21,7 @@ Log into root@chef:/opt/git/gemini/scripts. The script is located at [deploy_con
 	update user set host='%' where host='localhost';
 	flush priviledges;
 
-## verify Cluster Status
+## Verify Cluster Status
 
 
 	MySQL [mysql]> SHOW STATUS LIKE 'wsrep%';
