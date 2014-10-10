@@ -99,6 +99,14 @@ enabled=1
 gpgcheck=0
 priority=1
 
+[extras]
+name=CentOS-$releasever - Extras
+mirrorlist=http://mirrorlist.centos.org/?release=7&arch=x86_64&repo=extras
+#baseurl=http://mirror.centos.org/centos/$releasever/extras/$basearch/
+gpgcheck=0
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
+proxy=http://9.115.78.100:8085/
+
 [rhel-epel]
 name=Extra Packages for Enterprise Linux 6 - x86_64 
 #baseurl=http://download.fedoraproject.org/pub/epel/6/x86_64
