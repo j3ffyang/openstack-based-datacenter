@@ -23,6 +23,7 @@
 ## [CentOS Repo](CreateCentosRepo.markdown)
 
 ## [Build an Image](BuildAnImage.markdown)
+  * Build a Standard Image
 
 ## [Cobbler Configuration and Template](BuildCobblerVM.markdown)
   * Bare- metal provisioning
@@ -33,8 +34,6 @@
   * [Chef Repository](ChefRepo.markdown)
   * [Chef Client](ChefClient.markdown), including how deployment works after VM/ hosts provisioned
 
-## [Jenkins](BuildJenkins.markdown)
-
 ## [Controller VMs](BuildControllerVM.markdown)
   * Respectively host clusters of MySQL, queue, etc
 
@@ -44,16 +43,20 @@
   * [Ceph Node Configuration](CephDistributedStorage.markdown)
   * [Add New Ceph OSD](CephAddOSD.markdown)
   * [Add New Monitor](CephAddMon.markdown)
-  * [Post Install Configuration](CephPostConfiguration.markdown)
+  * [Post Install Configuration and Verify](CephPostConfiguration.markdown)
 
 ## Deploy Galera with MariaDB
   * [Deploy Galera Cluster](DeployGalera.markdown)
+
+## Deploy RabbitMQ Cluster
   * [Deploy RabbitMQ Cluster](DeployRabbitMQCluster.markdown)
 
 ## Deploy OpenStack
   * Chef Architecture
   * Git Architecture
   * OpenStack Cookbook Repo
+
+## [Jenkins](BuildJenkins.markdown)
 
 ## Software Defined Network
   * Neutron HA
