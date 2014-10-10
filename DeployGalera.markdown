@@ -15,7 +15,7 @@ Log into root@chef:/opt/git/gemini/scripts. The script is located at [deploy_con
 
 	./deploy_controller.sh
 
-## Update root privilege
+## Update root privilege through virtual IP (vIP= 37)
 
 	mysql -u mysql -p password -h localhost
 	update user set host='%' where host='localhost';

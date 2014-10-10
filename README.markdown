@@ -52,8 +52,6 @@
   * [Deploy RabbitMQ Cluster](DeployRabbitMQCluster.markdown)
 
 ## Deploy OpenStack
-  * Chef Architecture
-  * Git Architecture
   * OpenStack Cookbook Repo
 
 ## [Jenkins](BuildJenkins.markdown)
