@@ -1,0 +1,19 @@
+{
+  "description": "Gemini Network Node",
+  "name": "gemini-network",
+  "chef_type": "role",
+  "default_attributes": {
+  },
+  "json_class": "Chef::Role",
+  "override_attributes": {
+  },
+  "env_run_lists": {
+  },
+  "run_list": [
+     "role[os-base]",
+     "role[os-network-dhcp-agent]",
+     "role[os-network-l3-agent]",
+     "role[os-network-metadata-agent]",
+     "role[os-network-openvswitch]"
+  ]
+}
