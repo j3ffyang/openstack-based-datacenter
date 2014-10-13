@@ -6,12 +6,19 @@ Our cookbook installs and configures RabbitMQ on 3 nodes basically. But the 2nd 
 
 On 1st RabbitMQ node    
 
+	[root@ctrlr0 rabbitmq]# rabbitmq-server --detached
 	[root@ctrlr0 rabbitmq]# rabbitmqctl cluster_status
 	Cluster status of node rabbit@ctrlr0 ...
 	[{nodes,[{disc,[rabbit@ctrlr0]},{ram,[rabbit@ctrlr1]}]},
 	 {running_nodes,[rabbit@ctrlr0]},
 	 {partitions,[]}]
 	...done.
+
+        [root@ctrlr0 ~]# rabbitmqctl stop_app
+        Stopping node rabbit@ctrlr0 ...
+        ...done.
+        [root@ctrlr0 ~]# rabbitmqctl start_app
+
 	
 On 2nd and 3rd RabbitMQ node
 
