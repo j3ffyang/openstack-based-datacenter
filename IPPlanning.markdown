@@ -19,7 +19,7 @@
 ## IP Reservation. Also defined at [/etc/hosts](samples/hosts/hosts) for Management network, referring to [network architecture](NetworkConfiguration.markdown)
 | Hostname | NIC0/br0 | NIC1/br1 | NIC2/br2 | NIC3/br3 | IMM | Notice |
 | -------- | ---- | ---- | ---- | ---- | ---- | ---- |
-| r83x6u16 | 172.16.0.201 | | 10.0.0.201 | 10.10.0.201 | 172.29.83.16 | storage node, mounted at unit 16 on rack 83. 172.18 connecting to VM network and 172.17 connecting to Ceph network |
+| r83x6u16 | 172.16.0.201 | | 10.0.0.201 | 10.10.0.201 | 172.29.83.16 | storage node, mounted at unit 16 on rack 83. |
 | r83x6u18 | 172.16.0.202 | | 10.0.0.202 | 10.10.0.202 | 172.29.83.18 | storage node, mounted at unit 18 on rack 83. |
 | r83x6u20 | 172.16.0.203 | | 10.0.0.203 | 10.10.0.203 | 172.29.83.20 | storage node, mounted at unit 20 on rack 83. |
 
