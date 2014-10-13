@@ -23,10 +23,10 @@
 | r83x6u18 | 172.16.0.202 | | 10.0.0.202 | 10.10.0.202 | 172.29.83.18 | storage node, mounted at unit 18 on rack 83. |
 | r83x6u20 | 172.16.0.203 | | 10.0.0.203 | 10.10.0.203 | 172.29.83.20 | storage node, mounted at unit 20 on rack 83. |
 
+
 | Hostname | NIC0/br0 | NIC1/br1 | NIC2/br2 | NIC3/br3 | IMM | Notice |
 | -------- | ---- | ---- | ---- | ---- | ---- | ---- |
 | r83x5u09 | 172.16.0.21 | 9.110.178.28 | 172.29.83.249 | | 172.29.83.9 | controller host. NIC3/br3's IP provides bridge to Cobbler VM to connect into IMM network |
-| |  |  |  |  |  |
 | |  |  |  |  |  |
 | cobbler | 172.16.0.31 | | 172.29.0.31 | |
 | chef | 172.16.0.32 | | | |
