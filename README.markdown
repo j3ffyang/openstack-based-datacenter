@@ -7,11 +7,12 @@
   * Caching on RAID Card
   * Disk Partition Layout
 
-## [Network Architecture](NetworkConfiguration.markdown)
-  * Network Segmentations
-
-## [Hostnaming and IP Planning](IPPlanning.markdown)
-  * IP Range and Reservation Plan
+## Network
+  * [Architecture and Segment](NetworkConfiguration.markdown)
+  * [Hostnaming and IP Planning](IPPlanning.markdown)
+  * [Controller VM Network](BuildFirstBox.markdown)
+  * [Cobbler VM Network](BuildCobblerVM.markdown)
+  * [Ceph Network](CephDistributedStorage.markdown)
 
 ## [Hardware Specification](HardwareSpec.markdown)
   * Machine Location and Cabling, MAC Address, Switch Information, etc.
@@ -65,5 +66,3 @@
   * Log Analysis by Logstash
 
 ## [Troubleshooting](TroubleShooting.markdown)
-
-## Gao Ge and Zhang Yi
