@@ -34,8 +34,8 @@ Physical Host
 
 Controller VM
 
-| Hostname | NIC0/br0 | NIC1/br1 | NIC2/br2 | NIC3/br3 | IMM | 
-| -------- | ---- | ---- | ---- | ---- | ---- | ---- |
+| Hostname | NIC0/br0 | NIC1/br1 | NIC2/br2 | NIC3/br3 | 
+| -------- | -------- | -------- | -------- | -------- | 
 | cobbler | 172.16.0.31 | | 172.29.0.31 | |
 | chef | 172.16.0.32 | | | |
 | ctrlr0 | 172.16.0.33 | | | |
