@@ -33,6 +33,11 @@ Ceph Distributed Host
 | r83x6u18 | 172.16.0.202 | | 10.0.0.202 | 10.10.0.202 | 172.29.83.18 |
 | r83x6u20 | 172.16.0.203 | | 10.0.0.203 | 10.10.0.203 | 172.29.83.20 |
 
+Compute Host
+| Hostname | NIC0 |
+| -------- | ---- |
+| r83x6u14 | 172.16.0.101 |
+
 Controller VM
 
 | Hostname | NIC0 | NIC1 | NIC2 | NIC3 | 
