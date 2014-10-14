@@ -8,10 +8,11 @@
   * Disk Partition Layout
 
 ## Network
-  * [Network Architecture](NetworkConfiguration.markdown)
+  * [Architecture](NetworkConfiguration.markdown)
   * [Hostnaming and IP Planning](IPPlanning.markdown)
   * [Controller VM Network](BuildFirstBox.markdown)
   * [Cobbler VM Network](BuildCobblerVM.markdown)
+  * [Ceph Network](CephDistributedStorage.markdown)
 
 ## [Hardware Specification](HardwareSpec.markdown)
   * Machine Location and Cabling, MAC Address, Switch Information, etc.
