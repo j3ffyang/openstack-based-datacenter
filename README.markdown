@@ -10,7 +10,7 @@
 ## Network
   * [Architecture and Segment](NetworkConfiguration.markdown)
   * [Hostnaming and IP Planning](IPPlanning.markdown)
-  * [Controller VM Network](BuildFirstBox.markdown)
+  * [Physical Host and Controller VM Network](BuildFirstBox.markdown)
   * [Cobbler VM Network](BuildCobblerVM.markdown)
   * [Ceph Network](CephDistributedStorage.markdown)
 
