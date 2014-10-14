@@ -16,7 +16,8 @@
 | 201 | 240 | Storage |
 | 241 | 249 | VPN for maintenance |
 
-## IP Reservation. Also defined at [/etc/hosts](samples/hosts/hosts) for Management network, referring to [network architecture](NetworkConfiguration.markdown)
+## IP Reservation. Also defined at [/etc/hosts](samples/hosts/hosts)
+Referring to [network architecture](NetworkConfiguration.markdown)
 
 Ceph Distributed Host
 
