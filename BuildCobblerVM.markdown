@@ -74,7 +74,7 @@ Log in as "cobbler"
 
 	https://172.16.0.31/cobbler_web
 
-## Install Advanced Seeting Utility (ASU) (optional)
+## Install Advanced Seting Utility (ASU) (optional)
 Download package from [http://www.ibm.com/support/entry/portal/docdisplay?lndocid=TOOL-ASU](http://www-947.ibm.com/support/entry/portal/docdisplay?lndocid=TOOL-ASU)    
 
 	wget https://delivery04.dhe.ibm.com/sar/CMA/XSA/04mu9/0/ibm_utl_asu_asut85b-9.61_linux_x86-64.rpm
