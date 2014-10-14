@@ -8,7 +8,7 @@
   * Disk Partition Layout
 
 ## Network
-  * [Architecture](NetworkConfiguration.markdown)
+  * [Architecture and Segment](NetworkConfiguration.markdown)
   * [Hostnaming and IP Planning](IPPlanning.markdown)
   * [Controller VM Network](BuildFirstBox.markdown)
   * [Cobbler VM Network](BuildCobblerVM.markdown)
