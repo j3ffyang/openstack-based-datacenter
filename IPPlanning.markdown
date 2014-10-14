@@ -17,17 +17,22 @@
 | 241 | 249 | VPN for maintenance |
 
 ## IP Reservation. Also defined at [/etc/hosts](samples/hosts/hosts) for Management network, referring to [network architecture](NetworkConfiguration.markdown)
-| Hostname | NIC0/br0 | NIC1/br1 | NIC2/br2 | NIC3/br3 | IMM | Notice |
-| -------- | ---- | ---- | ---- | ---- | ---- | ---- |
-| r83x6u16 | 172.16.0.201 | | 10.0.0.201 | 10.10.0.201 | 172.29.83.16 | storage node, mounted at unit 16 on rack 83. |
-| r83x6u18 | 172.16.0.202 | | 10.0.0.202 | 10.10.0.202 | 172.29.83.18 | storage node, mounted at unit 18 on rack 83. |
-| r83x6u20 | 172.16.0.203 | | 10.0.0.203 | 10.10.0.203 | 172.29.83.20 | storage node, mounted at unit 20 on rack 83. |
 
-
-| Hostname | NIC0/br0 | NIC1/br1 | NIC2/br2 | NIC3/br3 | IMM | Notice |
+Ceph Distributed Host
+| Hostname | NIC0/br0/Mgmt | NIC1/br1 | NIC2/br2/ceph public/fiber | NIC3/br3/ceph private/fiber | IMM |
 | -------- | ---- | ---- | ---- | ---- | ---- | ---- |
-| r83x5u09 | 172.16.0.21 | 9.110.178.28 | 172.29.83.249 | | 172.29.83.9 | controller host. NIC2/br2's IP provides bridge to Cobbler VM to connect into IMM network |
-| |  |  |  |  |  |
+| r83x6u16 | 172.16.0.201 | | 10.0.0.201 | 10.10.0.201 | 172.29.83.16 | 
+| r83x6u18 | 172.16.0.202 | | 10.0.0.202 | 10.10.0.202 | 172.29.83.18 |
+| r83x6u20 | 172.16.0.203 | | 10.0.0.203 | 10.10.0.203 | 172.29.83.20 |
+
+Physical Host
+| Hostname | NIC0/br0/mgmt | NIC1/br1/public | NIC2/br2/IMM | NIC3/br3/ceph public/fiber | IMM |
+| -------- | ---- | ---- | ---- | ---- | ---- | ---- |
+| r83x5u09 | 172.16.0.21 | 9.110.178.28 | 172.29.83.249 | 10.0.0.21 | 172.29.83.9 | 
+
+Controller VM
+| Hostname | NIC0/br0 | NIC1/br1 | NIC2/br2 | NIC3/br3 | IMM | 
+| -------- | ---- | ---- | ---- | ---- | ---- | ---- |
 | cobbler | 172.16.0.31 | | 172.29.0.31 | |
 | chef | 172.16.0.32 | | | |
 | ctrlr0 | 172.16.0.33 | | | |
