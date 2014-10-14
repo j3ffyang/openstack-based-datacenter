@@ -19,6 +19,12 @@
 ## IP Reservation. Also defined at [/etc/hosts](samples/hosts/hosts)
 Referring to [network architecture](NetworkConfiguration.markdown)
 
+Physical Host
+
+| Hostname | NIC0/br0/Mgmt | NIC1/br1/Public | NIC2/br2/IMM | NIC3/br3/Ceph Public/fiber | IMM |
+| -------- | ---- | ---- | ---- | ---- | ---- | ---- |
+| r83x5u09 | 172.16.0.21 | 9.110.178.28 | 172.29.83.249 | 10.0.0.21 | 172.29.83.9 | 
+
 Ceph Distributed Host
 
 | Hostname | NIC0/br0/Mgmt | NIC1/br1 | NIC2/br2/Ceph public/fiber | NIC3/br3/Ceph private/fiber | IMM |
@@ -26,12 +32,6 @@ Ceph Distributed Host
 | r83x6u16 | 172.16.0.201 | | 10.0.0.201 | 10.10.0.201 | 172.29.83.16 | 
 | r83x6u18 | 172.16.0.202 | | 10.0.0.202 | 10.10.0.202 | 172.29.83.18 |
 | r83x6u20 | 172.16.0.203 | | 10.0.0.203 | 10.10.0.203 | 172.29.83.20 |
-
-Physical Host
-
-| Hostname | NIC0/br0/Mgmt | NIC1/br1/Public | NIC2/br2/IMM | NIC3/br3/Ceph Public/fiber | IMM |
-| -------- | ---- | ---- | ---- | ---- | ---- | ---- |
-| r83x5u09 | 172.16.0.21 | 9.110.178.28 | 172.29.83.249 | 10.0.0.21 | 172.29.83.9 | 
 
 Controller VM
 
