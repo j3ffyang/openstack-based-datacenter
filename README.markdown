@@ -10,8 +10,8 @@
 ## Network
   * [Network Architecture](NetworkConfiguration.markdown)
   * [Hostnaming and IP Planning](IPPlanning.markdown)
-  * [Controller Network](BuildFirstBox.markdown)
-  * [Cobbler Network](BuildCobblerVM.markdown)
+  * [Controller VM Network](BuildFirstBox.markdown)
+  * [Cobbler VM Network](BuildCobblerVM.markdown)
 
 ## [Hardware Specification](HardwareSpec.markdown)
   * Machine Location and Cabling, MAC Address, Switch Information, etc.
