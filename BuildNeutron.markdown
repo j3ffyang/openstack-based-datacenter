@@ -4,7 +4,7 @@
 
 	hostnamectl set-hostname neutron
 
-## Assign IP Addresses, accouding to [IP PLanning](IPPlanning.markdown)
+## Assign IP Addresses, accouding to [IP Planning](IPPlanning.markdown)
 
 | eth0 | eth1 | eth2 |
 | ---- | ---- | ---- |
