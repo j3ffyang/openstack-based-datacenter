@@ -66,19 +66,19 @@
             "quota": {
               "driver": "neutron.db.quota_db.DbQuotaDriver"
             },
-            "interface_driver": "neutron.agent.linux.interface.BridgeInterfaceDriver",
+            "interface_driver": "neutron.agent.linux.interface.OVSInterfaceDriver",
             "l3": {
               "router_delete_namespaces": "True",
-              "external_network_bridge_interface": ""
+              "external_network_bridge_interface": "eth1"
             },
             "ml2": {
-              "type_drivers": "flat,vlan,vxlan",
-              "mechanism_drivers": "linuxbridge",
+              "type_drivers": "flat,vlan,vxlan,gre",
+              "mechanism_drivers": "openvswitch",
               "network_vlan_ranges": "physnet1",
               "flat_networks": "physnet1",
               "vni_ranges": "10000:20000",
               "vxlan_group": "224.1.1.200",
-              "tenant_network_types": "flat,vlan,vxlan"
+              "tenant_network_types": "flat,vlan,vxlan,gre"
             },
             "platform": {
               "neutron_client_packages": [
