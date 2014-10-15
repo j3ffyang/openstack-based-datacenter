@@ -69,7 +69,7 @@
             "interface_driver": "neutron.agent.linux.interface.OVSInterfaceDriver",
             "l3": {
               "router_delete_namespaces": "True",
-              "external_network_bridge_interface": "eth1"
+              "external_network_bridge_interface": "eth2"
             },
             "ml2": {
               "type_drivers": "flat,vlan,vxlan,gre",
