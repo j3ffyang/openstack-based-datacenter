@@ -6,6 +6,9 @@
 
 ## Assign IP Addresses, accouding to [IP Planning](IPPlanning.markdown)
 
-| eth0 | eth1 | eth2 |
-| ---- | ---- | ---- |
-| 172.16.0.38 | 9.110.178.27 | 10.0.0.38 |
+## Update cookbook environment
+
+## Trigger cookbook
+Switch and log into Chef server
+
+	knife bootstrap 172.16.0.38 -c /etc/chef/knife.rb -u root -P passw0rd -N neutron --template-file /opt/git/mustang/samples/cookbooks/erb/gemini.erb -r 'role[gemini-network]' -E gemini
