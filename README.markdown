@@ -13,6 +13,7 @@
   * [Physical Host and Controller VM Network](BuildFirstBox.markdown)
   * [Cobbler VM Network](BuildCobblerVM.markdown)
   * [Ceph Network](CephDistributedStorage.markdown)
+  * [Neutron Network](BuildNeutron.markdown)
 
 ## [Hardware Specification](HardwareSpec.markdown)
   * Machine Location and Cabling, MAC Address, Switch Information, etc.
@@ -54,11 +55,12 @@
 
 ## Deploy OpenStack
   * OpenStack Cookbook Repo
-
-## [Jenkins](BuildJenkins.markdown)
+  * [Build Neutron Controller](BuildNeutron.markdown)
 
 ## Software Defined Network
   * Neutron HA
+
+## [Jenkins](BuildJenkins.markdown)
 
 ## Operation
   * One rule everybody should remember is to run "who" and "wall" prior to shutdown the server!
