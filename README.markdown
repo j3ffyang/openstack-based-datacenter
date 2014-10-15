@@ -54,11 +54,12 @@
 
 ## Deploy OpenStack
   * OpenStack Cookbook Repo
-
-## [Jenkins](BuildJenkins.markdown)
+  * [Build Neutron Controller](BuildNeutron.markdown)
 
 ## Software Defined Network
   * Neutron HA
+
+## [Jenkins](BuildJenkins.markdown)
 
 ## Operation
   * One rule everybody should remember is to run "who" and "wall" prior to shutdown the server!
