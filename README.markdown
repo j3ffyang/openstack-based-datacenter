@@ -3,18 +3,18 @@
 
 ## Pre- install Preparation
   * [Hardware Specification](HardwareSpec.markdown)
-  * [Build an Image](BuildAnImage.markdown)
   * [Disk Configuration](DiskConfiguration.markdown)
+  * [Build the 1st Controller Physical Box](BuildFirstBox.markdown)
+  * [Build an Image](BuildAnImage.markdown)
   * [Cobbler Configuration and Template](BuildCobblerVM.markdown)
   * [Setup an NTP Server](CreateNTP.markdown)
-  * [Build the 1st Controller Physical Box](BuildFirstBox.markdown)
-  * [Install and Configure OpenVPN](InstallAndConfigureOpenvpn.markdown)
   * [CentOS Repo](CreateCentosRepo.markdown)
 
 ## Network
   * [Architecture and Segment](NetworkConfiguration.markdown)
   * [Hostnaming and IP Planning](IPPlanning.markdown)
   * [Physical Host and Controller VM Network](BuildFirstBox.markdown)
+  * [Install and Configure OpenVPN](InstallAndConfigureOpenvpn.markdown)
   * [Cobbler VM Network](BuildCobblerVM.markdown)
   * [Ceph Network](CephDistributedStorage.markdown)
   * [Neutron Network](BuildNeutron.markdown)
