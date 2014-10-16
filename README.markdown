@@ -34,13 +34,10 @@
 ## [Controller VMs](BuildControllerVM.markdown)
   * Respectively host clusters of MySQL, queue, etc
 
-## Deploy Galera with MariaDB
+## Deployment
+  * Deploy HAProxy and Keepalived
   * [Deploy Galera Cluster](DeployGalera.markdown)
-
-## Deploy RabbitMQ Cluster
   * [Deploy RabbitMQ Cluster](DeployRabbitMQCluster.markdown)
-
-## Deploy OpenStack
   * OpenStack Cookbook Repo
   * [Build Neutron Controller](BuildNeutron.markdown)
 
