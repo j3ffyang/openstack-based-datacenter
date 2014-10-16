@@ -9,6 +9,7 @@
   * [Setup an NTP Server](CreateNTP.markdown)
   * [Build the 1st Controller Physical Box](BuildFirstBox.markdown)
   * [Install and Configure OpenVPN](InstallAndConfigureOpenvpn.markdown)
+  * [CentOS Repo](CreateCentosRepo.markdown)
 
 ## Network
   * [Architecture and Segment](NetworkConfiguration.markdown)
@@ -17,8 +18,6 @@
   * [Cobbler VM Network](BuildCobblerVM.markdown)
   * [Ceph Network](CephDistributedStorage.markdown)
   * [Neutron Network](BuildNeutron.markdown)
-
-## [CentOS Repo](CreateCentosRepo.markdown)
 
 ## Chef Automation
   * [Chef Repository](ChefRepo.markdown)
