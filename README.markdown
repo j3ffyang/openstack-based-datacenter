@@ -1,11 +1,14 @@
 ## [Design Thoughts and Architecture Overview](ArchitectureOverview.markdown)
   * Principle and Belief
 
-## [Disk Configuration](DiskConfiguration.markdown)
-  * Configuration Spec on Controller, Compute and Storage Node Respectively
-  * RAID Group Configuration
-  * Caching on RAID Card
-  * Disk Partition Layout
+## Pre- install Preparation
+  * [Hardware Specification](HardwareSpec.markdown)
+  * [Build an Image](BuildAnImage.markdown)
+  * [Disk Configuration](DiskConfiguration.markdown)
+  * [Cobbler Configuration and Template](BuildCobblerVM.markdown)
+  * [Setup an NTP Server](CreateNTP.markdown)
+  * [Build the 1st Controller Physical Box](BuildFirstBox.markdown)
+  * [Install and Configure OpenVPN](InstallAndConfigureOpenvpn.markdown)
 
 ## Network
   * [Architecture and Segment](NetworkConfiguration.markdown)
@@ -15,22 +18,7 @@
   * [Ceph Network](CephDistributedStorage.markdown)
   * [Neutron Network](BuildNeutron.markdown)
 
-## [Hardware Specification](HardwareSpec.markdown)
-  * Machine Location and Cabling, MAC Address, Switch Information, etc.
-
-## 1st Controller Physical Box
-  * [Build the 1st Controller Physical Box](BuildFirstBox.markdown)
-  * [Install and Configure OpenVPN](InstallAndConfigureOpenvpn.markdown)
-
 ## [CentOS Repo](CreateCentosRepo.markdown)
-
-## [Build an Image](BuildAnImage.markdown)
-  * Build a Standard Image
-
-## [Cobbler Configuration and Template](BuildCobblerVM.markdown)
-  * Bare- metal provisioning
-
-## [Setup an NTP Server](CreateNTP.markdown)
 
 ## Chef Automation
   * [Chef Repository](ChefRepo.markdown)
