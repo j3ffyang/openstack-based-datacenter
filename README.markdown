@@ -1,43 +1,27 @@
 ## [Design Thoughts and Architecture Overview](ArchitectureOverview.markdown)
   * Principle and Belief
 
-## [Disk Configuration](DiskConfiguration.markdown)
-  * Configuration Spec on Controller, Compute and Storage Node Respectively
-  * RAID Group Configuration
-  * Caching on RAID Card
-  * Disk Partition Layout
+## Pre- install Preparation
+  * [Hardware Specification](HardwareSpec.markdown)
+  * [Disk Configuration](DiskConfiguration.markdown)
+  * [Build the 1st Controller Physical Box](BuildFirstBox.markdown)
+  * [Build an Image](BuildAnImage.markdown)
+  * [Cobbler Configuration and Template](BuildCobblerVM.markdown)
+  * [Setup an NTP Server](CreateNTP.markdown)
+  * [CentOS Repo](CreateCentosRepo.markdown)
 
 ## Network
   * [Architecture and Segment](NetworkConfiguration.markdown)
   * [Hostnaming and IP Planning](IPPlanning.markdown)
   * [Physical Host and Controller VM Network](BuildFirstBox.markdown)
+  * [Install and Configure OpenVPN](InstallAndConfigureOpenvpn.markdown)
   * [Cobbler VM Network](BuildCobblerVM.markdown)
   * [Ceph Network](CephDistributedStorage.markdown)
   * [Neutron Network](BuildNeutron.markdown)
 
-## [Hardware Specification](HardwareSpec.markdown)
-  * Machine Location and Cabling, MAC Address, Switch Information, etc.
-
-## 1st Controller Physical Box
-  * [Build the 1st Controller Physical Box](BuildFirstBox.markdown)
-  * [Install and Configure OpenVPN](InstallAndConfigureOpenvpn.markdown)
-
-## [CentOS Repo](CreateCentosRepo.markdown)
-
-## [Build an Image](BuildAnImage.markdown)
-  * Build a Standard Image
-
-## [Cobbler Configuration and Template](BuildCobblerVM.markdown)
-  * Bare- metal provisioning
-
-## [Setup an NTP Server](CreateNTP.markdown)
-
 ## Chef Automation
   * [Chef Repository](ChefRepo.markdown)
   * [Chef Client](ChefClient.markdown), including how deployment works after VM/ hosts provisioned
-
-## [Controller VMs](BuildControllerVM.markdown)
-  * Respectively host clusters of MySQL, queue, etc
 
 ## Distributed Storage by Ceph
   * [Ceph Host Preparation](CephPrepare.markdown)
@@ -47,13 +31,11 @@
   * [Add New Monitor](CephAddMon.markdown)
   * [Post Install Configuration and Verify](CephPostConfiguration.markdown)
 
-## Deploy Galera with MariaDB
+## Deployment
+  * [Prepare Controller VMs](BuildControllerVM.markdown)
+  * Deploy HAProxy and Keepalived
   * [Deploy Galera Cluster](DeployGalera.markdown)
-
-## Deploy RabbitMQ Cluster
   * [Deploy RabbitMQ Cluster](DeployRabbitMQCluster.markdown)
-
-## Deploy OpenStack
   * OpenStack Cookbook Repo
   * [Build Neutron Controller](BuildNeutron.markdown)
 
