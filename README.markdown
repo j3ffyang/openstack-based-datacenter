@@ -31,10 +31,8 @@
   * [Add New Monitor](CephAddMon.markdown)
   * [Post Install Configuration and Verify](CephPostConfiguration.markdown)
 
-## [Controller VMs](BuildControllerVM.markdown)
-  * Respectively host clusters of MySQL, queue, etc
-
 ## Deployment
+  * [Prepare Controller VMs](BuildControllerVM.markdown)
   * Deploy HAProxy and Keepalived
   * [Deploy Galera Cluster](DeployGalera.markdown)
   * [Deploy RabbitMQ Cluster](DeployRabbitMQCluster.markdown)
