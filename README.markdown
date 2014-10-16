@@ -23,9 +23,6 @@
   * [Chef Repository](ChefRepo.markdown)
   * [Chef Client](ChefClient.markdown), including how deployment works after VM/ hosts provisioned
 
-## [Controller VMs](BuildControllerVM.markdown)
-  * Respectively host clusters of MySQL, queue, etc
-
 ## Distributed Storage by Ceph
   * [Ceph Host Preparation](CephPrepare.markdown)
   * [Ceph Partition](CephPartition.markdown)
@@ -33,6 +30,9 @@
   * [Add New Ceph OSD](CephAddOSD.markdown)
   * [Add New Monitor](CephAddMon.markdown)
   * [Post Install Configuration and Verify](CephPostConfiguration.markdown)
+
+## [Controller VMs](BuildControllerVM.markdown)
+  * Respectively host clusters of MySQL, queue, etc
 
 ## Deploy Galera with MariaDB
   * [Deploy Galera Cluster](DeployGalera.markdown)
