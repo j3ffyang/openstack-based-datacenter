@@ -32,7 +32,7 @@
   * [Post Install Configuration and Verify](CephPostConfiguration.markdown)
 
 ## Deployment
-  * [Prepare Controller VMs](BuildControllerVM.markdown)
+  * [Prepare Controller VMs and Create Snapshot](BuildControllerVM.markdown)
   * Deploy HAProxy and Keepalived
   * [Deploy Galera Cluster](DeployGalera.markdown)
   * [Deploy RabbitMQ Cluster](DeployRabbitMQCluster.markdown)

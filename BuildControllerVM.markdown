@@ -5,3 +5,8 @@ The VMs are named ctrlr0, ctrlr1, ctrlr2 based on CentOS7, which host MySQL, que
 	hostnamectl set-hostname ctrlr0
 
 IP addresses respectively ctrlr0/1/2 are 172.16.0.33/34/35
+
+## Create Snapshot
+After setup completed
+
+	virsh snapshot-create ctrlr0
