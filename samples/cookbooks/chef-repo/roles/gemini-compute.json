@@ -1,11 +1,18 @@
 {
   "description": "gemini compute node with neutron network",
-  "name": "gemini_compute",
+  "name": "gemini-compute",
   "chef_type": "role",
   "default_attributes": {
   },
   "json_class": "Chef::Role",
   "override_attributes": {
+     "openstack":{
+          "compute": {
+              "api": {
+                  "bind_interface": "enp11s0f0"
+               }
+          }
+      }
   },
   "env_run_lists": {
   },

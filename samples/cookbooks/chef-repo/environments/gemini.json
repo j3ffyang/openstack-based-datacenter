@@ -53,9 +53,6 @@
             }
         },
         "compute":{
-            "api": {
-                "bind_interface": "eth0"
-            },
             "enabled_apis": "osapi_compute",
             "network": {
                 "service_type": "neutron"
