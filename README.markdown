@@ -9,6 +9,7 @@
   * [Cobbler Configuration and Template](BuildCobblerVM.markdown)
   * [Setup an NTP Server](CreateNTP.markdown)
   * [CentOS Repo](CreateCentosRepo.markdown)
+  * [Update /etc/hosts](UpdateHosts.markdown)
 
 ## Network
   * [Architecture and Segment](NetworkConfiguration.markdown)
