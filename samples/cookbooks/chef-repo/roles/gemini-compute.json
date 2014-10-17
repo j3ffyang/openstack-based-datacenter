@@ -1,0 +1,23 @@
+{
+  "description": "gemini compute node with neutron network",
+  "name": "gemini_compute",
+  "chef_type": "role",
+  "default_attributes": {
+  },
+  "json_class": "Chef::Role",
+  "override_attributes": {
+  },
+  "env_run_lists": {
+  },
+  "run_list": [
+    "role[os-base]",
+    "recipe[openstack-ops-database::openstack-db-name]",
+    "recipe[openstack-compute::compute]",
+    "recipe[openstack-compute::identity_v3_enable]",
+    "role[os-compute-api-metadata]",
+    "recipe[openstack-compute::nova-obfuscate]",
+    "recipe[openstack-compute::nova-api-sensitive-clean]",
+    "recipe[openstack-network::obfuscate]",
+    "recipe[openstack-network::openvswitch]"
+  ]
+}
