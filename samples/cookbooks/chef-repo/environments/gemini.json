@@ -59,6 +59,11 @@
             "enabled_apis": "osapi_compute",
             "network": {
                 "service_type": "neutron"
+            },
+            "libvirt": {
+                "images_rbd_pool": "images",
+                "images_type": "rbd",
+                "rbd_secret_name": "dea66dcd-d661-4569-983a-b4a6e6f36824"
             }
         },
         "network": {
