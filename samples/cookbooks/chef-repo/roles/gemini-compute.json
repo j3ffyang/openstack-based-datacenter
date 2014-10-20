@@ -7,6 +7,9 @@
   "json_class": "Chef::Role",
   "override_attributes": {
      "openstack":{
+          "endpoints": {
+              "bind_interface": "enp11s0f0"
+          },
           "compute": {
               "api": {
                   "bind_interface": "enp11s0f0"
