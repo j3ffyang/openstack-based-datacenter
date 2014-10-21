@@ -145,8 +145,7 @@
             "bind_interface" : "eth0",
             "db": {
                   "host" : "172.16.0.37",
-                  "port" : "13306",
-                  "bind_interface" : "eth0"
+                  "port" : "13306"
             },
             "identity-admin": {
                   "port": "35358"

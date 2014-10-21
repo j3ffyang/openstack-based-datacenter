@@ -1,24 +1,27 @@
 {
-  "description": "gemini compute node with neutron network",
   "name": "gemini-compute",
-  "chef_type": "role",
-  "default_attributes": {
-  },
+  "description": "gemini compute node with neutron network",
   "json_class": "Chef::Role",
+  "default_attributes": {
+
+  },
   "override_attributes": {
-     "openstack":{
-          "endpoints": {
-              "bind_interface": "enp11s0f0"
-          },
-          "compute": {
-              "api": {
-                  "bind_interface": "enp11s0f0"
-               }
-          }
+    "openstack": {
+      "endpoints": {
+        "bind_interface": "enp11s0f0",
+        "compute-api": {
+          "host": "172.16.0.101",
+          "bind_interface": "enp11s0f0"
+        },
+        "db": {
+          "host": "172.16.0.37",
+          "port": "13306",
+          "bind_interface": "enp11s0f0"
+        }
       }
+    }
   },
-  "env_run_lists": {
-  },
+  "chef_type": "role",
   "run_list": [
     "role[os-base]",
     "recipe[openstack-ops-database::openstack-db-name]",
@@ -29,5 +32,8 @@
     "recipe[openstack-compute::nova-api-sensitive-clean]",
     "recipe[openstack-network::obfuscate]",
     "recipe[openstack-network::openvswitch]"
-  ]
+  ],
+  "env_run_lists": {
+
+  }
 }
