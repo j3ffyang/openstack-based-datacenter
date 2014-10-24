@@ -37,6 +37,14 @@ On 2nd and 3rd RabbitMQ node
 ## Stop all Existing Processes and Restart them
 Do the following commands on 2nd and 3rd RabbitMQ nodes
 
+	[root@ctrlr1 ~]# sudo -u rabbitmq rabbitmqctl stop
+	Stopping and halting node rabbit@ctrlr1 ...
+	...done.
+
+
+or
+
+
 	[root@ctrlr2 ~]# kill -9 `ps -ef | grep rabbitmq | awk '{print $2}'`
 	-bash: kill: (13951) - No such process
 	

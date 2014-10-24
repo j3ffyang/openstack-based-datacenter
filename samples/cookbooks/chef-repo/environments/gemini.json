@@ -53,12 +53,14 @@
             }
         },
         "compute":{
-            "api": {
-                "bind_interface": "eth0"
-            },
             "enabled_apis": "osapi_compute",
             "network": {
                 "service_type": "neutron"
+            },
+            "libvirt": {
+                "images_rbd_pool": "images",
+                "images_type": "rbd",
+                "rbd_secret_name": "dea66dcd-d661-4569-983a-b4a6e6f36824"
             }
         },
         "network": {
@@ -143,8 +145,7 @@
             "bind_interface" : "eth0",
             "db": {
                   "host" : "172.16.0.37",
-                  "port" : "13306",
-                  "bind_interface" : "eth0"
+                  "port" : "13306"
             },
             "identity-admin": {
                   "port": "35358"
@@ -307,6 +308,17 @@
             "server ctrlr0 172.16.0.33:8774 check inter 2000 rise 2 fall 5",
             "server ctrlr1 172.16.0.34:8774 check inter 2000 rise 2 fall 5",
             "server ctrlr2 172.16.0.35:8774 check inter 2000 rise 2 fall 5"
+          ],
+          "openstack-novnc-console":[
+            "bind 0.0.0.0:16080",
+            "mode tcp",
+            "log global",
+            "balance  source",
+            "#option httpchk",
+            "option tcpka",
+            "server ctrlr0 172.16.0.33:6080 check inter 2000 rise 2 fall 5",
+            "server ctrlr1 172.16.0.34:6080 check inter 2000 rise 2 fall 5",
+            "server ctrlr2 172.16.0.35:6080 check inter 2000 rise 2 fall 5"
           ],
           "openstack-cinder-api":[
             "bind 0.0.0.0:18776",
