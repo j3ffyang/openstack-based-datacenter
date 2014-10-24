@@ -53,3 +53,5 @@ Controller VM
 | neutron | 172.16.0.38 | 10.0.0.38 | 9.110.178.27 | 
 
 The maintenance network, 172.29.83.0, sub netmask is 24. (Not 16)
+
+I'm speaking at BUPT
