@@ -37,6 +37,8 @@
      "role[os-compute-api]",
      "role[os-compute-conductor]",
      "role[os-compute-scheduler]",
+     "role[os-compute-vncproxy]",
+     "role[os-compute-cert]",
      "recipe[openstack-network::server]",
      "recipe[openstack-network::identity_registration]",
      "role[os-dashboard]"

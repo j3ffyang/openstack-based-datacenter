@@ -13,6 +13,11 @@
       },
       "openstack":{
           "host": "172.16.0.35",
+          "compute": {
+              "api": {
+                  "bind_interface": "eth0"
+               }
+          },
           "endpoints": {
               "bind-host": "172.16.0.35",
               "mq": {
