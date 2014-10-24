@@ -309,6 +309,17 @@
             "server ctrlr1 172.16.0.34:8774 check inter 2000 rise 2 fall 5",
             "server ctrlr2 172.16.0.35:8774 check inter 2000 rise 2 fall 5"
           ],
+          "openstack-novnc-console":[
+            "bind 0.0.0.0:16080",
+            "mode tcp",
+            "log global",
+            "balance  source",
+            "#option httpchk",
+            "option tcpka",
+            "server ctrlr0 172.16.0.33:6080 check inter 2000 rise 2 fall 5",
+            "server ctrlr1 172.16.0.34:6080 check inter 2000 rise 2 fall 5",
+            "server ctrlr2 172.16.0.35:6080 check inter 2000 rise 2 fall 5"
+          ],
           "openstack-cinder-api":[
             "bind 0.0.0.0:18776",
             "mode tcp",
