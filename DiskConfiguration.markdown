@@ -2,16 +2,18 @@
 At our data center, each node has 600G*8 disks.
 
 ## Controller Node
-   * Two RAID drive groups:
-     1. one RAID1 for OS: two disks
-     2. one RAID5 for other VMs which run the controller serives: 6 disks
-   * Partitions on the RAID1:
-     1. /boot 250M
-     2. /boot/efi 250M
-     3. swap 2G
-     4. / given the remaining space
-   * Partitions on the RAID5:
-     1. /var/lib/libvirt    the whole remaining space on disk
+
+r83x5u08 - all 4 disks configured in RAID1
+
+| Label | Size |
+| ----- | ---- |
+| /boot | 250M |
+| /boot/efi | 250M |
+| / | 100G |
+| /var/log | 20G |
+| /var | remaining space |
+
+r83x5u09
 
 | Label | Size | 
 | ----- | ---- |
