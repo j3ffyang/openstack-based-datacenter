@@ -15,6 +15,10 @@
 	[root@r83x6u16 ~]# ceph auth get-or-create client.glance mon 'allow r' osd 'allow class-read object_prefix rbd_children, allow rwx pool=images'
 	[client.glance]
 	        key = AQD+ZCVUSIgDLBAA4tFE6GozDXExqc8BtDanFQ==
+
+## Enable cinder's client access Ceph image pool
+
+	ceph auth caps client.cinder mon 'allow r' osd 'allow class-read object_prefix rbd_children, allow rwx pool=volumes, allow rwx pool=vms, allow rwx pool=images'
 	
 
 ## Verify

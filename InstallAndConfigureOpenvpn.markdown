@@ -48,7 +48,7 @@
 
 	comp-lzo    
 
-Configuration samples can be found at [Management network VPN](samples/openvpn_client_conf/mgmt.conf) and [IMM network VPN](samples/openvpn_client_conf/imm.conf)
+Configuration samples can be found at [Management network VPN](samples/openvpn_conf/mgmt.conf) and [IMM network VPN](samples/openvpn_conf/imm.conf)
 
 ## Enable OpenVPN
 	systemctl -f enable openvpn@mgmt.service
@@ -70,3 +70,7 @@ Configuration samples can be found at [Management network VPN](samples/openvpn_c
 
 ## Save iptables
 	iptables-save > /etc/sysconfig/iptables
+
+## Install the 2nd OpenVPN on r83x5u08 [IP Planning](IPPlanning.markdown)
+
+Server configuration and client configuration can be found at [the 2nd OpenVPN configurations](samples/openvpn2_conf/). The value of gateway IP and range of IPs within "server-bridge" are different.
