@@ -73,4 +73,4 @@ Configuration samples can be found at [Management network VPN](samples/openvpn_c
 
 ## Install the 2nd OpenVPN on r83x5u08 [IP Planning](IPPlanning.markdown)
 
-Server configuration and client configuration can be found at [the 2nd OpenVPN](samples/openvpn2_conf/)
+Server configuration and client configuration can be found at [the 2nd OpenVPN configurations](samples/openvpn2_conf/). The value of gateway IP and range of IPs within "server-bridge" are different.
