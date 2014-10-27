@@ -70,3 +70,7 @@ Configuration samples can be found at [Management network VPN](samples/openvpn_c
 
 ## Save iptables
 	iptables-save > /etc/sysconfig/iptables
+
+## Install the 2nd OpenVPN on r83x5u08 [IP Planning](IPPlanning.markdown)
+
+Server configuration and client configuration can be found at [the 2nd OpenVPN](samples/openvpn2_conf/)
