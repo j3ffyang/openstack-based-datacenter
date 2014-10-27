@@ -24,6 +24,7 @@ Physical Host
 | Hostname | NIC0/br0/Mgmt | NIC1/br1/Public | NIC2/br2/IMM | NIC3/br3/Ceph Public/fiber | IMM |
 | -------- | ---- | ---- | ---- | ---- | ---- | ---- |
 | r83x5u09 | 172.16.0.21 | 9.110.178.28 | 172.29.83.249 | 10.0.0.21 | 172.29.83.9 | 
+| r83x5u08 | 172.16.0.22 | 9.110.178.27 | 172.29.83.248 | 10.0.0.22 | 172.29.83.8 |
 
 Ceph Distributed Host
 

@@ -3,6 +3,8 @@ At our data center, each node has 600G*8 disks.
 
 ## Controller Node
 
+Refer to [IP Planning](IPPlanning.markdown)
+
 r83x5u08 - all 4 disks configured in RAID1
 
 | Label | Size |
