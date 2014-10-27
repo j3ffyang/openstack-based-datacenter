@@ -37,7 +37,7 @@
   * Deploy HAProxy and Keepalived
   * [Deploy Galera Cluster](DeployGalera.markdown)
   * [Deploy RabbitMQ Cluster](DeployRabbitMQCluster.markdown)
-  * OpenStack Cookbook Repo
+  * [Deploy OpenStack](DeployOpenStack.markdown)
   * [Build Neutron Controller](BuildNeutron.markdown)
 
 ## Software Defined Network
