@@ -48,7 +48,7 @@
 
 	comp-lzo    
 
-Configuration samples can be found at [Management network VPN](samples/openvpn_client_conf/mgmt.conf) and [IMM network VPN](samples/openvpn_client_conf/imm.conf)
+Configuration samples can be found at [Management network VPN](samples/openvpn_conf/mgmt.conf) and [IMM network VPN](samples/openvpn_conf/imm.conf)
 
 ## Enable OpenVPN
 	systemctl -f enable openvpn@mgmt.service

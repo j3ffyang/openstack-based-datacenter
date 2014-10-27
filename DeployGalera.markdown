@@ -41,4 +41,9 @@ Log into root@chef:/opt/git/gemini/scripts. The script is located at [deploy_con
 	+------------------------------+----------------------------------------------------+
 	47 rows in set (0.00 sec)
 	
+## Modify 1st MySQL node /etc/my.cnf after Cluster Created
 
+	# Group communication system handle
+	#wsrep_cluster_address=gcomm://
+	wsrep_cluster_address=gcomm://172.16.0.33:4567,172.16.0.34:4567,172.16.0.35:4567
+	
