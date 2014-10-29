@@ -51,6 +51,7 @@ Controller VM
 | ctrlr2 | 172.16.0.35 | 10.0.0.35 | | |
 | jenkins | 172.16.0.36 | | | |
 | vIP | 172.16.0.37 | | | |
-| neutron | 172.16.0.38 | 10.0.0.38 | Neutron doesn't need an IP. It requires a physical link to external network. | 
+| neutron | 172.16.0.38 | 10.0.0.38 | Neutron doesn't need an external IP. It requires a physical link to external network. | 
+| logstash | 172.16.0.39 | | | |
 
 The maintenance network, 172.29.83.0, sub netmask is 24. (Not 16)
