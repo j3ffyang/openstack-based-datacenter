@@ -46,8 +46,8 @@
 ## [Jenkins](BuildJenkins.markdown)
 
 ## Operation
-  * One rule everybody should remember is to run "who" and "wall" prior to shutdown the server!
+  * Log Analysis by [Logstash](BuildLogstash.markdown)
   * Monitoring by Ganglia, Nagios
-  * Log Analysis by Logstash
+  * One rule everybody should remember is to run "who" and "wall" prior to shutdown the server!
 
 ## [Troubleshooting](TroubleShooting.markdown)
