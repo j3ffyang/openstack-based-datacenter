@@ -39,6 +39,8 @@ Compute Host
 | Hostname | NIC0 |
 | -------- | ---- |
 | r83x6u14 | 172.16.0.101 |
+| r83x6u12 | 172.16.0.102 |
+| r83x6u10 | 172.16.0.103 |
 
 Controller VM
 
