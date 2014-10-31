@@ -44,6 +44,7 @@
   * Neutron HA
 
 ## Operation
+  * When [adding new VM](PostConfigNewVM.markdow)
   * Log Analysis by [Logstash](BuildLogstash.markdown)
   * Monitoring by Ganglia, Nagios
   * [Jenkins](BuildJenkins.markdown)
