@@ -43,11 +43,10 @@
 ## Software Defined Network
   * Neutron HA
 
-## [Jenkins](BuildJenkins.markdown)
-
 ## Operation
   * Log Analysis by [Logstash](BuildLogstash.markdown)
   * Monitoring by Ganglia, Nagios
+  * [Jenkins](BuildJenkins.markdown)
   * One rule everybody should remember is to run "who" and "wall" prior to shutdown the server!
 
 ## [Troubleshooting](TroubleShooting.markdown)
