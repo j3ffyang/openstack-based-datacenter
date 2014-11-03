@@ -20,4 +20,5 @@ Do the following steps on Chef server
 	for i in `cat /etc/hosts | grep 172 | grep -v '172.16.0.20\|172.16.0.22' | grep -v chef`; do echo $i; scp /etc/ntp.conf $i:/etc/; ssh $i "systemctl stop ntpd; ntpdate -u 172.16.0.22; systemctl enable ntpd; systemctl start ntpd"; done
 
 20 = 201, 202, 203... all Ceph hosts. They're already sync'd. Be careful when running ntpdate which could break their own sync
+
 22 = Chef server, which is running on CentOS65. The only 65 in env.
