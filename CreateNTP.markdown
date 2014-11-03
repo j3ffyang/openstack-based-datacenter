@@ -1,3 +1,7 @@
+## NTP Architecture
+
+r83x5u08 is NTP server, which sync with public NTP service
+
 ## Setup NTP
 Do the following steps on Chef server
 
