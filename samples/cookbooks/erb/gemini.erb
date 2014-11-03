@@ -119,7 +119,7 @@ priority=3
 
 [ceph]
 name=Ceph packages for $basearch
-baseurl=http://ceph.com/rpm/rhel6/x86_64
+baseurl=http://ceph.com/rpm/rhel7/x86_64
 enabled=1
 gpgcheck=1
 type=rpm-md
@@ -244,7 +244,7 @@ EOP
     sysctl -p >/dev/null 2>&1
 fi
 #/etc/init.d/ntpd stop
-systemctl ntpd stop
+systemctl stop ntpd 
 <% if ENV["CENTRAL_SERVER"] %>
   ntpdate <%= ENV["CENTRAL_SERVER"] %>
   sed -i /^server/d /etc/ntp.conf
@@ -262,7 +262,7 @@ systemctl ntpd stop
 <% end %>
 
 #/etc/init.d/ntpd start
-systemctl ntpd start
+systemctl start ntpd
 
 /sbin/iptables -F
 service iptables save

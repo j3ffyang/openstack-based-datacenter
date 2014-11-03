@@ -52,3 +52,9 @@ knife client delete ctrlr2 -y
 knife bootstrap 172.16.0.35 -c /etc/chef/knife.rb -u root -P passw0rd -N ctrlr2 --template-file ../erb/gemini.erb -r 'role[gemini-controller3]' -E gemini
 knife client delete r83x6u14 -y
 knife bootstrap 172.16.0.101 -c /etc/chef/knife.rb -u root -P Passw0rd -N r83x6u14 --template-file ../erb/gemini.erb -r 'role[gemini-compute]' -E gemini
+knife client delete r83x6u12 -y
+knife bootstrap 172.16.0.102 -c /etc/chef/knife.rb -u root -P Passw0rd -N r83x6u12 --template-file ../erb/gemini.erb -r 'role[gemini-compute]' -E gemini
+knife client delete r83x6u10 -y
+knife bootstrap 172.16.0.103 -c /etc/chef/knife.rb -u root -P Passw0rd -N r83x6u10 --template-file ../erb/gemini.erb -r 'role[gemini-compute]' -E gemini
+
+
