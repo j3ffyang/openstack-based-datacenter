@@ -39,6 +39,7 @@
   * [Deploy RabbitMQ Cluster](DeployRabbitMQCluster.markdown)
   * [Deploy OpenStack](DeployOpenStack.markdown)
   * [Build Neutron Controller](BuildNeutron.markdown)
+  * [Register Image](RegisterImage.markdown)
 
 ## Software Defined Network
   * Neutron HA
