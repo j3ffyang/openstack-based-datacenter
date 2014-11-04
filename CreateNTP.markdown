@@ -1,5 +1,7 @@
 ## NTP Architecture
 
+NTP server is essential to the entire environment. It must be setup from very beginning. It doesn't matter whether it synchronizes to outside public NTP server. It just does need to offer a central point for all end- points.
+
 r83x5u08 is NTP server, which sync with public NTP service
 
 ## Setup NTP
