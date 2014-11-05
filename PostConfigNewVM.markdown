@@ -1,6 +1,6 @@
 ## Launch VM
 
-	Refer to [build a VM](BuildAnImage.markdown)
+Refer to [build a VM](BuildAnImage.markdown)
 
 ## Set hostname
 
