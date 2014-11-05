@@ -52,5 +52,3 @@
   * One rule everybody should remember is to run "who" and "wall" prior to shutdown the server!
 
 ## [Troubleshooting](TroubleShooting.markdown)
-
-At eLoan

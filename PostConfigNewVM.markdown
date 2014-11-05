@@ -1,5 +1,7 @@
 ## Launch VM
 
+	Refer to [build a VM](BuildAnImage.markdown)
+
 ## Set hostname
 
 	hostnamectl set-hostname logstash
