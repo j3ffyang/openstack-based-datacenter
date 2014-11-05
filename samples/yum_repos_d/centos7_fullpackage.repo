@@ -6,3 +6,12 @@ enabled=1
 gpgcheck=0
 #proxy=http://9.115.78.100:8085/
 priority=3
+
+[centos7_extras]
+name=CentOS- - Extras
+mirrorlist=http://mirrorlist.centos.org/?release=7&arch=x86_64&repo=extras
+#baseurl=http://mirror.centos.org/centos//extras//
+gpgcheck=0
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
+proxy=http://9.115.78.100:8085/
+
