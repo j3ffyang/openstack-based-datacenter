@@ -30,4 +30,4 @@ Log into Chef, then
 Log into Chef, then
 
 	ssh logstash "yum install ntp -y"; scp /opt/git/mustang/samples/ntp/ntp.conf logstash:/etc/
-	ssh logstash "systemctl enable ntpd"; ssh logstash "systemctl restart ntpd"; ssh logstash "ntpdate -u 172.16.0.22""
+	ssh logstash "systemctl enable ntpd"; ssh logstash "systemctl restart ntpd"; ssh logstash "ntpdate -u 172.16.0.22"
