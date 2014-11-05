@@ -8,6 +8,10 @@ Refer to [build a VM](BuildAnImage.markdown)
 
 ## Assign IP address, referring to [IP Planning](IPPlanning.markdown)
 
+## Add SSH key
+
+	ssh-copy-id root@logstash
+
 ## Update [/etc/hosts](samples/hosts/hosts)
 
 Log into Chef, then
@@ -26,4 +30,4 @@ Log into Chef, then
 Log into Chef, then
 
 	ssh logstash "yum install ntp -y"; scp /opt/git/mustang/samples/ntp/ntp.conf logstash:/etc/
-	ssh logstash "systemctl enable ntpd"; ssh logstash "systemctl restart ntpd"; ssh logstash "ntpdate -u 9.115.78.100"
+	ssh logstash "systemctl enable ntpd"; ssh logstash "systemctl restart ntpd"; ssh logstash "ntpdate -u 172.16.0.22""
