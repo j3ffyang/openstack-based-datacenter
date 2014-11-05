@@ -231,7 +231,7 @@
           "max_connections": 100
         },
         {
-          "hostname": "ctrl1",
+          "hostname": "ctrlr1",
           "ipaddress": "172.16.0.34",
           "max_connections": 100
         },
