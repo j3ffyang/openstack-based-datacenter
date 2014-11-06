@@ -195,3 +195,5 @@ Flush cache on each Ceph node
 	-rw-r--r-- 1 root root 4294967296 Nov  6 18:09 deleteme
 	drwx------ 2 root root      16384 Nov  6 18:04 lost+found
 
+### Conclusion    
+4294967296 bytes (4.3 GB) copied, 22.2571 s, 193 MB/s
