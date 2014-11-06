@@ -114,3 +114,84 @@ Flush cache on each Ceph node
 	Max latency:            8.91847
 	Min latency:            2.38516
 	[root@ctrlr2 ceph]# rados bench -p stress_test_sample --concurrent-ios=256 120 write
+
+## Test in Vol (on Ceph) mounted in a VM
+
+	core@coreos-6d13c3b2-4d86-4e5c-bb2e-f0def2ef6501 ~ $ lsblk
+	NAME   MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+	sr0     11:0    1  422K  0 rom  /media/configdrive
+	vda    254:0    0   40G  0 disk 
+	|-vda1 254:1    0  128M  0 part 
+	|-vda2 254:2    0    2M  0 part 
+	|-vda3 254:3    0    1G  0 part /usr
+	|-vda4 254:4    0    1G  0 part 
+	|-vda6 254:6    0  128M  0 part /usr/share/oem
+	|-vda7 254:7    0   64M  0 part 
+	`-vda9 254:9    0 37.7G  0 part /var/lib/docker/btrfs
+	vdb    254:16   0   20G  0 disk 
+	`-vdb1 254:17   0    5G  0 part 
+	core@coreos-6d13c3b2-4d86-4e5c-bb2e-f0def2ef6501 ~ $ sudo parted /dev/vdb
+	GNU Parted 3.1
+	Using /dev/vdb
+	Welcome to GNU Parted! Type 'help' to view a list of commands.
+	(parted) print                                                            
+	Model: Virtio Block Device (virtblk)
+	Disk /dev/vdb: 21.5GB
+	Sector size (logical/physical): 512B/512B
+	Partition Table: msdos
+	Disk Flags: 
+	
+	(parted) mkpart                                                           
+	Partition type?  primary/extended? primary                                
+	File system type?  [ext2]? xfs                                            
+	Start? 0                                                                  
+	End? -1s                                                                  
+	Warning: The resulting partition is not properly aligned for best performance.
+	Ignore/Cancel? I                                                          
+	(parted) print                                                            
+	Model: Virtio Block Device (virtblk)
+	Disk /dev/vdb: 21.5GB
+	Sector size (logical/physical): 512B/512B
+	Partition Table: msdos
+	Disk Flags: 
+	
+	Number  Start  End     Size    Type     File system  Flags
+	 1      512B   21.5GB  21.5GB  primary
+	
+	(parted) quit                                                             
+	Information: You may need to update /etc/fstab.
+	
+	core@coreos-6d13c3b2-4d86-4e5c-bb2e-f0def2ef6501 ~ $ sudo mkfs -t ext4 /dev/vdb1
+	mke2fs 1.42.9 (28-Dec-2013)
+	Filesystem label=
+	OS type: Linux
+	Block size=4096 (log=2)
+	Fragment size=4096 (log=2)
+	Stride=0 blocks, Stripe width=0 blocks
+	1310720 inodes, 5242879 blocks
+	262143 blocks (5.00%) reserved for the super user
+	First data block=0
+	Maximum filesystem blocks=4294967296
+	160 block groups
+	32768 blocks per group, 32768 fragments per group
+	8192 inodes per group
+	Superblock backups stored on blocks: 
+		32768, 98304, 163840, 229376, 294912, 819200, 884736, 1605632, 2654208, 
+		4096000
+	
+	Allocating group tables: done                            
+	Writing inode tables: done                            
+	Creating journal (32768 blocks): done
+	Writing superblocks and filesystem accounting information: done   
+	
+	core@coreos-6d13c3b2-4d86-4e5c-bb2e-f0def2ef6501 ~ $ sudo mount /dev/vdb1 /mnt
+	core@coreos-6d13c3b2-4d86-4e5c-bb2e-f0def2ef6501 ~ $ cd /mnt
+	core@coreos-6d13c3b2-4d86-4e5c-bb2e-f0def2ef6501 /mnt $ sudo dd if=/dev/zero of=/mnt/deleteme bs=4M count=1024
+	1024+0 records in
+	1024+0 records out
+	4294967296 bytes (4.3 GB) copied, 22.2571 s, 193 MB/s
+	core@coreos-6d13c3b2-4d86-4e5c-bb2e-f0def2ef6501 /mnt $ ls -tl
+	total 4194324
+	-rw-r--r-- 1 root root 4294967296 Nov  6 18:09 deleteme
+	drwx------ 2 root root      16384 Nov  6 18:04 lost+found
+
