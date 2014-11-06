@@ -12,14 +12,14 @@ Sample on 1 OSD on 1 Ceph node
 
 ## Fiber Network
 
-On root@r83x6u16, which is the 1st Ceph node
+On root@r83x6u16 (physical box), which is the 1st Ceph node
 
 	[root@r83x6u16 ceph-0]# iperf3 -s
 	-----------------------------------------------------------
 	Server listening on 5201
 	-----------------------------------------------------------
 
-On root@r83x6u18, which is the 2nd Ceph node
+On root@r83x6u18 (physical box), which is the 2nd Ceph node
 	
 	[root@r83x6u18 ceph-3]# iperf3 -c 10.10.0.201 -i1 -t10
 	Connecting to host 10.10.0.201, port 5201
@@ -42,7 +42,7 @@ On root@r83x6u18, which is the 2nd Ceph node
 	
 	iperf Done.
 
-On root@ctrlr2, which is the 3rd Controller VM
+On root@ctrlr2 (VM), which is the 3rd Controller VM
 
 	[root@ctrlr2 ~]# iperf3 -c 10.0.0.201 -i1 -t10
 	Connecting to host 10.0.0.201, port 5201
@@ -64,6 +64,10 @@ On root@ctrlr2, which is the 3rd Controller VM
 	[  4]   0.00-10.00  sec  9.64 GBytes  8.28 Gbits/sec                  receiver
 	
 	iperf Done.
+
+Conclusion:
+1. All traffic are through fiber network
+2. Test covers both physical boxes and VM
 
 ## Create a Pool for Stress
 
