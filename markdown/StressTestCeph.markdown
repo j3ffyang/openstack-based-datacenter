@@ -79,3 +79,38 @@ On root@ctrlr2 (VM), which is the 3rd Controller VM
 
 256 concurrent request
 300 seconds
+
+## Stress Test on Ceph
+
+Flush cache on each Ceph node
+
+	[root@r83x6u16 ceph-0]# free 
+	             total       used       free     shared    buffers     cached
+	Mem:     148366580   24082720  124283860      18056        884   20256484
+	-/+ buffers/cache:    3825352  144541228
+	Swap:      2047996          0    2047996
+	[root@r83x6u16 ceph-0]# echo 3 | tee /proc/sys/vm/drop_caches && sync
+	3
+	[root@r83x6u16 ceph-0]# free 
+	             total       used       free     shared    buffers     cached
+	Mem:     148366580    3198156  145168424      18056         12      36220
+	-/+ buffers/cache:    3161924  145204656
+	Swap:      2047996          0    2047996
+
+## From Ceph client to Ceph cluster
+
+	[root@ctrlr2 ceph]# rados bench -p stress_test_sample --concurrent-ios=256 120 write
+	
+	Total time run:         122.002878
+	Total writes made:      4953
+	Write size:             4194304
+	Bandwidth (MB/sec):     162.390 
+	
+	Stddev Bandwidth:       97.3952
+	Max bandwidth (MB/sec): 856
+	Min bandwidth (MB/sec): 0
+	Average Latency:        6.15544
+	Stddev Latency:         1.13544
+	Max latency:            8.91847
+	Min latency:            2.38516
+	[root@ctrlr2 ceph]# rados bench -p stress_test_sample --concurrent-ios=256 120 write
