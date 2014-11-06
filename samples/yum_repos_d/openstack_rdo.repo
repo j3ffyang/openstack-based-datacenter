@@ -2,6 +2,7 @@
 name=Extra Packages for Enterprise Linux 7 - $basearch
 baseurl=https://repos.fedorapeople.org/repos/openstack/openstack-icehouse/epel-7/
 failovermethod=priority
-enabled=0
+enabled=1
+gpgcheck=0
 proxy=http://9.115.78.100:8085/
 

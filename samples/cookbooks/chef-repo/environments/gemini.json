@@ -231,7 +231,7 @@
           "max_connections": 100
         },
         {
-          "hostname": "ctrl1",
+          "hostname": "ctrlr1",
           "ipaddress": "172.16.0.34",
           "max_connections": 100
         },
@@ -256,7 +256,7 @@
           ],
           "openstack-identity-public-api":[
             "bind 0.0.0.0:15000",
-            "mode tcp",
+            "mode http",
             "log global",
             "balance  source",
             "#option httpchk",
@@ -267,7 +267,7 @@
           ],
           "openstack-identity-amin-api":[
             "bind 0.0.0.0:35358",
-            "mode tcp",
+            "mode http",
             "log global",
             "balance  source",
             "#option httpchk",
@@ -278,7 +278,7 @@
           ],
           "openstack-image-api":[
             "bind 0.0.0.0:19292",
-            "mode tcp",
+            "mode http",
             "log global",
             "balance  source",
             "#option httpchk",
@@ -289,7 +289,7 @@
           ],
           "openstack-image-registry-api":[
             "bind 0.0.0.0:19191",
-            "mode tcp",
+            "mode http",
             "log global",
             "balance  source",
             "#option httpchk",
@@ -300,7 +300,7 @@
           ],
           "openstack-compute-api":[
             "bind 0.0.0.0:18774",
-            "mode tcp",
+            "mode http",
             "log global",
             "balance  source",
             "#option httpchk",
@@ -311,7 +311,7 @@
           ],
           "openstack-novnc-console":[
             "bind 0.0.0.0:16080",
-            "mode tcp",
+            "mode http",
             "log global",
             "balance  source",
             "#option httpchk",
@@ -322,7 +322,7 @@
           ],
           "openstack-cinder-api":[
             "bind 0.0.0.0:18776",
-            "mode tcp",
+            "mode http",
             "log global",
             "balance  source",
             "#option httpchk",
@@ -333,7 +333,7 @@
           ],
           "openstack-network-api":[
             "bind 0.0.0.0:19696",
-            "mode tcp",
+            "mode http",
             "log global",
             "balance  source",
             "#option httpchk",
@@ -341,6 +341,20 @@
             "server ctrlr0 172.16.0.33:9696 check inter 2000 rise 2 fall 5",
             "server ctrlr1 172.16.0.34:9696 check inter 2000 rise 2 fall 5",
             "server ctrlr2 172.16.0.35:9696 check inter 2000 rise 2 fall 5"
+          ],
+          "openstack-dashboard":[
+            "bind 0.0.0.0:18080",
+            "balance  source",
+            "capture  cookie vgnvisitor= len 32",
+            "cookie  SERVERID insert indirect nocache",
+            "mode  http",
+            "option  forwardfor",
+            "option  httpchk",
+            "option  httpclose",
+            "rspidel  ^Set-cookie:\\ IP=",
+            "server ctrlr0 172.16.0.33:80 cookie ctl0 check inter 2000 rise 2 fall 5",
+            "server ctrlr1 172.16.0.34:80 cookie ctl1 check inter 2000 rise 2 fall 5",
+            "server ctrlr2 172.16.0.35:80 cookie ctl2 check inter 2000 rise 2 fall 5"
           ]
         }
       }

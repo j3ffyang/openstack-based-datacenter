@@ -1,54 +1,54 @@
-## [Design Thoughts and Architecture Overview](ArchitectureOverview.markdown)
+## [Design Thoughts and Architecture Overview](markdown/ArchitectureOverview.markdown)
   * Principle and Belief
 
 ## Pre- install Preparation
-  * [Hardware Specification](HardwareSpec.markdown)
-  * [Disk Configuration](DiskConfiguration.markdown)
-  * [Build the 1st Controller Physical Box](BuildFirstBox.markdown)
-  * [Build an Image](BuildAnImage.markdown)
-  * [Cobbler Configuration and Template](BuildCobblerVM.markdown)
-  * [Setup an NTP Server](CreateNTP.markdown)
-  * [CentOS Repo](CreateCentosRepo.markdown)
-  * [Update /etc/hosts](UpdateHosts.markdown)
+  * [Hardware Specification](markdown/HardwareSpec.markdown)
+  * [Disk Configuration](markdown/DiskConfiguration.markdown)
+  * [Build the 1st Controller Physical Box](markdown/BuildFirstBox.markdown)
+  * [Build an Image](markdown/BuildAnImage.markdown)
+  * [Cobbler Configuration and Template](markdown/BuildCobblerVM.markdown)
+  * [Setup an NTP Server](markdown/CreateNTP.markdown)
+  * [CentOS Repo](markdown/CreateCentosRepo.markdown)
+  * [Update /etc/hosts](markdown/UpdateHosts.markdown)
 
 ## Network
-  * [Architecture and Segment](NetworkConfiguration.markdown)
-  * [Hostnaming and IP Planning](IPPlanning.markdown)
-  * [Physical Host and Controller VM Network](BuildFirstBox.markdown)
-  * [Install and Configure OpenVPN](InstallAndConfigureOpenvpn.markdown)
-  * [Cobbler VM Network](BuildCobblerVM.markdown)
-  * [Ceph Network](CephDistributedStorage.markdown)
-  * [Neutron Network](BuildNeutron.markdown)
+  * [Architecture and Segment](markdown/NetworkConfiguration.markdown)
+  * [Hostnaming and IP Planning](markdown/IPPlanning.markdown)
+  * [Physical Host and Controller VM Network](markdown/BuildFirstBox.markdown)
+  * [Install and Configure OpenVPN](markdown/InstallAndConfigureOpenvpn.markdown)
+  * [Cobbler VM Network](markdown/BuildCobblerVM.markdown)
+  * [Ceph Network](markdown/CephDistributedStorage.markdown)
+  * [Neutron Network](markdown/BuildNeutron.markdown)
 
 ## Chef Automation
-  * [Chef Repository](ChefRepo.markdown)
-  * [Chef Client](ChefClient.markdown), including how deployment works after VM/ hosts provisioned
+  * [Chef Repository](markdown/ChefRepo.markdown)
+  * [Chef Client](markdown/ChefClient.markdown), including how deployment works after VM/ hosts provisioned
 
 ## Distributed Storage by Ceph
-  * [Ceph Host Preparation](CephPrepare.markdown)
-  * [Ceph Partition](CephPartition.markdown)
-  * [Ceph Node Configuration](CephDistributedStorage.markdown)
-  * [Add New Ceph OSD](CephAddOSD.markdown)
-  * [Add New Monitor](CephAddMon.markdown)
-  * [Post Install Configuration and Verify](CephPostConfiguration.markdown)
+  * [Ceph Host Preparation](markdown/CephPrepare.markdown)
+  * [Ceph Partition](markdown/CephPartition.markdown)
+  * [Ceph Node Configuration](markdown/CephDistributedStorage.markdown)
+  * [Add New Ceph OSD](markdown/CephAddOSD.markdown)
+  * [Add New Monitor](markdown/CephAddMon.markdown)
+  * [Post Install Configuration and Verify](markdown/CephPostConfiguration.markdown)
 
 ## Deployment
-  * [Prepare Controller VMs and Create Snapshot](BuildControllerVM.markdown)
+  * [Prepare Controller VMs and Create Snapshot](markdown/BuildControllerVM.markdown)
   * Deploy HAProxy and Keepalived
-  * [Deploy Galera Cluster](DeployGalera.markdown)
-  * [Deploy RabbitMQ Cluster](DeployRabbitMQCluster.markdown)
-  * [Deploy OpenStack](DeployOpenStack.markdown)
-  * [Build Neutron Controller](BuildNeutron.markdown)
-  * [Register Image](RegisterImage.markdown)
+  * [Deploy Galera Cluster](markdown/DeployGalera.markdown)
+  * [Deploy RabbitMQ Cluster](markdown/DeployRabbitMQCluster.markdown)
+  * [Deploy OpenStack](markdown/DeployOpenStack.markdown)
+  * [Build Neutron Controller](markdown/BuildNeutron.markdown)
+  * [Register Image](markdown/RegisterImage.markdown)
 
 ## Software Defined Network
   * Neutron HA
 
 ## Operation
-  * When [adding new VM](PostConfigNewVM.markdown)
-  * Log Analysis by [Logstash](BuildLogstash.markdown)
+  * When [adding new VM](markdown/PostConfigNewVM.markdown)
+  * Log Analysis by [Logstash](markdown/BuildLogstash.markdown)
   * Monitoring by Ganglia, Nagios
-  * [Jenkins](BuildJenkins.markdown)
+  * [Jenkins](markdown/BuildJenkins.markdown)
   * One rule everybody should remember is to run "who" and "wall" prior to shutdown the server!
 
-## [Troubleshooting](TroubleShooting.markdown)
+## [Troubleshooting](markdown/TroubleShooting.markdown)
