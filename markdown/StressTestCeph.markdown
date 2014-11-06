@@ -67,7 +67,7 @@ On root@ctrlr2 (VM), which is the 3rd Controller VM
 
 ### Conclusion:    
 1. All traffic are through fiber network    
-2. Test covers both physical boxes and VM
+2. Test covers both physical boxes (average 9.1 Gbits/sec) and VM (average 8.28 Gbits/sec)
 
 ## Create a Pool for Stress
 
