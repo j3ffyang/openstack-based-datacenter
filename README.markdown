@@ -31,6 +31,7 @@
   * [Add New Ceph OSD](markdown/CephAddOSD.markdown)
   * [Add New Monitor](markdown/CephAddMon.markdown)
   * [Post Install Configuration and Verify](markdown/CephPostConfiguration.markdown)
+  * [Stress Test](markdown/StressTestCeph.markdown)
 
 ## Deployment
   * [Prepare Controller VMs and Create Snapshot](markdown/BuildControllerVM.markdown)
