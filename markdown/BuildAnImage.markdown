@@ -12,7 +12,7 @@
 ## Convert a qcow2 image as base image
 	qemu-img create -b centos7_15g.img -o cluster_size=2M -f qcow2 centos7_15g.qcow2
 
-## Modify disk format in xml as base xml definition [sample xml](samples/centos7_15g.xml)
+## Modify disk format in xml as base xml definition [sample xml](samples/vm_xml/centos7_15g.xml)
 	...
 	<disk type='file' device='disk'>
 	  <driver name='qemu' type='qcow2' cache='none'/>
