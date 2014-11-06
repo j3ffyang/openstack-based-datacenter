@@ -1,5 +1,5 @@
 ## Install CentOS 7 x86_64
-According to Controller's [partition layout](./DiskConfiguration)
+According to Controller's [partition layout](DiskConfiguration)
 
 ## Physical Host Network
 ![FirstBox Network](images/20140902_ctrl_net.png)
