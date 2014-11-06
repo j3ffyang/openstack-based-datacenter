@@ -1,4 +1,4 @@
-## [Design Thoughts and Architecture Overview](ArchitectureOverview.markdown)
+## [Design Thoughts and Architecture Overview](markdown/ArchitectureOverview.markdown)
   * Principle and Belief
 
 ## Pre- install Preparation
