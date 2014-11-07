@@ -198,63 +198,59 @@ Flush cache on each Ceph node
 ### Conclusion    
 4294967296 bytes (4.3 GB) copied, 22.2571 s, 193 MB/s
 
-## fio against all Ceph node
+## fio on local Ceph node
 
 	yum install fio -y
 
-	[root@r83x6u20 ~]# fio -filename=/dev/sdc2 -direct=1 -iodepth 1 -thread -rw=randrw -rwmixread=70 -ioengine=psync -bs=4k -size=100G -numjobs=30 -runtime=100 -group_reporting -name=sdc_4k
-	sdc_4k: (g=0): rw=randrw, bs=4K-4K/4K-4K/4K-4K, ioengine=psync, iodepth=1
+	[root@r83x6u20 ~]# fio -filename=/dev/sdc2 -direct=1 -iodepth 1 -thread -rw=randrw -rwmixread=70 -ioengine=psync -bs=16k -size=200G -numjobs=30 -runtime=100 -group_reporting -name=sdc_4k
+	sdc_4k: (g=0): rw=randrw, bs=16K-16K/16K-16K/16K-16K, ioengine=psync, iodepth=1
 	...
 	fio-2.1.11
 	Starting 30 threads
-	Jobs: 30 (f=30): [m(30)] [100.0% done] [2524KB/1040KB/0KB /s] [631/260/0 iops] [eta 00m:00s]
-	sdc_4k: (groupid=0, jobs=30): err= 0: pid=1679: Fri Nov  7 13:53:40 2014
-	  read : io=256436KB, bw=2560.8KB/s, iops=640, runt=100140msec
-	    clat (usec): min=62, max=739327, avg=46566.87, stdev=55388.31
-	     lat (usec): min=62, max=739327, avg=46567.04, stdev=55388.32
+	Jobs: 30 (f=30): [m(30)] [100.0% done] [8176KB/2464KB/0KB /s] [511/154/0 iops] [eta 00m:00s]
+	sdc_4k: (groupid=0, jobs=30): err= 0: pid=1954: Fri Nov  7 14:57:56 2014
+	  read : io=406992KB, bw=4066.5KB/s, iops=254, runt=100085msec
+	    clat (usec): min=88, max=2618.3K, avg=98808.05, stdev=194430.05
+	     lat (usec): min=88, max=2618.3K, avg=98808.38, stdev=194430.06
 	    clat percentiles (msec):
-	     |  1.00th=[    3],  5.00th=[    5], 10.00th=[    6], 20.00th=[    9],
-	     | 30.00th=[   14], 40.00th=[   19], 50.00th=[   27], 60.00th=[   38],
-	     | 70.00th=[   52], 80.00th=[   74], 90.00th=[  114], 95.00th=[  157],
-	     | 99.00th=[  265], 99.50th=[  318], 99.90th=[  429], 99.95th=[  474],
-	     | 99.99th=[  603]
-	    bw (KB  /s): min=    5, max=  199, per=3.36%, avg=86.05, stdev=29.24
-	  write: io=102896KB, bw=1027.6KB/s, iops=256, runt=100140msec
-	    clat (usec): min=48, max=523444, avg=601.83, stdev=6557.84
-	     lat (usec): min=48, max=523444, avg=602.12, stdev=6557.84
+	     |  1.00th=[    4],  5.00th=[    6], 10.00th=[    8], 20.00th=[   13],
+	     | 30.00th=[   20], 40.00th=[   29], 50.00th=[   41], 60.00th=[   58],
+	     | 70.00th=[   80], 80.00th=[  118], 90.00th=[  212], 95.00th=[  437],
+	     | 99.00th=[ 1090], 99.50th=[ 1352], 99.90th=[ 2008], 99.95th=[ 2212],
+	     | 99.99th=[ 2442]
+	    bw (KB  /s): min=    1, max=  724, per=4.55%, avg=185.02, stdev=140.35
+	  write: io=163472KB, bw=1633.4KB/s, iops=102, runt=100085msec
+	    clat (usec): min=68, max=663854, avg=23792.50, stdev=91810.74
+	     lat (usec): min=69, max=663855, avg=23793.58, stdev=91810.79
 	    clat percentiles (usec):
-	     |  1.00th=[   51],  5.00th=[   53], 10.00th=[   55], 20.00th=[   72],
-	     | 30.00th=[   77], 40.00th=[   79], 50.00th=[   81], 60.00th=[   82],
-	     | 70.00th=[   86], 80.00th=[  122], 90.00th=[  163], 95.00th=[  596],
-	     | 99.00th=[ 2928], 99.50th=[38656], 99.90th=[98816], 99.95th=[109056],
-	     | 99.99th=[123392]
-	    bw (KB  /s): min=    4, max=  149, per=3.44%, avg=35.38, stdev=19.94
-	    lat (usec) : 50=0.03%, 100=21.79%, 250=5.24%, 500=0.13%, 750=0.23%
-	    lat (usec) : 1000=0.11%
-	    lat (msec) : 2=0.67%, 4=3.74%, 10=13.03%, 20=13.29%, 50=19.64%
-	    lat (msec) : 100=13.15%, 250=8.07%, 500=0.84%, 750=0.03%
-	  cpu          : usr=0.02%, sys=0.04%, ctx=90390, majf=0, minf=11
+	     |  1.00th=[   81],  5.00th=[  107], 10.00th=[  119], 20.00th=[  143],
+	     | 30.00th=[  151], 40.00th=[  163], 50.00th=[  179], 60.00th=[  187],
+	     | 70.00th=[  199], 80.00th=[  221], 90.00th=[ 9664], 95.00th=[218112],
+	     | 99.00th=[440320], 99.50th=[440320], 99.90th=[659456], 99.95th=[659456],
+	     | 99.99th=[659456]
+	    bw (KB  /s): min=    5, max=  440, per=6.00%, avg=97.91, stdev=71.72
+	    lat (usec) : 100=0.91%, 250=23.65%, 500=0.51%, 750=0.29%, 1000=0.07%
+	    lat (msec) : 2=0.14%, 4=1.81%, 10=10.02%, 20=10.68%, 50=18.39%
+	    lat (msec) : 100=14.88%, 250=11.88%, 500=4.47%, 750=1.11%, 1000=0.38%
+	    lat (msec) : 2000=0.72%, >=2000=0.07%
+	  cpu          : usr=0.01%, sys=0.20%, ctx=36934, majf=0, minf=14
 	  IO depths    : 1=100.0%, 2=0.0%, 4=0.0%, 8=0.0%, 16=0.0%, 32=0.0%, >=64=0.0%
 	     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
 	     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
-	     issued    : total=r=64109/w=25724/d=0, short=r=0/w=0/d=0
+	     issued    : total=r=25437/w=10217/d=0, short=r=0/w=0/d=0
 	     latency   : target=0, window=0, percentile=100.00%, depth=1
 	
 	Run status group 0 (all jobs):
-	   READ: io=256436KB, aggrb=2560KB/s, minb=2560KB/s, maxb=2560KB/s, mint=100140msec, maxt=100140msec
-	  WRITE: io=102896KB, aggrb=1027KB/s, minb=1027KB/s, maxb=1027KB/s, mint=100140msec, maxt=100140msec
+	   READ: io=406992KB, aggrb=4066KB/s, minb=4066KB/s, maxb=4066KB/s, mint=100085msec, maxt=100085msec
+	  WRITE: io=163472KB, aggrb=1633KB/s, minb=1633KB/s, maxb=1633KB/s, mint=100085msec, maxt=100085msec
 	
 	Disk stats (read/write):
-	  sdc: ios=64078/25762, merge=566/8, ticks=2978487/15435, in_queue=2995497, util=100.00%
-	[root@r83x6u20 ~]# 
+	  sdc: ios=25421/12046, merge=7/104, ticks=2511315/27916736, in_queue=7019367, util=100.00%
 
 ### Conclusion
 
-iops = 631
-
-           READ: io=256436KB, aggrb=2560KB/s, minb=2560KB/s, maxb=2560KB/s, mint=100140msec, maxt=100140msec
-          WRITE: io=102896KB, aggrb=1027KB/s, minb=1027KB/s, maxb=1027KB/s, mint=100140msec, maxt=100140msec
-
+Read  iops=254    
+Write iops=102
 
 ## Test fio within VM against volume from Ceph node
 
