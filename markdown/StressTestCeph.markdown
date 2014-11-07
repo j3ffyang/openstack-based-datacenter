@@ -249,7 +249,7 @@ Flush cache on each Ceph node
 
 ### Conclusion
 
-Read  iops=254
+Read  iops=254    
 Write iops=102
 
 ## Test fio within VM against volume from Ceph node
