@@ -32,7 +32,6 @@
   * [Add New Monitor](markdown/CephAddMon.markdown)
   * [Post Install Configuration and Verify](markdown/CephPostConfiguration.markdown)
   * [Modify Ceph Parameter](markdown/CephParamChange.markdown)
-  * [Stress Test](markdown/StressTestCeph.markdown)
 
 ## Deployment
   * [Prepare Controller VMs and Create Snapshot](markdown/BuildControllerVM.markdown)
@@ -45,6 +44,9 @@
 
 ## Software Defined Network
   * Neutron HA
+
+## Stress Test
+  * [Ceph Stress Test](markdown/StressTestCeph.markdown)
 
 ## Operation
   * When [adding new VM](markdown/PostConfigNewVM.markdown)
