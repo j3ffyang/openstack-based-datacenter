@@ -248,4 +248,8 @@ Flush cache on each Ceph node
 	  sdc: ios=64078/25762, merge=566/8, ticks=2978487/15435, in_queue=2995497, util=100.00%
 	[root@r83x6u20 ~]# 
 
+### Conclusion
+
+           READ: io=256436KB, aggrb=2560KB/s, minb=2560KB/s, maxb=2560KB/s, mint=100140msec, maxt=100140msec
+          WRITE: io=102896KB, aggrb=1027KB/s, minb=1027KB/s, maxb=1027KB/s, mint=100140msec, maxt=100140msec
 
