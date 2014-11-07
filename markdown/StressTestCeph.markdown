@@ -255,3 +255,56 @@ iops = 631
            READ: io=256436KB, aggrb=2560KB/s, minb=2560KB/s, maxb=2560KB/s, mint=100140msec, maxt=100140msec
           WRITE: io=102896KB, aggrb=1027KB/s, minb=1027KB/s, maxb=1027KB/s, mint=100140msec, maxt=100140msec
 
+
+## Test fio within VM against volume from Ceph node
+
+	[root@localhost yum.repos.d]# fio -filename=/dev/vda -direct=1 -iodepth 1 -thread -rw=randrw -rwmixread=70 -ioengine=psync -bs=16k -size=200G -numjobs=30 -runtime=100 -group_reporting -name=vda_16k
+	vda_16k: (g=0): rw=randrw, bs=16K-16K/16K-16K/16K-16K, ioengine=psync, iodepth=1
+	...
+	fio-2.1.11
+	Starting 30 threads
+	Jobs: 27 (f=27): [m(10),_(1),m(4),_(1),m(10),_(1),m(3)] [25.6% done] [0KB/47KB/0KB /s] [0/2/0 iops] [eta 05m:00s]
+	vda_16k: (groupid=0, jobs=30): err= 0: pid=8952: Fri Nov  7 01:22:38 2014
+	  read : io=2014.6MB, bw=20136KB/s, iops=1258, runt=102451msec
+	    clat (usec): min=764, max=3729.4K, avg=2006.43, stdev=21054.86
+	     lat (usec): min=764, max=3729.4K, avg=2006.86, stdev=21054.86
+	    clat percentiles (usec):
+	     |  1.00th=[ 1064],  5.00th=[ 1176], 10.00th=[ 1256], 20.00th=[ 1336],
+	     | 30.00th=[ 1400], 40.00th=[ 1464], 50.00th=[ 1528], 60.00th=[ 1608],
+	     | 70.00th=[ 1704], 80.00th=[ 1832], 90.00th=[ 2064], 95.00th=[ 2320],
+	     | 99.00th=[ 3088], 99.50th=[ 3696], 99.90th=[68096], 99.95th=[175104],
+	     | 99.99th=[897024]
+	    bw (KB  /s): min=    2, max= 2752, per=4.93%, avg=992.11, stdev=661.23
+	  write: io=870128KB, bw=8493.2KB/s, iops=530, runt=102451msec
+	    clat (msec): min=2, max=5473, avg=51.71, stdev=242.70
+	     lat (msec): min=2, max=5473, avg=51.72, stdev=242.70
+	    clat percentiles (msec):
+	     |  1.00th=[    4],  5.00th=[    4], 10.00th=[    5], 20.00th=[   12],
+	     | 30.00th=[   14], 40.00th=[   16], 50.00th=[   19], 60.00th=[   25],
+	     | 70.00th=[   30], 80.00th=[   36], 90.00th=[   45], 95.00th=[   72],
+	     | 99.00th=[  865], 99.50th=[ 1663], 99.90th=[ 4490], 99.95th=[ 5014],
+	     | 99.99th=[ 5473]
+	    bw (KB  /s): min=    2, max= 1035, per=4.81%, avg=408.73, stdev=261.46
+	    lat (usec) : 1000=0.23%
+	    lat (msec) : 2=61.56%, 4=10.45%, 10=2.86%, 20=10.54%, 50=11.98%
+	    lat (msec) : 100=1.14%, 250=0.47%, 500=0.23%, 750=0.18%, 1000=0.14%
+	    lat (msec) : 2000=0.15%, >=2000=0.08%
+	  cpu          : usr=0.05%, sys=0.16%, ctx=183371, majf=0, minf=49
+	  IO depths    : 1=100.0%, 2=0.0%, 4=0.0%, 8=0.0%, 16=0.0%, 32=0.0%, >=64=0.0%
+	     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+	     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+	     issued    : total=r=128933/w=54383/d=0, short=r=0/w=0/d=0
+	     latency   : target=0, window=0, percentile=100.00%, depth=1
+	
+	Run status group 0 (all jobs):
+	   READ: io=2014.6MB, aggrb=20135KB/s, minb=20135KB/s, maxb=20135KB/s, mint=102451msec, maxt=102451msec
+	  WRITE: io=870128KB, aggrb=8493KB/s, minb=8493KB/s, maxb=8493KB/s, mint=102451msec, maxt=102451msec
+	
+	Disk stats (read/write):
+	  vda: ios=129024/54380, merge=0/9, ticks=251089/2707506, in_queue=3098204, util=100.00%
+	[root@localhost yum.repos.d]# 
+
+### Conclusion
+
+Read  iops=1258    
+Write iops=530
