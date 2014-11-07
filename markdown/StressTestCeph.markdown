@@ -250,6 +250,8 @@ Flush cache on each Ceph node
 
 ### Conclusion
 
+iops = 631
+
            READ: io=256436KB, aggrb=2560KB/s, minb=2560KB/s, maxb=2560KB/s, mint=100140msec, maxt=100140msec
           WRITE: io=102896KB, aggrb=1027KB/s, minb=1027KB/s, maxb=1027KB/s, mint=100140msec, maxt=100140msec
 
