@@ -1,3 +1,8 @@
+## Ceph Service Crashing
+November 09, 2014, there was a Ceph service crash, caused by an interrupted fiber NIC. Basic symptom was that the VM launched on Ceph became unaccessible.
+
+## Check Status
+
 	[root@r83x6u20 ceph]# ceph -s
 	    cluster ed095412-5171-4d91-8d7e-5f5678985cd2
 	     health HEALTH_ERR 9 pgs inconsistent; 9 scrub errors
@@ -9,18 +14,7 @@
 	                   9 active+clean+inconsistent
 	  client io 70503 B/s wr, 26 op/s
 
-	[root@r83x6u20 ceph]# ceph health detail
-	HEALTH_ERR 9 pgs inconsistent; 9 scrub errors
-	pg 5.a0 is active+clean+inconsistent, acting [1,2,0]
-	pg 5.9d is active+clean+inconsistent, acting [8,0,5]
-	pg 5.43 is active+clean+inconsistent, acting [0,4,7]
-	pg 5.3a is active+clean+inconsistent, acting [4,2,5]
-	pg 5.31 is active+clean+inconsistent, acting [0,2,1]
-	pg 5.18 is active+clean+inconsistent, acting [1,3,5]
-	pg 5.1d is active+clean+inconsistent, acting [4,6,1]
-	pg 5.13 is active+clean+inconsistent, acting [1,3,5]
-	pg 5.f7 is active+clean+inconsistent, acting [5,0,2]
-	9 scrub errors
+## Check OSD. No error
 
 	[root@r83x6u20 ceph]# ceph osd dump
 	epoch 1250
@@ -46,7 +40,24 @@
 	osd.7 up   in  weight 1 up_from 1245 up_thru 1249 down_at 1174 last_clean_interval [1083,1173) 10.0.0.203:6801/2927 10.10.0.203:6800/2927 10.10.0.203:6801/2927 10.0.0.203:6803/2927 exists,up b4bdc7a4-2e3a-4614-8406-96710c831a68
 	osd.8 up   in  weight 1 up_from 993 up_thru 1245 down_at 992 last_clean_interval [119,981) 10.0.0.203:6804/5689 10.10.0.203:6802/5689 10.10.0.203:6804/5689 10.0.0.203:6807/5689 exists,up ab117c1d-21ed-4a20-81a3-890b39d40146
 
-	[root@r83x6u20 ceph]# for i in `ceph health detail|grep ^pg|awk '{print $2}'`; do ceph pg repair $i; done
+## List 9 page groups in error
+
+	[root@r83x6u20 ceph]# ceph health detail
+	HEALTH_ERR 9 pgs inconsistent; 9 scrub errors
+	pg 5.a0 is active+clean+inconsistent, acting [1,2,0]
+	pg 5.9d is active+clean+inconsistent, acting [8,0,5]
+	pg 5.43 is active+clean+inconsistent, acting [0,4,7]
+	pg 5.3a is active+clean+inconsistent, acting [4,2,5]
+	pg 5.31 is active+clean+inconsistent, acting [0,2,1]
+	pg 5.18 is active+clean+inconsistent, acting [1,3,5]
+	pg 5.1d is active+clean+inconsistent, acting [4,6,1]
+	pg 5.13 is active+clean+inconsistent, acting [1,3,5]
+	pg 5.f7 is active+clean+inconsistent, acting [5,0,2]
+	9 scrub errors
+
+## Repair page group
+
+	[root@r83x6u20 ceph]# for i in `ceph health detail | grep ^pg | awk '{print $2}'`; do ceph pg repair $i; done
 	instructing pg 5.a0 on osd.1 to repair
 	instructing pg 5.9d on osd.8 to repair
 	instructing pg 5.43 on osd.0 to repair
@@ -56,6 +67,9 @@
 	instructing pg 5.1d on osd.4 to repair
 	instructing pg 5.13 on osd.1 to repair
 	instructing pg 5.f7 on osd.5 to repair
+
+## Check status again
+Check status during repairing
 
 	[root@r83x6u20 ceph]# ceph -s
 	    cluster ed095412-5171-4d91-8d7e-5f5678985cd2
@@ -69,6 +83,8 @@
 	                   7 active+clean+inconsistent
 	recovery io 23715 kB/s, 5 objects/s
 
+Check status after repair
+
 	[root@r83x6u20 ceph]# ceph -s
 	    cluster ed095412-5171-4d91-8d7e-5f5678985cd2
 	     health HEALTH_OK
@@ -80,4 +96,3 @@
 	recovery io 10210 kB/s, 2 objects/s
 	  client io 319 B/s wr, 0 op/s
 	[root@r83x6u20 ceph]# 
-
