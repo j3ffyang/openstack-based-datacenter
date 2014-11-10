@@ -46,6 +46,7 @@
   * Neutron HA
 
 ## Stress Test
+  * [Network](markdown/StressTestNetwork.markdown)
   * [Ceph Stress Test](markdown/StressTestCeph.markdown)
 
 ## Operation
