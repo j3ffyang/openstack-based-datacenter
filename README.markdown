@@ -32,6 +32,7 @@
   * [Add New Monitor](markdown/CephAddMon.markdown)
   * [Post Install Configuration and Verify](markdown/CephPostConfiguration.markdown)
   * [Modify Ceph Parameter](markdown/CephParamChange.markdown)
+  * [Repair Inconsistent Page Groups](markdown/CephPGRepair.markdown)
 
 ## Deployment
   * [Prepare Controller VMs and Create Snapshot](markdown/BuildControllerVM.markdown)

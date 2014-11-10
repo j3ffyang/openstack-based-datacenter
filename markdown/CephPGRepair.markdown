@@ -1,5 +1,7 @@
+Document created by Bo Ma
+
 ## Ceph Service Crashing
-November 09, 2014, there was a Ceph service crash, caused by an interrupted fiber NIC. Basic symptom was that the VM launched on Ceph became unaccessible.
+November 09, 2014, there was a Ceph service crash, caused by an interrupted fiber NIC :-( [we need a fiber NIC bonding for production]. Basic symptom was that the VM launched on Ceph became unaccessible.
 
 ## Check Status
 
