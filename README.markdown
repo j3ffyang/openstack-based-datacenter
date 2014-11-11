@@ -49,6 +49,7 @@
 ## Stress Test
   * [Network Performance Test](markdown/StressTestNetwork.markdown)
   * [Ceph Stress Test](markdown/StressTestCeph.markdown)
+  * [MySQL Stress Test](markdown/StressTestMySQL.markdown)
 
 ## Operation
   * When [adding new VM](markdown/PostConfigNewVM.markdown)
