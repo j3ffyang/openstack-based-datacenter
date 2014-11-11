@@ -91,7 +91,7 @@ wsrep_cluster_name=<%= node['wsrep']['cluster_name'] %>
 wsrep_node_name=<%= node['ipaddress'] %>
 
 # Address for incoming client connections. Autodetect by default.
-#wsrep_node_incoming_address=<%= node['ipaddress'] %>
+wsrep_node_incoming_address=<%= node['ipaddress'] %>
 
 # How many threads will process writesets from other nodes
 # (more than one untested)

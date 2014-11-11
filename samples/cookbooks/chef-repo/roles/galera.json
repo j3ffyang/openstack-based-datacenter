@@ -1,0 +1,22 @@
+{
+  "description": "Galera cluster",
+  "name": "galera-cluster",
+  "chef_type": "role",
+  "default_attributes": {
+  },
+  "json_class": "Chef::Role",
+  "override_attributes": {
+     "wsrep":{
+       "cluster_name": "galera_cluster"
+     },
+     "galera_config":{
+       "data_bag_name":"galera",
+       "data_bag_item_name":"config"
+     }
+  },
+  "env_run_lists": {
+  },
+  "run_list": [
+     "recipe[galera::server]"
+  ]
+}
