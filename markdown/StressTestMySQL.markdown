@@ -2,6 +2,8 @@
 
 	yum install sysbench -y
 
+## Create a "TEST" database
+
 ## Prepare and Run
 
 	sysbench --test=oltp --oltp-table-size=10000 --mysql-db=test --mysql-user=root --mysql-password=password --oltp-read-only=off --db-driver=mysql --mysql-socket=/var/run/mysqld/mysqld.sock prepare
