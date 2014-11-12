@@ -96,3 +96,46 @@
 	    events (avg/stddev):           10000.0000/0.00
 	    execution time (avg/stddev):   42.5865/0.00
 
+## Output from Three Database Node
+
+	[root@mysql-1 ~]# sysbench --test=oltp --oltp-table-size=10000 --mysql-db=test --mysql-user=root --mysql-password=password --oltp-read-only=off --db-driver=mysql --mysql-socket=/var/run/mysqld/mysqld.sock run
+	sysbench 0.4.12:  multi-threaded system evaluation benchmark
+	
+	Running the test with following options:
+	Number of threads: 1
+	
+	Doing OLTP test.
+	Running mixed OLTP test
+	Using Special distribution (12 iterations,  1 pct of values are returned in 75 pct cases)
+	Using "BEGIN" for starting transactions
+	Using auto_inc on the id column
+	Maximum number of requests for OLTP test is limited to 10000
+	Threads started!
+	Done.
+	
+	OLTP test statistics:
+	    queries performed:
+	        read:                            140000
+	        write:                           50000
+	        other:                           20000
+	        total:                           210000
+	    transactions:                        10000  (223.83 per sec.)
+	    deadlocks:                           0      (0.00 per sec.)
+	    read/write requests:                 190000 (4252.82 per sec.)
+	    other operations:                    20000  (447.67 per sec.)
+	
+	Test execution summary:
+	    total time:                          44.6763s
+	    total number of events:              10000
+	    total time taken by event execution: 44.5991
+	    per-request statistics:
+	         min:                                  2.66ms
+	         avg:                                  4.46ms
+	         max:                                105.07ms
+	         approx.  95 percentile:               4.71ms
+	
+	Threads fairness:
+	    events (avg/stddev):           10000.0000/0.00
+	    execution time (avg/stddev):   44.5991/0.00
+
+
