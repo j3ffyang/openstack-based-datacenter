@@ -14,4 +14,4 @@
 
 ## Crete floating IP
 
-	neutron floatingip-create 
+	neutron floatingip-create public-9x
