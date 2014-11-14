@@ -1,7 +1,8 @@
 Neutron server has been implemented in ctrlr0/1/2 3 boxes. Neutron VM provides agent service, including L3, DHCP, and Open vSwitch
 
 ## Architecture 
-![neutron network](images/20141015_neutron_net.png)
+![Network Architecture](images/20141015_neutron_net.png)
+
 
 ## Launch a VM
 
