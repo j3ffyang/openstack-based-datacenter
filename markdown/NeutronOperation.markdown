@@ -12,6 +12,6 @@
 
 	neutron floatingip-create public-9x
 
-## Crete floating IP
+## Create floating IP
 
 	neutron floatingip-create public-9x
