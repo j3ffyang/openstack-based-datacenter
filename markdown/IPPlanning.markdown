@@ -57,5 +57,6 @@ Controller VM
 | neutron | 172.16.0.38 | 10.0.0.38 | Neutron doesn't need an external IP. It requires a physical link to external network. | 
 | logstash | 172.16.0.39 | | | |
 | sahara | 172.16.0.40 | | | |
+| neutron2 | 172.16.0.41 | 10.0.0.41 | Neutron doesn't need an external IP. It requires a physical link to external network. | 
 
 The maintenance network, 172.29.83.0, sub netmask is 24. (Not 16)
