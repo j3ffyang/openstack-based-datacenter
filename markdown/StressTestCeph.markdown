@@ -135,9 +135,18 @@ Flush cache on each Ceph node
 	total 4194324
 	-rw-r--r-- 1 root root 4294967296 Nov  6 18:09 deleteme
 	drwx------ 2 root root      16384 Nov  6 18:04 lost+found
+	core@coreos-6d13c3b2-4d86-4e5c-bb2e-f0def2ef6501 /mnt $ sudo rm -f deleteme
+	core@coreos-6d13c3b2-4d86-4e5c-bb2e-f0def2ef6501 /mnt $ sudo dd if=/dev/zero of=/mnt/deleteme bs=4M count=1024 conv=fdatasync
+	1024+0 records in
+	1024+0 records out
+	4294967296 bytes (4.3 GB) copied, 22.8796 s, 188 MB/s
+	core@coreos-6d13c3b2-4d86-4e5c-bb2e-f0def2ef6501 /mnt $ ls -tl
+	total 4194324
+	-rw-r--r-- 1 root root 4294967296 Nov 25 11:41 deleteme
+	drwx------ 2 root root      16384 Nov  6 18:04 lost+found
 
 ### Conclusion    
-4294967296 bytes (4.3 GB) copied, 22.2571 s, 193 MB/s
+4294967296 bytes (4.3 GB) copied, 22.2571 s, 193 MB/s, 188 MB/s with conv=fdatasync
 
 ## fio on local Ceph node
 
