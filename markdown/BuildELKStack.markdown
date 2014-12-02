@@ -12,7 +12,7 @@ Note: Above is a very high level overview, to improve the scalability we can ado
 ## Install Elasticsearch on CentOS 7:
 You need install the ruby before the steps in below since it is prereqed by Elasticsearch.
 
-Ensure the local host name is resolvable (you can add the local host name and ip address into the /etc/hosts).
+Ensure the local host name is resolvable (you can add the local host name and ip address into the [/etc/hosts](samples/hosts/hosts)).
 
 Update iptables rule, the IP_ADRRESS_1,IP_ADRRESS_2,IP_ADRRESS_3 are the IP address of ES (Elasticsearch) cluster nodes you plan to install ES:
 
