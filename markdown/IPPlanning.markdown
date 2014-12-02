@@ -55,8 +55,11 @@ Controller VM
 | jenkins | 172.16.0.36 | | | |
 | vIP | 172.16.0.37 | | | |
 | neutron | 172.16.0.38 | 10.0.0.38 | Neutron doesn't need an external IP. It requires a physical link to external network. | 
-| logstash | 172.16.0.39 | | | |
+| kibana | 172.16.0.39 | | | |
 | sahara | 172.16.0.40 | | | |
 | neutron2 | 172.16.0.41 | 10.0.0.41 | Neutron doesn't need an external IP. It requires a physical link to external network. | 
+| elasticsearch1 | 172.16.0.42 | | |
+| elasticsearch2 | 172.16.0.43 | | |
+| elasticsearch3 | 172.16.0.44 | | |
 
 The maintenance network, 172.29.83.0, sub netmask is 24. (Not 16)
