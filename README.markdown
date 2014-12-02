@@ -54,7 +54,7 @@
 
 ## Operation
   * When [adding new VM](markdown/PostConfigNewVM.markdown)
-  * Log Analysis by [Logstash](markdown/BuildLogstash.markdown)
+  * Log Analysis by [Logstash](markdown/BuildELKstack.markdown)
   * Monitoring by Ganglia, Nagios
   * [Jenkins](markdown/BuildJenkins.markdown)
   * One rule everybody should remember is to run "who" and "wall" prior to shutdown the server!
