@@ -33,8 +33,7 @@ The elasticsearch cookbook can be found on chef server (9.110.178.26), use follo
 
 Use following command to check the ES cluster status:
 
-	curl http://IP_ADDRESS_1:9200/_cluster/health
-
+	curl http://IP_ADDRESS_1:9200/_cluster/health    
 	curl http://IP_ADDRESS_1:9200/?pretty
 
 You can find the existing elasticsearch nodes in [IP Planning](IPPlanning.markdown)
@@ -42,8 +41,8 @@ You can find the existing elasticsearch nodes in [IP Planning](IPPlanning.markdo
 ## Install Logstash on CentOS 7:
 The logstash cookbook can be found on chef server (9.110.178.26), use following command to install logstash:
 
-        chef-client -N logstash-control
-        chef-client -N logstash-compute
+	chef-client -N logstash-control
+	chef-client -N logstash-compute
 
 There are different logstash input files for each logstash related chef role, you need update the filter or create a new role if you want to monitor new log files.
 
