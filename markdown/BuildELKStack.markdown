@@ -60,7 +60,6 @@ Enable the iptables firewall:
 
 The kibana cookbook can be found on chef server (9.110.178.26), use following command to install kibana
 
-        chef-client -N kibana
+	chef-client -N kibana
 
 In mustang, the nginx proxy of the kibana is enabled on the 9.110.178.27, you can access the Kibana dashboard via 'http://9.110.178.27/kibana/'
-
