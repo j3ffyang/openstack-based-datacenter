@@ -54,9 +54,9 @@ If you have different filter logic (grok, filter, codec, muate and etc), you can
 Enable the iptables firewall:    
 
 	iptables -I INPUT 1 -p tcp --dport 80 -j ACCEPT    
-        iptables-save > /etc/sysconfig/iptables.rules    
-        echo '/sbin/iptables-restore < /etc/sysconfig/iptables.rules' >> /etc/rc.d/rc.local    
-        chmod +x /etc/rc.d/rc.local    
+	iptables-save > /etc/sysconfig/iptables.rules    
+	echo '/sbin/iptables-restore < /etc/sysconfig/iptables.rules' >> /etc/rc.d/rc.local    
+	chmod +x /etc/rc.d/rc.local    
 
 The kibana cookbook can be found on chef server (9.110.178.26), use following command to install kibana
 
