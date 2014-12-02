@@ -9,7 +9,7 @@ Note: Above is a very high level overview, to improve the scalability we can ado
 
 ![Centralized ELK Overview](images/20141202_advanced_elk.png)
 
-## Install Elasticsearch on CentOS 7:
+## Install Elasticsearch on CentOS 7
 You need install the ruby before the steps in below since it is prereqed by Elasticsearch.
 
 Ensure the local host name is resolvable (you can add the local host name and ip address into the [/etc/hosts](samples/hosts/hosts)).
@@ -31,14 +31,14 @@ The elasticsearch cookbook can be found on chef server (9.110.178.26), use follo
 
 	chef-client -N elasticsearch
 
-Use following command to check the ES cluster status:
+Use following command to check the ES cluster status
 
 	curl http://IP_ADDRESS_1:9200/_cluster/health    
 	curl http://IP_ADDRESS_1:9200/?pretty
 
 You can find the existing elasticsearch nodes in [IP Planning](IPPlanning.markdown)
 
-## Install Logstash on CentOS 7:
+## Install Logstash on CentOS 7
 The logstash cookbook can be found on chef server (9.110.178.26), use following command to install logstash:
 
 	chef-client -N logstash-control
@@ -49,7 +49,7 @@ There are different logstash input files for each logstash related chef role, yo
 If you have different filter logic (grok, filter, codec, muate and etc), you can customize the 'templates/default/openstack-logstash-filter.conf.erb' in logstash cookbook or create new template.
 
 
-## Install Kibana on CentOS 7:
+## Install Kibana on CentOS 7
 
 Enable the iptables firewall:    
 
