@@ -61,5 +61,6 @@ Controller VM
 | elasticsearch1 | 172.16.0.42 | | |
 | elasticsearch2 | 172.16.0.43 | | |
 | elasticsearch3 | 172.16.0.44 | | |
+| graphite | 172.16.0.45 | | |
 
 The maintenance network, 172.29.83.0, sub netmask is 24. (Not 16)
