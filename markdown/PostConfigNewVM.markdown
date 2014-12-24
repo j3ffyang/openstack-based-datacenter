@@ -12,7 +12,7 @@ Refer to [build a VM](BuildAnImage.markdown)
 
 	ssh-copy-id root@logstash
 
-## Update [/etc/hosts](samples/hosts/hosts)
+## Update [/etc/hosts](/samples/hosts/hosts)
 
 Log into Chef, then
 

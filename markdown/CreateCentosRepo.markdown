@@ -25,7 +25,7 @@
 	sync --recursive --progress --archive --compress centos7_64 centos7_64_repo
 	createrepo centos7_64_repo
 
-## Create repo configuration and [sample repo files](samples/yum_repos_d/)
+## Create repo configuration and [sample repo files](/samples/yum_repos_d/)
 
 	[root@r83x5u09 yum.repos.d]# cat /etc/yum.repos.d/centos7_fullpackage.repo
 	[centos7_fullpackage]
@@ -67,7 +67,7 @@
 	gpgcheck=1
 
 
-## Create a tailered [chef-client.repo](samples/yum_repos_d/chef-client.repo)
+## Create a tailered [chef-client.repo](/samples/yum_repos_d/chef-client.repo)
 Copy chef server and cilent RPMs to the same server where CentOS7 local repo reside. In our case, this server is r83x5u09 (172.16.0.21)
 
 	scp 172.16.0.32:/opt/chef*.rpm /mnt/chef_repo/

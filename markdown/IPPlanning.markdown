@@ -16,7 +16,7 @@
 | 201 | 240 | Storage |
 | 241 | 249 | VPN for maintenance |
 
-## IP Reservation. Also defined at [/etc/hosts](samples/hosts/hosts)
+## IP Reservation. Also defined at [/etc/hosts](/samples/hosts/hosts)
 Referring to [network architecture](NetworkConfiguration.markdown)
 
 Physical Host
