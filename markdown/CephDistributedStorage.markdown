@@ -1,10 +1,10 @@
 ## Ceph Architecture
-![Ceph Architecture](images/20140918_ceph_stack.png)
+![Ceph Architecture](/images/20140918_ceph_stack.png)
 
 Credit: [http://docs.ceph.com](http://docs.ceph.com/docs/master/architecture/#the-ceph-storage-cluster)
 
 ## Ceph Network
-![Ceph Network](images/20140918_ceph_nw.png)
+![Ceph Network](/images/20140918_ceph_nw.png)
 Credit: [http://ceph.com](http://ceph.com/docs/v0.80.5/rados/configuration/network-config-ref/)
 
 ## How Data is Stored in Ceph Cluster
