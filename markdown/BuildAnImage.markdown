@@ -4,19 +4,19 @@
 ## Install CentOS 7 over centos7_15g.img
 
 ## Configure virtio disk
-![virtio_disk](images/20140827_virtio_disk.png)
+![virtio_disk](/images/20140827_virtio_disk.png)
 
 ## Configure virtio network interface card with bridge
-![virtio_nic](images/20140827_virtio_network_bridge.png)
+![virtio_nic](/images/20140827_virtio_network_bridge.png)
 
 ## Convert a qcow2 image as base image
 	qemu-img create -b centos7_15g.img -o cluster_size=2M -f qcow2 centos7_15g.qcow2
 
-## Modify disk format in xml as base xml definition [sample xml](samples/vm_xml/centos7_15g.xml)
+## Modify disk format in xml as base xml definition [sample xml](/samples/vm_xml/centos7_15g.xml)
 	...
 	<disk type='file' device='disk'>
 	  <driver name='qemu' type='qcow2' cache='none'/>
-	  <source file='/var/lib/libvirt/images/centos7_15g.qcow2'/>
+	  <source file='/var/lib/libvirt//images/centos7_15g.qcow2'/>
 	  <target dev='vda' bus='virtio'/>
 	  <address type='pci' domain='0x0000' bus='0x00' slot='0x04' function='0x0'/>
     	</disk>
@@ -52,6 +52,6 @@ Update grub
 	export http_proxy=http://9.115.78.100:8085/
 	export https_proxy=http://9.115.78.100:8085/
 
-## [Sample of VM XML](samples/vm_xml/)
+## [Sample of VM XML](/samples/vm_xml/)
 
-## [/etc/host](samples/hosts/hosts) accoding to [IP Planning](IPPlanning.markdown)
+## [/etc/host](/samples/hosts/hosts) accoding to [IP Planning](IPPlanning.markdown)
