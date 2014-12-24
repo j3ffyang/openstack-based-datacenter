@@ -8,7 +8,7 @@ Used for internal communication between OpenStack Components. The IP addresses o
 
 ## VM network
 10.0.xx.xx/16 -- 10G fiber connection
-Used for VM data communication within the cloud deployment. The IP addressing requirements of this network depend on the OpenStack Networking plugin in use and the network configuration choices of the virtual networks made by the tenant. This network is considered the Guest Security Domain. 
+Used for VM data communication within the cloud deployment. The IP addressing requirements of this network depend on the OpenStack Networking plugin in use and the network configuration choices of the virtual networks made by the tenant. This network is considered the Guest Security Domain...
 
 ## Storage network
 10.10.xx.xx/16 --10G fiber connection
