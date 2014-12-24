@@ -46,6 +46,7 @@ You need to create a new node named logstash-control-ctrlr1 (on ctrl1), second t
 	chef-client -N logstash-control-ctrlr1 -S https://chef:443 -K /etc/chef/chef-validator.pem
 
 Then 
+
 	/etc/init.d/logstanh-agent restart
 
 On Compute node
