@@ -10,7 +10,7 @@ Running the following command from Chef server
 	ssh -t root@172.16.0.201 "mv /etc/yum.repos.d/CentOS*.repo /tmp"
 	scp /opt/git/mustang/samples/yum_repos_d/*.repo 172.16.0.36:/etc/yum.repos.d/
 
-## Sync [/etc/hosts](samples/hosts/)
+## Sync [/etc/hosts](/samples/hosts/)
 
 	scp /opt/git/mustang/samples/hosts/hosts 172.16.0.36:/etc/
 

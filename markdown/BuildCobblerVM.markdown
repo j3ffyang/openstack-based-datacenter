@@ -1,7 +1,7 @@
 ## Launch a CentOS 7 VM
 
 ## Network Overview
-![Cobbler Network](images/20140902_cobbler_nw.png)
+![Cobbler Network](/images/20140902_cobbler_nw.png)
 
 ## Configure network according [IP Planning](IPPlanning.markdown)
 Configuration details    

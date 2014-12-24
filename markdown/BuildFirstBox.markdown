@@ -2,7 +2,7 @@
 According to Controller's [partition layout](DiskConfiguration.markdown)
 
 ## Physical Host Network
-![FirstBox Network](images/20140902_ctrl_net.png)
+![FirstBox Network](/images/20140902_ctrl_net.png)
 
 ## Update Hostname
     [root@localhost ~]# hostnamectl set-hostname r83x5u09

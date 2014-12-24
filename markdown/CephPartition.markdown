@@ -146,5 +146,5 @@ Parted list AFTER partitioning is finished
  	1      17.4kB  10.0GB  10000MB               primary
  	2      10.0GB  1198GB  1188GB                primary
 
-## Create [Ceph Configure File](samples/ceph/ceph.conf)
+## Create [Ceph Configure File](/samples/ceph/ceph.conf)
 

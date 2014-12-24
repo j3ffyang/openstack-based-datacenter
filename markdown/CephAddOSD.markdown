@@ -11,7 +11,7 @@ Update /etc/yum.repos.d
 	
 	yum install ceph
 
-## Update [/etc/ceph/ceph.conf](samples/ceph/ceph.conf)
+## Update [/etc/ceph/ceph.conf](/samples/ceph/ceph.conf)
 Update ceph.conf to add osd blocks. Then upload the change to Chef
 Log into Chef
 

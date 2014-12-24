@@ -1,18 +1,18 @@
 ## Log Monitoring
 
 ## ELK (Elasticsearch, Logstash, Kibana) Stack Overview
-![ELK Overview](images/20141202_file_logstash_es_kibana.png)
+![ELK Overview](/images/20141202_file_logstash_es_kibana.png)
 
 Reference: [http://www.elasticsearch.org/overview/](http://www.elasticsearch.org/overview/)
 
 Note: Above is a very high level overview, to improve the scalability we can adopt the following structure, the redis broker could be replaced by any others candidate, such as Kafka:
 
-![Centralized ELK Overview](images/20141202_advanced_elk.png)
+![Centralized ELK Overview](/images/20141202_advanced_elk.png)
 
 ## Install Elasticsearch on CentOS 7
 You need install the ruby before the steps in below since it is prereqed by Elasticsearch.
 
-Ensure the local host name is resolvable (you can add the local host name and ip address into the [/etc/hosts](samples/hosts/hosts)).
+Ensure the local host name is resolvable (you can add the local host name and ip address into the [/etc/hosts](/samples/hosts/hosts)).
 
 Update iptables rule, the IP_ADRRESS_1,IP_ADRRESS_2,IP_ADRRESS_3 are the IP address of ES (Elasticsearch) cluster nodes you plan to install ES:
 
