@@ -41,7 +41,15 @@ You can find the existing elasticsearch nodes in [IP Planning](IPPlanning.markdo
 ## Install Logstash on CentOS 7
 The logstash cookbook can be found on chef server (9.110.178.26), use following command to install logstash:
 
-	chef-client -N logstash-control
+You need to create a new node named logstash-control-ctrlr1 (on ctrl1), second to the 1st logstash-control (on ctrlr0)
+
+	chef-client -N logstash-control-ctrlr1 -S https://chef:443 -K /etc/chef/chef-validator.pem
+
+Then 
+	/etc/init.d/logstanh-agent restart
+
+On Compute node
+
 	chef-client -N logstash-compute
 
 There are different logstash input files for each logstash related chef role, you need update the filter or create a new role if you want to monitor new log files.
