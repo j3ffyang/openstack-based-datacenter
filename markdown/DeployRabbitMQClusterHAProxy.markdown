@@ -33,3 +33,7 @@ On 9.110.178.27 (management VM host), edit /etc/nginx/nginx.conf
 
 Restart Nginx
 	systemctl restart nginx
+
+## Access Management on Web
+
+	http://9.110.178.27/rabbitmq/
