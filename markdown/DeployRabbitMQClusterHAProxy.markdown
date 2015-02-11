@@ -18,6 +18,11 @@ Restart HAProxy
 
 Repeat the above on 34/ 35
 
+Access on Web
+
+	http://9.110.178.27/haproxy
+
+
 ## Deploy RabbitMQ Cluster in Nginx
 
 On 9.110.178.27 (management VM host), edit /etc/nginx/nginx.conf
