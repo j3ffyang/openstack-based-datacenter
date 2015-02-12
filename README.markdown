@@ -39,7 +39,7 @@
   * Deploy HAProxy and Keepalived
   * [Deploy Galera Cluster](markdown/DeployGalera.markdown)
   * [Deploy RabbitMQ Cluster](markdown/DeployRabbitMQCluster.markdown)
-  * [Deploy RabbitMQ Monitoring HAProxy and Nginx](mardown/DeployRabbitMQClusterHAProxy.markdown)
+  * [Deploy RabbitMQ Monitoring HAProxy and Nginx](markdown/DeployRabbitMQClusterHAProxy.markdown)
   * [Deploy OpenStack](markdown/DeployOpenStack.markdown)
   * [Build Neutron Controller](markdown/BuildNeutron.markdown)
   * [Register Image](markdown/RegisterImage.markdown)
