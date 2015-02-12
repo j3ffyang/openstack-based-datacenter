@@ -17,7 +17,7 @@ Restart HAProxy
 
 	/etc/init.d/haproxy restart
 
-Repeat the above on 34/ 35
+Repeat the above on 34(ctrlr1)/ 35(ctrlr2)
 
 Access on Web
 
@@ -38,6 +38,7 @@ On 9.110.178.27 (management VM host), edit /etc/nginx/nginx.conf
 	...
 
 Restart Nginx
+
 	systemctl restart nginx
 
 ## Access Management on Web
