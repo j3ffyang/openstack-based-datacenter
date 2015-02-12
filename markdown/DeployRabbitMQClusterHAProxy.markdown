@@ -14,6 +14,7 @@ On 172.16.0.33 (ctrlr0), edit /etc/haproxy/haproxy.cfg
 	  server ctrlr2 172.16.0.35:15672 check inter 2000 rise 2 fall 5
 
 Restart HAProxy
+
 	/etc/init.d/haproxy restart
 
 Repeat the above on 34/ 35
