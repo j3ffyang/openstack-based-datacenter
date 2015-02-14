@@ -19,7 +19,6 @@
 172.16.0.38	neutron
 172.16.0.39	logstash
 172.16.0.40	sahara
-172.16.0.41	hirain
 
 127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
 ::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
