@@ -36,7 +36,7 @@
 
 ## Deployment
   * [Prepare Controller VMs and Create Snapshot](markdown/BuildControllerVM.markdown)
-  * Deploy HAProxy and Keepalived
+  * [Deploy HAProxy and Keepalived](markdown/DeployHALB.markdown)
   * [Deploy Galera Cluster](markdown/DeployGalera.markdown)
   * [Deploy RabbitMQ Cluster](markdown/DeployRabbitMQCluster.markdown)
   * [Deploy RabbitMQ Monitoring HAProxy and Nginx](markdown/DeployRabbitMQClusterHAProxy.markdown)
