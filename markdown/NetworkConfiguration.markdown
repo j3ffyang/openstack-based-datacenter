@@ -2,6 +2,9 @@ Mustang Networking setup is up to six distinct physical data center networks. Th
 
 ![Network Architecture](/images/20141015_neutron_net.png)
 
+## Current Network Architecture Reference
+![Current Network Architecture](/images/20150409_mustang_networkarch2.png)
+
 ## Management network
 172.16.xx.xx/16 --1G cable connection
 Used for internal communication between OpenStack Components. The IP addresses on this network should be reachable only within the data center and is considered the Management Security Domain. 
