@@ -78,6 +78,10 @@ or
 	 {running_nodes,[rabbit@ctrlr0]},
 	 {partitions,[]}]
 	...done.
+
+## Restart RabbitMQ Cluster
+
+	rabbitmqctl eval 'application:stop(rabbitmq_management),application:start(rabbitmq_management).'
 	
 ## Deploy RabbitMQ Cluster in HAProxy
 
