@@ -61,5 +61,3 @@
 
 ## [Troubleshooting](markdown/TroubleShooting.markdown)
 
-
-Jason Wang
