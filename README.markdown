@@ -60,6 +60,3 @@
   * One rule everybody should remember is to run "who" and "wall" prior to shutdown the server!
 
 ## [Troubleshooting](markdown/TroubleShooting.markdown)
-
-
-Amy Zeng
